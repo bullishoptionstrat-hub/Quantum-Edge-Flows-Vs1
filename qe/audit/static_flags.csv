@@ -1,0 +1,269 @@
+file,pattern,count,lines
+QuantumEdge/backtest_standalone.py,network_call,2,28 68
+QuantumEdge/data/validator.py,broad_except,1,171
+QuantumEdge/generate_lean_data.py,network_call,4,3 10 29 85
+QuantumEdge/main.py,broker_or_order,1,69
+QuantumEdge/main.py,float_price_eq,1,246
+QuantumEdge/research/analytics.py,broad_except,1,60
+QuantumEdge/research/fib/backtester.py,float_price_eq,1,105
+QuantumEdge/research/fib/backtester.py,golden_ratio,1,105
+QuantumEdge/research/fib/detector.py,golden_ratio,4,95 99 113 117
+QuantumEdge/research/fib/experiments.py,golden_ratio,16,27 32 33 40 47 52 57 58 65 69 76 80 88 95 104 114
+QuantumEdge/research/fib/model.py,golden_ratio,12,16 17 58 62 75 120 121 175 179 181 184 273
+QuantumEdge/research/fib/run.py,wall_clock,1,272
+QuantumEdge/research/fib/run.py,broad_except,1,352
+QuantumEdge/research/fib/run.py,golden_ratio,1,215
+QuantumEdge/research/fib2/backtester.py,float_price_eq,1,488
+QuantumEdge/research/fib2/backtester.py,golden_ratio,1,488
+QuantumEdge/research/fib2/data.py,broad_except,1,172
+QuantumEdge/research/fib2/detector.py,golden_ratio,5,76 80 94 98 378
+QuantumEdge/research/fib2/experiments.py,golden_ratio,18,31 42 52 61 69 77 86 94 102 111 120 137 147 157 167 176 186 196
+QuantumEdge/research/fib2/model.py,golden_ratio,4,8 52 71 160
+QuantumEdge/research/fib2/run.py,wall_clock,1,303
+QuantumEdge/research/fib2/run.py,broad_except,1,365
+QuantumEdge/research/fib2/run.py,golden_ratio,2,13 204
+QuantumEdge/research/fib3/analysis.py,dict_get_default,6,77 100 101 102 103 104
+QuantumEdge/research/fib3/detector.py,golden_ratio,4,35 40 53 58
+QuantumEdge/research/fib3/experiments.py,golden_ratio,10,27 36 45 54 66 78 88 100 112 120
+QuantumEdge/research/fib3/fib_respect.py,golden_ratio,7,13 19 51 61 65 76 80
+QuantumEdge/research/fib3/model.py,golden_ratio,4,183 187 195 199
+QuantumEdge/research/fib3/run.py,wall_clock,1,253
+QuantumEdge/research/fib3/run.py,broad_except,1,350
+QuantumEdge/research/fib3/run.py,golden_ratio,1,200
+QuantumEdge/research/fib4/analysis.py,dict_get_default,6,135 136 201 220 282 287
+QuantumEdge/research/fib4/analysis.py,golden_ratio,1,148
+QuantumEdge/research/fib4/experiments.py,golden_ratio,22,34 44 54 65 76 87 98 109 112 120 131 144 155 166 178 187 198 210 219 230 241 251
+QuantumEdge/research/fib4/run.py,wall_clock,1,103
+QuantumEdge/research/fib4/run.py,broad_except,1,228
+QuantumEdge/research/fib5/analysis.py,dict_get_default,18,205 243 244 245 246 247 248 255 256 257 258 259 307 308 309 310 401 405
+QuantumEdge/research/fib5/experiments.py,golden_ratio,4,46 65 91 105
+QuantumEdge/research/fib5/model.py,broker_or_order,1,25
+QuantumEdge/research/fib5/robustness.py,golden_ratio,2,38 66
+QuantumEdge/research/fib6/analysis.py,dict_get_default,31,134 139 140 180 181 252 256 261 299 300 301 319 369 395 396 397 398 420 421 422 423 424 425 432 433 434 435 436 499 506 507
+QuantumEdge/research/fib6/experiments.py,golden_ratio,3,44 59 74
+QuantumEdge/research/fib6/robustness.py,golden_ratio,2,123 141
+QuantumEdge/research/fib6/run.py,dict_get_default,4,471 472 473 474
+QuantumEdge/research/fib7/analysis.py,dict_get_default,41,127 131 132 133 138 139 140 178 183 186 187 192 193 213 232 279 289 294 334 335 354 363 415 441 442 443 444 465 466 467 468 469 470 477 478 479 480 481 549 556
+QuantumEdge/research/fib7/experiments.py,golden_ratio,10,59 78 95 123 125 128 129 131 134 280
+QuantumEdge/research/fib7/live_spec.py,dict_get_default,7,197 198 199 200 201 207 208
+QuantumEdge/research/fib7/live_spec.py,golden_ratio,1,124
+QuantumEdge/research/fib7/run.py,dict_get_default,8,422 515 566 567 595 596 597 598
+QuantumEdge/research/fib8/analysis.py,dict_get_default,12,43 44 47 48 52 53 110 111 112 113 156 164
+QuantumEdge/research/fib8/forward_monitor.py,dict_get_default,7,113 114 115 116 117 118 119
+QuantumEdge/research/fib8/forward_monitor.py,golden_ratio,3,160 333 362
+QuantumEdge/research/fib8/promotion.py,dict_get_default,30,38 53 54 55 75 76 93 109 110 111 133 148 149 165 166 167 181 195 196 197 329 330 331 332 333 334 335 336 337 338
+QuantumEdge/research/fib8/rotation.py,dict_get_default,9,250 275 276 297 298 299 300 301 302
+QuantumEdge/research/fib8/run.py,dict_get_default,5,177 178 308 309 311
+QuantumEdge/research/fib8/signal_cards.py,dict_get_default,9,248 278 279 280 281 282 317 318 319
+QuantumEdge/research/fib8/signal_cards.py,golden_ratio,3,28 69 164
+QuantumEdge/research/fib9/canonical.py,dict_get_default,23,75 76 77 78 79 182 299 300 301 304 305 306 313 314 317 318 335 336 337 340 341 342 343
+QuantumEdge/research/fib9/model.py,golden_ratio,1,106
+QuantumEdge/research/manifest.py,wall_clock,1,164
+QuantumEdge/research/manifest.py,broad_except,1,102
+QuantumEdge/research/manifest.py,dict_get_default,24,111 112 113 115 116 117 120 157 158 159 160 171 172 173 178 181 182 183 185 186 187 188 189 190
+QuantumEdge/research/results.py,wall_clock,1,127
+QuantumEdge/research/results.py,broad_except,2,146 201
+QuantumEdge/research/results.py,dict_get_default,13,141 188 189 197 198 207 208 219 220 221 225 226 227
+QuantumEdge/research/runner.py,wall_clock,3,116 170 183
+QuantumEdge/research/runner.py,broad_except,1,276
+QuantumEdge/research/validity.py,dict_get_default,2,96 98
+QuantumEdge/strategy/regime.py,float_price_eq,2,69 80
+QuantumEdge/strategy/sleeve_b.py,tradeable_flag,1,119
+QuantumEdge/tests/test_data_presence.py,broad_except,1,103
+QuantumEdge/tests/test_data_presence.py,broker_or_order,1,20
+quantum-edge-terminal/FINAL_COMPLETION_SUMMARY.py,broker_or_order,1,79
+quantum-edge-terminal/PHASE_8_5_DEPLOYMENT_GUIDE.py,wall_clock,1,345
+quantum-edge-terminal/PHASE_8_5_INSTRUMENTATION_COMPLETE.py,broker_or_order,1,34
+quantum-edge-terminal/PHASE_8_5_TEST_SUITE_AUDIT.py,wall_clock,1,331
+quantum-edge-terminal/PHASE_8_5_TEST_SUITE_AUDIT.py,dict_get_default,1,410
+quantum-edge-terminal/PHASE_8_5_TEST_SUITE_AUDIT.py,broker_or_order,2,101 255
+quantum-edge-terminal/ai-engine/main.py,broad_except,4,47 58 69 106
+quantum-edge-terminal/ai-engine/src/modules/algo_detection.py,broad_except,1,56
+quantum-edge-terminal/ai-engine/src/modules/algo_detection.py,golden_ratio,2,102 111
+quantum-edge-terminal/ai-engine/src/modules/enhanced_fib_validator.py,broad_except,1,261
+quantum-edge-terminal/ai-engine/src/modules/enhanced_fib_validator.py,golden_ratio,7,90 92 182 186 192 196 216
+quantum-edge-terminal/ai-engine/src/modules/fib_manipulation_validator.py,broad_except,1,164
+quantum-edge-terminal/ai-engine/src/modules/fib_manipulation_validator.py,golden_ratio,11,13 20 44 51 53 97 99 111 119 121 133
+quantum-edge-terminal/ai-engine/src/modules/fractal_validator.py,broad_except,1,101
+quantum-edge-terminal/ai-engine/src/modules/fractal_validator.py,golden_ratio,2,76 81
+quantum-edge-terminal/ai-engine/src/modules/institutional_smart_blend_plus.py,broad_except,1,223
+quantum-edge-terminal/ai-engine/src/modules/institutional_smart_blend_plus.py,dict_get_default,12,138 183 205 236 247 254 298 299 328 329 330 352
+quantum-edge-terminal/ai-engine/src/modules/institutional_smart_blend_plus.py,golden_ratio,13,16 18 30 58 65 67 77 78 83 244 340 342 346
+quantum-edge-terminal/ai-engine/src/modules/market_structure_analyzer.py,dict_get_default,2,97 271
+quantum-edge-terminal/ai-engine/src/modules/market_structure_analyzer.py,golden_ratio,7,55 56 61 62 211 336 340
+quantum-edge-terminal/ai-engine/src/modules/market_structure_detector.py,broad_except,1,47
+quantum-edge-terminal/ai-engine/src/modules/master_multi_signal.py,broad_except,1,159
+quantum-edge-terminal/ai-engine/src/modules/master_multi_signal.py,dict_get_default,6,75 80 116 134 155 179
+quantum-edge-terminal/ai-engine/src/utils.py,wall_clock,1,15
+quantum-edge-terminal/ai-engine/src/utils.py,dict_get_default,1,31
+quantum-edge-terminal/backend/src/api/alerts.ts,wall_clock,1,35
+quantum-edge-terminal/backend/src/api/alerts.ts,broad_except,2,37 69
+quantum-edge-terminal/backend/src/api/alerts.ts,dict_get_default,1,12
+quantum-edge-terminal/backend/src/api/alerts.ts,todo,1,63
+quantum-edge-terminal/backend/src/api/alerts.ts,network_call,1,63
+quantum-edge-terminal/backend/src/api/health.ts,wall_clock,1,9
+quantum-edge-terminal/backend/src/api/health.ts,dict_get_default,1,5
+quantum-edge-terminal/backend/src/api/market-data.ts,wall_clock,2,47 89
+quantum-edge-terminal/backend/src/api/market-data.ts,broad_except,3,49 91 139
+quantum-edge-terminal/backend/src/api/market-data.ts,dict_get_default,2,13 59
+quantum-edge-terminal/backend/src/api/signals.ts,wall_clock,2,27 91
+quantum-edge-terminal/backend/src/api/signals.ts,broad_except,3,29 67 99
+quantum-edge-terminal/backend/src/api/signals.ts,dict_get_default,1,12
+quantum-edge-terminal/backend/src/db/postgres.ts,wall_clock,2,31 34
+quantum-edge-terminal/backend/src/db/postgres.ts,broad_except,2,24 37
+quantum-edge-terminal/backend/src/db/redis.ts,broad_except,1,18
+quantum-edge-terminal/backend/src/server.ts,wall_clock,3,31 49 66
+quantum-edge-terminal/backend/src/server.ts,broad_except,1,92
+quantum-edge-terminal/backend/src/server.ts,dict_get_default,1,48
+quantum-edge-terminal/backend/src/server.ts,network_call,5,7 18 58 59 88
+quantum-edge-terminal/backend/src/websocket/server.ts,broad_except,1,53
+quantum-edge-terminal/backend/src/websocket/server.ts,network_call,5,10 13 54 62 66
+quantum-edge-terminal/backtest_baseline_validated.py,random_call,6,48 54 56 57 58 59
+quantum-edge-terminal/backtest_enhanced_fib.py,random_call,6,48 51 54 56 57 58
+quantum-edge-terminal/backtest_fast_enhanced_fib.py,dict_get_default,2,291 292
+quantum-edge-terminal/backtest_fast_enhanced_fib.py,random_call,6,75 78 81 83 84 85
+quantum-edge-terminal/backtest_fast_enhanced_fib.py,golden_ratio,4,137 139 142 144
+quantum-edge-terminal/backtest_fib_manipulation.py,random_call,6,47 51 54 56 57 58
+quantum-edge-terminal/backtest_fib_manipulation.py,golden_ratio,2,8 174
+quantum-edge-terminal/backtest_fib_optimization.py,random_call,6,45 48 51 53 54 55
+quantum-edge-terminal/backtest_fib_optimization.py,golden_ratio,5,6 8 68 222 225
+quantum-edge-terminal/backtest_fix_validation.py,dict_get_default,2,282 286
+quantum-edge-terminal/backtest_fix_validation.py,random_call,5,45 51 53 54 55
+quantum-edge-terminal/backtest_historical_rr.py,wall_clock,1,80
+quantum-edge-terminal/backtest_historical_rr.py,broad_except,1,100
+quantum-edge-terminal/backtest_historical_rr.py,network_call,2,19 84
+quantum-edge-terminal/backtest_historical_rr_synthetic.py,wall_clock,1,95
+quantum-edge-terminal/backtest_historical_rr_synthetic.py,random_call,5,79 83 86 87 90
+quantum-edge-terminal/backtest_hybrid_strategy.py,random_call,6,46 49 52 54 55 56
+quantum-edge-terminal/backtest_hybrid_strategy.py,golden_ratio,5,8 100 102 104 187
+quantum-edge-terminal/backtest_integrated_system.py,dict_get_default,10,92 94 114 148 149 150 151 152 153 154
+quantum-edge-terminal/backtest_integrated_system.py,random_call,16,33 34 35 36 37 38 39 44 45 46 47 48 49 50 54 118
+quantum-edge-terminal/backtest_max_profit_final.py,random_call,6,51 57 59 60 61 62
+quantum-edge-terminal/backtest_optimized_profitability.py,wall_clock,1,114
+quantum-edge-terminal/backtest_optimized_profitability.py,random_call,6,92 100 103 104 105 109
+quantum-edge-terminal/backtest_phase2_institutional.py,dict_get_default,2,173 174
+quantum-edge-terminal/backtest_phase2_institutional.py,random_call,8,86 90 91 96 97 98 99 113
+quantum-edge-terminal/backtest_phase2_institutional.py,float_price_eq,2,311 313
+quantum-edge-terminal/backtest_phase2_institutional.py,golden_ratio,8,13 16 69 76 222 223 264 267
+quantum-edge-terminal/backtest_phase2_optimized.py,random_call,6,59 60 61 63 68 69
+quantum-edge-terminal/backtest_phase2_optimized.py,golden_ratio,7,7 43 118 121 123 128 260
+quantum-edge-terminal/backtest_post_fix_validation.py,random_call,5,45 51 53 54 55
+quantum-edge-terminal/backtest_practical_profits.py,random_call,6,70 76 79 80 81 83
+quantum-edge-terminal/backtest_smart_profitability.py,wall_clock,1,94
+quantum-edge-terminal/backtest_smart_profitability.py,random_call,6,74 81 84 85 86 89
+quantum-edge-terminal/backtest_timeframe_analysis.py,random_call,7,26 32 33 34 35 165 187
+quantum-edge-terminal/backtest_timeframe_analysis.py,golden_ratio,4,11 12 14 18
+quantum-edge-terminal/comprehensive_verification.py,wall_clock,2,259 367
+quantum-edge-terminal/comprehensive_verification.py,broad_except,7,88 154 193 235 288 329 383
+quantum-edge-terminal/execution/__init__.py,broker_or_order,3,5 15 16
+quantum-edge-terminal/execution/broker_engine/__init__.py,broker_or_order,8,1 3 4 5 6 13 14 15
+quantum-edge-terminal/execution/broker_engine/broker_connection.py,dict_get_default,26,181 182 183 184 185 186 187 188 195 210 211 212 213 214 215 216 217 316 317 318 319 320 321 324 325 327
+quantum-edge-terminal/execution/broker_engine/broker_connection.py,broker_or_order,32,2 4 29 37 38 43 49 51 52 55 58 59 62 64 130 132 138 140 143 149 150 154 157 232 244 261 283 286 287 308 339 367
+quantum-edge-terminal/execution/execution_audit_log.py,wall_clock,3,135 358 417
+quantum-edge-terminal/execution/execution_audit_log.py,broker_or_order,3,11 316 338
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,wall_clock,5,93 333 382 384 390
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,broad_except,2,258 301
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,dict_get_default,15,224 228 229 230 232 251 252 253 274 295 296 307 321 342 352
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,broker_or_order,1,36
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,confidence_sizing,4,309 312 314 315
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,network_call,2,12 55
+quantum-edge-terminal/execution/execution_engine/websocket_stream.py,wall_clock,1,68
+quantum-edge-terminal/execution/execution_engine/websocket_stream.py,broad_except,2,137 240
+quantum-edge-terminal/execution/execution_engine/websocket_stream.py,dict_get_default,2,86 155
+quantum-edge-terminal/execution/execution_engine/websocket_stream.py,broker_or_order,2,19 166
+quantum-edge-terminal/execution/execution_engine/websocket_stream.py,network_call,33,2 4 6 8 42 43 60 93 106 107 108 112 114 115 116 130 132 133 135 136 139 148 168 176 184 192 206 219 227 232 236 237 239
+quantum-edge-terminal/execution/execution_kill_switch.py,wall_clock,1,325
+quantum-edge-terminal/execution/order_manager/__init__.py,broker_or_order,3,1 3 5
+quantum-edge-terminal/execution/order_manager/order_manager.py,dict_get_default,5,125 126 127 128 345
+quantum-edge-terminal/execution/order_manager/order_manager.py,broker_or_order,55,2 4 10 11 15 24 25 26 28 57 58 76 79 82 87 89 93 99 102 108 110 119 157 160 165 169 171 173 176 179 182 186 187 188 191 194 195 196 197 198
+quantum-edge-terminal/execution/order_manager/order_manager.py,confidence_sizing,5,114 141 256 271 272
+quantum-edge-terminal/execution/risk_engine/risk_engine.py,wall_clock,5,102 211 261 264 439
+quantum-edge-terminal/execution/risk_engine/risk_engine.py,dict_get_default,10,260 289 290 315 316 344 393 394 399 420
+quantum-edge-terminal/execution/shadow_execution_comparator.py,wall_clock,3,146 166 200
+quantum-edge-terminal/execution/staged_capital_deployment.py,wall_clock,3,78 171 188
+quantum-edge-terminal/execution/staged_capital_deployment.py,dict_get_default,5,231 239 247 255 263
+quantum-edge-terminal/execution/staged_capital_deployment.py,todo,1,339
+quantum-edge-terminal/frontend/src/app/page.tsx,network_call,2,8 13
+quantum-edge-terminal/frontend/src/components/panels/AlertsPanel.tsx,broad_except,1,18
+quantum-edge-terminal/frontend/src/components/panels/AlertsPanel.tsx,network_call,1,13
+quantum-edge-terminal/frontend/src/components/panels/ChartPanel.tsx,broad_except,1,33
+quantum-edge-terminal/frontend/src/components/panels/ChartPanel.tsx,network_call,1,18
+quantum-edge-terminal/frontend/src/components/panels/SignalsPanel.tsx,broad_except,1,22
+quantum-edge-terminal/frontend/src/components/panels/SignalsPanel.tsx,network_call,1,17
+quantum-edge-terminal/frontend/src/hooks/useWebSocket.ts,network_call,12,5 7 11 13 15 18 20 23 24 28 31 37
+quantum-edge-terminal/interface/alert_engine/alert_engine.py,wall_clock,2,88 382
+quantum-edge-terminal/interface/alert_engine/alert_engine.py,dict_get_default,34,128 226 231 236 241 246 253 258 263 268 269 274 290 291 294 313 341 345 349 353 358 363 367 373 374 375 376 381 411 412 414 424 450 454
+quantum-edge-terminal/monitoring/execution_audit_report.py,wall_clock,11,169 368 374 390 396 404 410 418 424 512 532
+quantum-edge-terminal/monitoring/execution_audit_report.py,dict_get_default,1,279
+quantum-edge-terminal/monitoring/execution_audit_report.py,broker_or_order,2,476 496
+quantum-edge-terminal/observability/execution_instrumenter.py,wall_clock,6,186 226 267 291 363 389
+quantum-edge-terminal/observability/execution_instrumenter.py,broad_except,5,191 233 315 337 373
+quantum-edge-terminal/observability/execution_instrumenter.py,broker_or_order,2,210 215
+quantum-edge-terminal/observability/runtime_api.py,broad_except,2,157 292
+quantum-edge-terminal/observability/telemetry_config.py,broad_except,1,174
+quantum-edge-terminal/production/PHASE8_PRODUCTION_EXAMPLE.py,broker_or_order,8,27 28 29 193 272 294 319 320
+quantum-edge-terminal/production/PHASE8_PRODUCTION_EXAMPLE.py,secret_like,2,66 67
+quantum-edge-terminal/production/PHASE8_PRODUCTION_EXAMPLE.py,network_call,1,319
+quantum-edge-terminal/production/__init__.py,broker_or_order,16,5 11 14 15 63 86 87 92 105 106 107 110 137 138 139 142
+quantum-edge-terminal/production/__init__.py,network_call,1,86
+quantum-edge-terminal/production/deployment_gate_controller.py,wall_clock,3,260 284 285
+quantum-edge-terminal/production/deployment_gate_controller.py,broker_or_order,6,7 33 73 308 311 360
+quantum-edge-terminal/production/live_broker_connector.py,wall_clock,2,54 199
+quantum-edge-terminal/production/live_broker_connector.py,broad_except,2,137 215
+quantum-edge-terminal/production/live_broker_connector.py,todo,2,132 198
+quantum-edge-terminal/production/live_broker_connector.py,broker_or_order,30,2 4 37 38 46 63 64 69 75 77 86 88 91 95 115 123 129 132 134 138 151 156 169 171 192 198 210 222 285 324
+quantum-edge-terminal/production/market_data_streamer.py,wall_clock,1,272
+quantum-edge-terminal/production/market_data_streamer.py,broad_except,3,160 192 259
+quantum-edge-terminal/production/market_data_streamer.py,todo,4,153 187 200 209
+quantum-edge-terminal/production/market_data_streamer.py,broker_or_order,10,2 4 82 93 144 150 153 157 205 211
+quantum-edge-terminal/production/market_data_streamer.py,network_call,3,153 209 231
+quantum-edge-terminal/production/performance_monitor.py,wall_clock,3,57 166 277
+quantum-edge-terminal/production/performance_monitor.py,dict_get_default,8,133 162 191 192 193 321 322 324
+quantum-edge-terminal/production/production_runner.py,wall_clock,3,178 300 332
+quantum-edge-terminal/production/production_runner.py,broad_except,1,155
+quantum-edge-terminal/production/production_runner.py,todo,23,136 185 186 187 211 212 213 214 215 216 238 239 240 292 327 328 329 348 374 375 376 513 514
+quantum-edge-terminal/production/production_runner.py,broker_or_order,11,9 37 50 94 138 145 305 327 328 331 345
+quantum-edge-terminal/services/PHASE4_DEMO.py,wall_clock,5,58 143 280 321 323
+quantum-edge-terminal/services/PHASE4_DEMO.py,broker_or_order,2,356 359
+quantum-edge-terminal/services/PHASE4_DEMO.py,confidence_sizing,4,123 125 129 176
+quantum-edge-terminal/services/PHASE4_DEMO.py,network_call,6,10 23 303 305 567 572
+quantum-edge-terminal/services/ai_engine/modules/options_flow.py,wall_clock,5,221 401 417 429 441
+quantum-edge-terminal/services/order_manager/order_manager.py,dict_get_default,7,137 138 139 140 382 502 512
+quantum-edge-terminal/services/order_manager/order_manager.py,broker_or_order,60,2 4 10 11 15 26 56 57 76 79 82 87 89 93 108 111 117 119 128 181 184 189 194 196 198 200 203 206 209 213 214 215 218 222 223 225 226 227 228 229
+quantum-edge-terminal/services/order_manager/order_manager.py,confidence_sizing,5,123 153 293 308 309
+quantum-edge-terminal/storage/trade_journal/trade_journal.py,wall_clock,9,187 202 205 217 220 232 234 293 306
+quantum-edge-terminal/storage/trade_journal/trade_journal.py,dict_get_default,2,150 165
+quantum-edge-terminal/storage/trade_journal/trade_journal.py,todo,1,370
+quantum-edge-terminal/tests/test_execution_instrumentation.py,wall_clock,11,159 187 435 459 482 503 525 654 709 946 1008
+quantum-edge-terminal/tests/test_execution_instrumentation_perfect.py,broker_or_order,1,200
+quantum-edge-terminal/tests/test_phase_8_5_integration.py,wall_clock,6,249 259 287 297 555 564
+quantum-edge-terminal/tradingview_bridge_adapter.py,wall_clock,2,133 324
+quantum-edge-terminal/tradingview_bridge_adapter.py,broad_except,2,154 334
+quantum-edge-terminal/tradingview_bridge_adapter.py,dict_get_default,11,128 129 134 135 136 137 140 141 144 145 220
+quantum-edge-terminal/tradingview_bridge_adapter.py,broker_or_order,10,247 253 254 257 259 260 262 274 286 287
+quantum-edge-terminal/tradingview_bridge_adapter.py,tradeable_flag,4,191 197 342 348
+quantum-edge-terminal/tradingview_bridge_adapter.py,golden_ratio,5,96 172 173 182 243
+quantum-edge-terminal/tradingview_institutional_smart_blend_plus.pine,golden_ratio,13,7 15 18 23 26 31 62 63 66 72 226 233 316
+quantum-edge-terminal/tradingview_institutional_smart_blend_plus_CLEAN.pine,golden_ratio,4,5 6 9 14
+quantum-edge-terminal/tradingview_ut_bot_institutional.pine,golden_ratio,7,10 11 14 19 207 216 218
+quantum-edge-terminal/validation/PHASE7_INTEGRATION_EXAMPLE.py,wall_clock,4,51 86 87 176
+quantum-edge-terminal/validation/PHASE7_INTEGRATION_EXAMPLE.py,broker_or_order,4,106 313 315 360
+quantum-edge-terminal/validation/VALIDATION_EXAMPLE.py,wall_clock,1,46
+quantum-edge-terminal/validation/forward_test_engine/forward_test_engine.py,wall_clock,4,174 247 298 367
+quantum-edge-terminal/validation/forward_test_engine/forward_test_engine.py,dict_get_default,14,163 164 166 168 169 170 171 172 173 175 176 177 178 179
+quantum-edge-terminal/validation/forward_test_engine/forward_test_engine.py,broker_or_order,1,5
+quantum-edge-terminal/validation/integration_bridge.py,wall_clock,3,341 377 408
+quantum-edge-terminal/validation/integration_bridge.py,dict_get_default,4,280 288 441 442
+quantum-edge-terminal/validation/integration_bridge.py,todo,3,379 387 405
+quantum-edge-terminal/validation/integration_bridge.py,broker_or_order,7,4 52 109 295 403 405 469
+quantum-edge-terminal/validation/live_validation_runner.py,wall_clock,4,116 252 466 484
+quantum-edge-terminal/validation/live_validation_runner.py,dict_get_default,6,230 263 269 270 319 325
+quantum-edge-terminal/validation/live_validation_runner.py,todo,6,119 134 168 185 206 371
+quantum-edge-terminal/validation/live_validation_runner.py,broker_or_order,1,39
+quantum-edge-terminal/validation/safety_controls/safety_controls.py,wall_clock,5,94 115 250 357 376
+quantum-edge-terminal/validation/scoring_engine/institutional_scorecard.py,dict_get_default,1,193
+quantum-edge-terminal/validation/validation_orchestrator.py,wall_clock,6,255 395 429 499 760 786
+quantum-edge-terminal/validation/validation_orchestrator.py,todo,1,249
+quantum-edge-terminal/validation/validation_orchestrator.py,broker_or_order,1,49
+quantum-edge-terminal/verify_instrumentation.py,wall_clock,1,89
+quantum-edge-terminal/verify_instrumentation.py,broad_except,5,31 48 72 103 137

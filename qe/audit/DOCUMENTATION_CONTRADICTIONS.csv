@@ -1,0 +1,13 @@
+document,claim,runtime_reality,verdict
+"quantum-edge-terminal/DEPLOYMENT_SUMMARY.md:4,376",PRODUCTION READY,execution/production packages cannot import (D-001); no real broker submission exists (D-029/D-040),CONTRADICTED
+"quantum-edge-terminal/DEPLOYMENT_SUMMARY.md:15-16,374","43.1% WR, 1.99x PF","produced by backtests on synthetic random-walk data (D-030; the doc itself says ""multi-year simulated data"" at :219)",CONTRADICTED as market evidence
+quantum-edge-terminal/PERFECT_PHASE_8_5_MASTERY_SUMMARY.md:361,"23 -> 43 tests, 80% -> 95% coverage",0 of 3 terminal test files can be collected; coverage cannot be measured,CONTRADICTED
+"quantum-edge-terminal/PERFECT_PHASE_8_5_MASTERY_SUMMARY.md:294,310","Production Ready: YES, 99.5% confidence",same as above,CONTRADICTED
+"quantum-edge-terminal/PERFECT_TEST_STRATEGY_REPORT.md:338,452",Definitely production ready,tests do not collect,CONTRADICTED
+quantum-edge-terminal/PHASE2_COMPLETE_GUIDE.md:4,PHASE 2 COMPLETE & READY FOR DEPLOYMENT,no deployable execution path (D-038),CONTRADICTED
+quantum-edge-terminal/REALITY_CHECK_STATUS.md,Broker integration - Alpaca API (Paper/Live) COMPLETE; ExecutionKillSwitch COMPLETE,broker code is a mock that crashes (D-040); execution package cannot import (D-001),CONTRADICTED
+quantum-edge-terminal/REALITY_CHECK_STATUS.md,Integration layer NEEDS TO BE BUILT,consistent with findings,CONSISTENT
+quantum-edge-terminal/AUDIT_COMPLETE_EXECUTION_VALIDATION_DELIVERED.md:404-406,"Complete deployed code (1,200+ LOC of execution monitoring)",code exists (L1) but cannot be imported,CONTRADICTED (deployed)
+quantum-edge-terminal/validation/PHASE7_STATUS.txt:5-12,COMPLETION STATUS: COMPLETE; central orchestrator; integration bridge,validation_orchestrator.py does not parse and the validation package cannot be imported (D-027),CONTRADICTED
+QuantumEdge/output/runs/*/manifest.json,provenance: git_commit 77509024b8,commit absent from this repo; git_dirty=true; data absent (D-035),UNVERIFIABLE
+QuantumEdge/main.py header,sector momentum / IBS / Greenblatt LEAN algorithm,code consistent with header; not a God's Plan strategy (D-037),CONSISTENT (but out of GP scope)
