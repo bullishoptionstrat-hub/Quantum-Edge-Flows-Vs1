@@ -14,4 +14,5 @@ python3 qe/tools/scan_repo.py            # inventory, import edges, static flags
 qe/.venv/bin/python qe/tools/import_sweep.py   # runtime importability, network disabled
 python3 qe/tools/build_inventory.py      # merge runtime evidence into inventory
 python3 qe/tools/defects.py              # defect register
-qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=. -q   # 30 legacy defects must xfail
+python3 qe/tools/divergence_matrix.py    # P1-01 rule divergence matrix
+qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=. -q   # legacy defects must xfail; boundary tests must pass

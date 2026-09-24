@@ -322,3 +322,40 @@ def test_d040_broker_submit_returns_status():
         conn.submit_order("ES", 1, "buy")
     except TypeError as e:
         raise AssertionError(f"submit_order crashed: {e}") from None
+
+
+# --------------------------------------------------------------------------- D-045, D-046 (Pine R:R arithmetic)
+# Pine cannot run here. These tests first assert that the formulas are still in
+# the Pine source (so they fail loudly if the scripts change), then replay the
+# same arithmetic in float64, which is Pine's float type.
+def _pine(name):
+    return (_legacy.TERMINAL / name).read_text()
+
+
+@defect("D-045", "UT bot: rr == 1.618 up to rounding, so the 1.618 minimum is decided by float noise")
+def test_d045_ut_rr_filter_depends_on_market():
+    import random
+    src = _pine("tradingview_ut_bot_institutional.pine")
+    assert "buy_target_2 = buy_entry + (buy_sl_dist * FRAC_162)" in src
+    assert "buy_signal = buy_filtered and buy_rr >= min_rr" in src
+    rng = random.Random(7)
+    outcomes = set()
+    for _ in range(2000):
+        e, d = rng.uniform(4000, 7000), rng.uniform(0.25, 60)
+        rr = ((e + d * 1.618) - e) / d
+        outcomes.add(rr >= 1.618)
+    # A filter that means something should pass every one of these identical-geometry setups.
+    assert outcomes == {True}, f"filter outcomes over identical geometry: {outcomes}"
+
+
+@defect("D-046", "Smart Blend: rr is a constant of the level geometry (2.94), so min_rr never rejects")
+def test_d046_blend_rr_is_not_constant():
+    src = _pine("tradingview_institutional_smart_blend_plus_CLEAN.pine")
+    assert "buy_tp2 = buy_entry + (swing_range * FRAC_162)" in src
+    rrs = set()
+    for hi, lo in [(6000.0, 5900.0), (6000.0, 5990.0), (18000.0, 17000.0), (2400.0, 2395.5)]:
+        r = hi - lo
+        e = hi - r * 0.618
+        sl = e - (e - (e - r * 0.786)) * 0.7
+        rrs.add(round(((e + r * 1.618) - e) / (e - sl), 6))
+    assert len(rrs) > 1, f"rr is the same for every range: {rrs}"

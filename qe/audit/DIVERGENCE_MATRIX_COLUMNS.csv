@@ -1,0 +1,13 @@
+column,implementation
+GP_CANONICAL,gp-1.0.0 (not yet written)
+AI_MSD,AI/market_structure_detector.py (served by ai-engine; D-044 service does not start)
+AI_MSA,AI/market_structure_analyzer.py
+AI_FRACTAL,AI/fractal_validator.py (4-candle 'TTrades' fractal)
+AI_FIB,AI/fib_manipulation_validator.py + enhanced_fib_validator.py
+AI_BLEND,AI/institutional_smart_blend_plus.py + master_multi_signal.py + algo_detection.py
+PINE_BLEND,T/tradingview_institutional_smart_blend_plus*.pine
+PINE_UT,T/tradingview_ut_bot_institutional.pine
+RESEARCH_FIB,R/fib..fib9 (ETF manipulation-leg research; best-engineered code in repo)
+TV_BRIDGE,T/tradingview_bridge_adapter.py
+EXEC_RISK,T/execution/execution_engine + risk_engine + storage/trade_journal
+SYNTH_BT,T/backtest_*.py (17 of 18 on synthetic prices)

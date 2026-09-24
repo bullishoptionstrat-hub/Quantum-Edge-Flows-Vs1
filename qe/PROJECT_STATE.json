@@ -1,9 +1,9 @@
 {
   "directive": "QEGP-MASTER-4.0 (quantum-edge-governance/QEGP_MASTER_PROMPT_v4.md)",
-  "current_phase": "0",
+  "current_phase": "1",
   "phase_status": {
     "0": "EXIT_GATES_MET_PENDING_REVIEW",
-    "1": "BLOCKED_ON_A2 (A2-00 spec source, A2-01 repo layout)",
+    "1": "PARTIAL: P1-01 matrix and P1-03 quarantine done; GP column and P1-02 blocked on A2-00/A2-01 (qe/audit/PHASE_1_DIVERGENCE_REPORT.md)",
     "2": "NOT_STARTED"
   },
   "audited_commit": "361e92ac",
@@ -11,8 +11,8 @@
   "canonical_strategy_note": "gp-1.0.0 does not exist. No God's Plan implementation exists in the repo (D-037).",
   "mode": "AUDIT",
   "live_capability": "NONE (no code path can reach a broker; see qe/audit/EXECUTION_AUTHORITY_GRAPH.md)",
-  "defects_open": {"CRITICAL": 15, "HIGH": 22, "MEDIUM": 6, "register": "qe/audit/DEFECT_REGISTER.csv"},
-  "legacy_defect_reproductions": {"tests": 30, "status": "all xfail (reproduced)", "command": "qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=."},
+  "defects_open": {"CRITICAL": 15, "HIGH": 23, "MEDIUM": 7, "register": "qe/audit/DEFECT_REGISTER.csv"},
+  "legacy_defect_reproductions": {"tests": 32, "status": "all xfail (reproduced); plus 2 boundary tests passing", "command": "qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=."},
   "pending_decisions": ["A2-00", "A2-01", "A2-02", "A2-03"],
   "research_protocol": null,
   "holdouts": "none defined; no GP dataset exists",
