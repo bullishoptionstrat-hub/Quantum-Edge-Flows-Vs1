@@ -1,0 +1,15 @@
+invariant,summary,implementation,tests (under qe/),status
+INV-01,same inputs give identical hashes,qe/core/serialization.py,"tests/core/test_serialization.py::test_hash_is_deterministic, ::test_golden_hash_is_stable; tests/core/test_events_clock_mode.py::test_any_consistent_ohlc_accepted_and_hash_stable",PARTIAL: primitives only; no reducer yet
+INV-02,"no wall clock, randomness or I/O in core",qe/core/*,"tests/boundary/test_quarantine.py::test_core_is_pure, ::test_purity_checker_catches_violations",ENFORCED (static)
+INV-03,use facts only once available_at <= decision time,qe/core/events.py BarClosed,"tests/core/test_events_clock_mode.py::test_usable_only_once_available, ::test_invalid_bars_rejected",PARTIAL: bar events only
+INV-04,UTC integer-ns time; injected clock,qe/core/clock.py,tests/core/test_events_clock_mode.py::test_replay_clock_only_moves_forward,PARTIAL: no live clock yet
+INV-05,integer ticks; floats rejected,"qe/core/ticks.py, events.py, instruments.py",tests/core/test_ticks.py (all); test_events_clock_mode.py::test_invalid_bars_rejected[float],ENFORCED
+INV-06,canonical serialization before hashing,qe/core/serialization.py,tests/core/test_serialization.py (all),ENFORCED
+INV-07,corrections as new events,-,-,NOT STARTED
+INV-18,stop on correct side of entry,qe/core/instruments.py check_geometry,tests/core/test_instruments.py::test_bad_geometry_rejected,PARTIAL: geometry only; breach-before-authorization needs the reducer
+INV-19,"net R after costs, exact","qe/core/instruments.py net_r, meets_min_net_r","tests/core/test_instruments.py::test_net_r_is_exact_and_costs_can_break_2r, ::test_net_r_exact_value_with_costs, ::test_costs_never_improve_net_r",PARTIAL: threshold value is a spec decision (A2-00)
+INV-20,never move stop to fit size; zero contracts = blocked,qe/core/instruments.py size_contracts,"tests/core/test_instruments.py::test_zero_contracts_when_budget_too_small, ::test_sizing_never_exceeds_budget",PARTIAL: BLOCKED_RISK reason code comes with the reducer
+INV-24,economic risk in minor units incl. costs,qe/core/instruments.py economic_risk_minor,"tests/core/test_instruments.py::test_es_ten_points_one_contract_is_500_dollars, ::test_costs_add_to_risk, ::test_risk_nonnegative_and_linear_in_contracts",PARTIAL: registry values unverified (D9)
+INV-33,no LLM SDK in canonical code,-,tests/boundary/test_quarantine.py::test_canonical_code_does_not_touch_legacy,ENFORCED (static)
+INV-34,no broker/HTTP/DB/LLM imports in strategy code,-,tests/boundary/test_quarantine.py (all),ENFORCED (static)
+B2,mode firewall; LIVE cannot be entered,qe/core/mode.py,"tests/core/test_events_clock_mode.py::test_live_mode_cannot_be_entered, ::test_no_mode_grants_live_orders_and_replay_cannot_touch_brokers",ENFORCED

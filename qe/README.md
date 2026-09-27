@@ -14,6 +14,9 @@ Governed by `quantum-edge-governance/QEGP_MASTER_PROMPT_v4.md`. **Start with `PR
 | `evidence/EVIDENCE_MATURITY_MATRIX.csv` | Evidence level per capability |
 | `tests/regression/legacy/` | 32 strict-xfail reproductions of legacy defects |
 | `tests/boundary/` | Quarantine: canonical code may not import legacy code, broker SDKs or LLM SDKs |
+| `core/` | Canonical primitives with no strategy semantics: ticks, instrument risk and net R, clock, canonical hashing, bar events, mode firewall (ADR-0004) |
+| `config/instruments.json` | Instrument specs, all `verified: false` until checked against CME |
+| `spec/INVARIANT_TRACEABILITY.csv` | Which test proves which invariant |
 | `tools/` | Scanner, import sweep, inventory merge, defect register, `run_phase0.sh` |
 
 ```bash

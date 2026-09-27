@@ -9,6 +9,7 @@ checker cannot pass silently.
 from __future__ import annotations
 
 import ast
+import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
@@ -63,3 +64,24 @@ def test_canonical_code_does_not_touch_legacy():
         for f in sorted((REPO / root).rglob("*.py")):
             found += violations(f.read_text(), str(f.relative_to(REPO)))
     assert found == [], "\n".join(found)
+
+
+# INV-02: the core reads no wall clock, uses no randomness, and does no I/O.
+IMPURE = re.compile(
+    r"\bdatetime\.(now|utcnow|today)\(|\btime\.(time|monotonic|perf_counter)\(|\bimport random\b|\bfrom random\b"
+    r"|\bopen\(|\.read_text\(|\.write_text\(|\brequests\b|\burllib\b|\bsocket\b|\bsubprocess\b|\bos\.environ\b"
+)
+
+
+def test_core_is_pure():
+    bad = []
+    for f in sorted((REPO / "qe/core").rglob("*.py")):
+        for i, line in enumerate(f.read_text().splitlines(), 1):
+            if IMPURE.search(line):
+                bad.append(f"{f.relative_to(REPO)}:{i}: {line.strip()}")
+    assert bad == [], "\n".join(bad)
+
+
+def test_purity_checker_catches_violations():
+    for line in ["t = datetime.now()", "import random", "x = Path(p).read_text()", "v = os.environ['K']"]:
+        assert IMPURE.search(line), line
