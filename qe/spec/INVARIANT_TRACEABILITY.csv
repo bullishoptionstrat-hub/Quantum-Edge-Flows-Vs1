@@ -5,7 +5,9 @@ INV-03,use facts only once available_at <= decision time,qe/core/events.py BarCl
 INV-04,UTC integer-ns time; injected clock,qe/core/clock.py,tests/core/test_events_clock_mode.py::test_replay_clock_only_moves_forward,PARTIAL: no live clock yet
 INV-05,integer ticks; floats rejected,"qe/core/ticks.py, events.py, instruments.py",tests/core/test_ticks.py (all); test_events_clock_mode.py::test_invalid_bars_rejected[float],ENFORCED
 INV-06,canonical serialization before hashing,qe/core/serialization.py,tests/core/test_serialization.py (all),ENFORCED
-INV-07,corrections as new events,-,-,NOT STARTED
+INV-07,corrections as new events,qe/core/data_quality.py (conflicting duplicate),tests/core/test_data_quality.py::test_conflicting_duplicate_blocks,PARTIAL: a changed bar blocks the feed (UNKNOWN); a Correction event type is not built yet
+INV-09,missing/stale/ambiguous mandatory data -> WAIT or BLOCKED,qe/core/data_quality.py,"tests/core/test_data_quality.py (gap, stale, contract change, duplicates, out-of-order)",PARTIAL: bar feeds only; WAIT/BLOCKED mapping happens in the reducer
+INV-11,UNKNOWN data health is unhealthy,"qe/core/data_quality.py health_at, tradeable",tests/core/test_data_quality.py::test_no_data_is_unknown_and_not_tradeable,ENFORCED for bar feeds
 INV-18,stop on correct side of entry,qe/core/instruments.py check_geometry,tests/core/test_instruments.py::test_bad_geometry_rejected,PARTIAL: geometry only; breach-before-authorization needs the reducer
 INV-19,"net R after costs, exact","qe/core/instruments.py net_r, meets_min_net_r","tests/core/test_instruments.py::test_net_r_is_exact_and_costs_can_break_2r, ::test_net_r_exact_value_with_costs, ::test_costs_never_improve_net_r",PARTIAL: threshold value is a spec decision (A2-00)
 INV-20,never move stop to fit size; zero contracts = blocked,qe/core/instruments.py size_contracts,"tests/core/test_instruments.py::test_zero_contracts_when_budget_too_small, ::test_sizing_never_exceeds_budget",PARTIAL: BLOCKED_RISK reason code comes with the reducer

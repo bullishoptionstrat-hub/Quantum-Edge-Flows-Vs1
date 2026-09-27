@@ -38,3 +38,29 @@
 
   Two of these first survived, and the tests were strengthened until they were killed: costs dropped from risk (fixed with an exact net-R test) and the lookahead check removed (the test case now isolates it). A tool-based mutation run (mutmut) is still to do.
 - **Consequence:** `qe/spec/INVARIANT_TRACEABILITY.csv` maps each invariant to its code and tests. Nothing here is wired to data or orders.
+
+## ADR-0005: Data-quality gate for closed-bar feeds (2026-09-28)
+
+- **Context:** Directive D8 puts data quality upstream of strategy logic. It doesn't depend on God's Plan semantics, so it can be built before gp-1.0.0.
+- **Decision:** `qe/core/data_quality.py` is a pure `step(state, bar, policy) -> (state, verdict)` with a closed `DQReason` set. It fails closed:
+  - no data yet is UNKNOWN;
+  - a duplicate bar is rejected idempotently;
+  - the same bar with different content is rejected and sets the feed to UNKNOWN;
+  - an older bar is rejected as out of order;
+  - missing bars make the feed GAPPED, unless an injected session-break rule says the hole is a known closure;
+  - a contract change makes the feed UNKNOWN;
+  - silence past `max_staleness_ns` makes it STALE.
+
+  Leaving GAPPED or UNKNOWN takes `recovery_bars` consecutive clean bars.
+- **Policy, not code:** `timeframe_s`, `max_staleness_ns`, `recovery_bars` and the session-break rule have no defaults. They are A2 choices per instrument, and tests pick illustrative values.
+- **Mutation check (by hand):** nine planted mutations, all killed:
+  - accept out-of-order bars;
+  - ignore gaps;
+  - recover instantly;
+  - staleness off by one;
+  - ignore contract changes;
+  - treat no data as healthy;
+  - accept the wrong feed;
+  - report the old health on a conflict (survived at first; fixed by asserting verdict health);
+  - leave the state healthy on a conflict.
+- **Not done:** a Correction event type (INV-07), a real session calendar, and multi-feed alignment for SMT (needs the spec).

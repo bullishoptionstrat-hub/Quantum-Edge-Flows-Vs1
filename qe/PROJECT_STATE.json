@@ -5,7 +5,8 @@
     "0": "EXIT_GATES_MET_PENDING_REVIEW",
     "1": "PARTIAL: P1-01 matrix and P1-03 quarantine done; GP column and P1-02 blocked on A2-00/A2-01 (qe/audit/PHASE_1_DIVERGENCE_REPORT.md)",
     "2": "NOT_STARTED",
-    "core_primitives": "DONE (ADR-0004): ticks, instruments/risk/net-R, clock, serialization, events, mode firewall; see qe/spec/INVARIANT_TRACEABILITY.csv"
+    "core_primitives": "DONE (ADR-0004): ticks, instruments/risk/net-R, clock, serialization, events, mode firewall; see qe/spec/INVARIANT_TRACEABILITY.csv",
+    "data_quality_gate": "DONE (ADR-0005): closed-bar feed gate, fail-closed; thresholds are A2 policy"
   },
   "audited_commit": "361e92ac",
   "canonical_strategy_version": null,
@@ -20,7 +21,7 @@
   },
   "legacy_defect_reproductions": {
     "tests": 32,
-    "status": "32 xfail (reproduced); plus 46 passing core and boundary tests",
+    "status": "32 xfail (reproduced); plus 61 passing core, data-quality and boundary tests",
     "command": "qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=."
   },
   "pending_decisions": [
