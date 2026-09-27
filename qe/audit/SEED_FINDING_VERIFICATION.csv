@@ -1,0 +1,29 @@
+id,claim,verdict,evidence
+S-01,execution/risk field-name mismatch,CONFIRMED (mechanism); PARTIALLY for impact,"D-002; engines are never wired together (D-038), and execution_engine cannot import (D-001)"
+S-02,signal_id missing -> empty-id collisions,CONFIRMED,D-003
+S-03,macro filter exception fails open,CONFIRMED,D-004 (also regime classifier D-005)
+S-04,empty target / sub-2R accepted,CONFIRMED,"D-006, D-007"
+S-05,risk_amount is price distance,CONFIRMED,D-008
+S-06,confidence increases size,CONFIRMED,D-009
+S-07,TradingView tradeable from confidence/confluence; 1.618 only warns,CONFIRMED,"D-012, D-013, D-015"
+S-08,scorecard ignores missing metrics,CONFIRMED,"D-017, D-018"
+S-09,sweep tolerance below level; high side only,CONFIRMED,"D-019, D-020"
+S-10,CHoCH asymmetric,CONFIRMED,D-021
+S-11,FVG two-bar definition,CONFIRMED,D-022
+S-12,hard-coded confidences 0.85/0.75,CONFIRMED,"SOURCE market_structure_detector.py:65,76,96"
+S-13,journal net = gross,CONFIRMED,"D-023 (plus D-024 signed R, D-025 points not dollars)"
+S-14,no SMT; Alpaca broker; wall clock in decision code,CONFIRMED,"D-036; Alpaca URLs in broker_connection.py:59-62 and live_broker_connector.py:69 (both mocks, D-040/D-029); 147 wall-clock call lines across the two subtrees (static_flags.csv)"
+A3-01,swing detection uses right-side bars without available_at,REFUTED for sampled research detectors,fib/fib2/fib3 detectors set discovery_bar = completion_bar + pivot_n and document it; legacy ai-engine detector has no swing confirmation concept at all. fib4-fib9 not line-audited (INSUFFICIENT_EVIDENCE for those)
+A3-02,fill at trigger-bar high/low after close-confirmed signal,REFUTED for fib research,fib/backtester.py:94-97 enters at next bar open; synthetic terminal backtests not audited because their data is not market data (D-030)
+A3-03,exit-censored MFE/MAE,CONFIRMED,D-032
+A3-04,zero-cost defaults,CONFIRMED,D-033; 17 of 18 terminal backtests have no cost terms
+A3-05,webhook without auth/replay protection,CONFIRMED,D-016; backend POST /api/signals unauthenticated (D-034)
+A3-06,TradingView timestamps replaced by receive time,CONFIRMED,D-014
+A3-07,risk state only in process memory,CONFIRMED,risk_engine.py daily_pnl/open_positions/recent_signals are instance attributes; nothing persists or reconciles
+A3-08,incompatible trade schemas across Python/TS,CONFIRMED,"ExecutionPayload vs RiskEngine payload vs TradingViewSignal vs backend signals table (signal_type,symbol,entry_price,...) vs JournalEntry"
+A3-09,integration bridge continues after safety violation,INSUFFICIENT_EVIDENCE,validation/integration_bridge.py cannot be imported (D-027 via package); not line-audited
+A3-10,live-switch requirements documentation-only,CONFIRMED,live_broker_connector.enable_deployment only flips a flag; no real submission exists (D-029)
+A3-11,TODO paths presented as integrations,CONFIRMED,"42 TODO/FIXME lines; e.g. live order submission, Alpaca websocket, journal commissions"
+A3-12,strategy families differ in bar-timing semantics,PARTIALLY_CONFIRMED,fib research uses next-open entry; ai-engine detector has no timing model; Pine uses realtime alert() (D-039)
+A3-13,continuous-contract prices as executable levels,NOT APPLICABLE today,no futures data exists in the repo; research is on ETFs
+A3-14,no futures roll policy,CONFIRMED,no roll logic or contract metadata anywhere
