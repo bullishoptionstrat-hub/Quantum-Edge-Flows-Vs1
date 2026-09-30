@@ -1,0 +1,9 @@
+# Next.js build output and generated types
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+coverage/
+
+# The repo root ignores package-lock.json (it uses pnpm). This app installs with npm and its Dockerfile runs npm ci.
+!package-lock.json

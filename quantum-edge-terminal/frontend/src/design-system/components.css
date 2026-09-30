@@ -1,0 +1,357 @@
+/* Quantum Edge — component styles (the design system's bundle.css). Colors, spacing, radii, sizes and strokes are token variables;
+   typography comes from the qe-* text-style classes in tokens.css. Borders, not shadows. */
+
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-mono); }
+
+/* ── Utilities and layout (the terminal's 12-column dashboard: chart 8, sidebar 4) ─────────── */
+.qe-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.qe-page { min-height: 100vh; box-sizing: border-box; padding: var(--space-4); background: var(--surface); color: var(--ink); }
+.qe-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.qe-stack { display: flex; flex-direction: column; gap: var(--space-4); }
+.qe-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-4); }
+.qe-col-8 { grid-column: span 8; min-width: 0; }
+.qe-col-4 { grid-column: span 4; min-width: 0; }
+@media (max-width: 1023px) { .qe-col-8, .qe-col-4 { grid-column: 1 / -1; } }
+
+/* ── Focus: one ring everywhere — a ground-colored gap, then solid accent ─────────────────── */
+.qe-button:focus-visible, .qe-icon-button:focus-visible, .qe-toggle:focus-visible,
+.qe-signal.is-interactive:focus-visible, .qe-kill:focus-visible, .qe-chart:focus-visible,
+.qe-panel-body.is-scroll:focus-visible {
+  outline: 2px solid transparent; outline-offset: 2px; box-shadow: var(--focus-ring);
+}
+
+/* ── Icon ──────────────────────────────────────────────────────────────────────────────── */
+.qe-icon { display: inline-block; flex: none; vertical-align: middle; }
+.qe-icon-sm { width: var(--icon-sm); height: var(--icon-sm); }
+.qe-icon-md { width: var(--icon-md); height: var(--icon-md); }
+.qe-icon-lg { width: var(--icon-lg); height: var(--icon-lg); }
+
+/* ── Button ────────────────────────────────────────────────────────────────────────────── */
+.qe-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  border: 1px solid var(--line-control); border-radius: var(--radius); background: transparent; color: var(--ink);
+  text-transform: uppercase; white-space: nowrap; cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.qe-button-md { padding: var(--space-2) var(--space-4); }
+.qe-button-sm { padding: var(--space-1) var(--space-3); }
+.qe-button-secondary:hover { background: var(--control-hover); border-color: var(--accent); }
+.qe-button-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.qe-button-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.qe-button-danger { border-color: var(--danger); color: var(--danger); }
+.qe-button-danger:hover { background: var(--danger-soft); }
+.qe-button-ghost { border-color: transparent; color: var(--ink-muted); }
+.qe-button-ghost:hover { background: var(--control-hover); color: var(--ink); }
+.qe-button.is-disabled, .qe-button.is-disabled:hover {
+  background: transparent; border-color: var(--line-strong); color: var(--ink-disabled); cursor: not-allowed;
+}
+
+/* ── IconButton (source: p-2 rounded hover:bg-qt-accent/10) ───────────────────────────── */
+.qe-icon-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid transparent; border-radius: var(--radius); background: transparent; color: var(--ink); cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.qe-icon-button-md { padding: var(--space-2); }
+.qe-icon-button-sm { padding: var(--space-1); }
+.qe-icon-button:hover { background: var(--control-hover); }
+.qe-icon-button.is-pressed { background: var(--surface-selected); color: var(--accent); }
+
+/* ── ToggleGroup (source symbol and timeframe selectors) ───────────────────────────────── */
+.qe-toggle-group { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.qe-toggle {
+  border: 1px solid var(--line-control); border-radius: var(--radius); background: transparent; color: var(--ink); cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.qe-toggle-md { padding: var(--space-2) var(--space-4); }
+.qe-toggle-sm { padding: var(--space-1) var(--space-3); }
+.qe-toggle:hover { background: var(--control-hover); }
+.qe-toggle-accent:hover { border-color: var(--accent); }
+.qe-toggle-alt:hover { border-color: var(--accent-alt); }
+.qe-toggle.is-selected { font-weight: 700; }
+.qe-toggle-accent.is-selected { border-color: var(--accent); background: var(--surface-selected); }
+.qe-toggle-alt.is-selected { border-color: var(--accent-alt); background: var(--accent-alt-soft); }
+.qe-toggle:disabled { border-color: var(--line-strong); color: var(--ink-disabled); cursor: not-allowed; background: transparent; }
+
+/* ── TerminalHeader (source: border-b accent/20, pb-4 mb-4, mark + wordmark gap-3) ───────── */
+.qe-header {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4);
+  padding-bottom: var(--space-4); margin-bottom: var(--space-4); border-bottom: 1px solid var(--line);
+}
+.qe-header-brand { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.qe-header-mark { color: var(--accent); }
+.qe-header-wordmark { margin: 0; color: var(--accent); text-transform: uppercase; white-space: nowrap; }
+.qe-header-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-left: auto; }
+
+/* ── Panel (source: bg-qt-dark border accent/20 rounded p-4) ───────────────────────────── */
+.qe-panel { box-sizing: border-box; min-width: 0; padding: var(--space-4); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); }
+.qe-panel-head { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+.qe-panel-heading { flex: 1 1 auto; min-width: 0; margin: 0; color: var(--accent); text-transform: uppercase; }
+.qe-panel-meta { display: flex; align-items: center; gap: var(--space-2); color: var(--ink-muted); }
+.qe-panel-actions { display: flex; align-items: center; gap: var(--space-1); }
+.qe-panel-body.is-scroll {
+  max-height: var(--list-max); overflow-y: auto; border-radius: var(--radius);
+  scrollbar-width: thin; scrollbar-color: var(--line-control) transparent;
+}
+.qe-panel-body.is-scroll::-webkit-scrollbar { width: var(--scrollbar); height: var(--scrollbar); }
+.qe-panel-body.is-scroll::-webkit-scrollbar-track { background: transparent; }
+.qe-panel-body.is-scroll::-webkit-scrollbar-thumb { background: var(--line-control); border-radius: var(--radius); }
+.qe-panel-body.is-scroll::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+.qe-list { display: flex; flex-direction: column; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+
+/* ── Badge ─────────────────────────────────────────────────────────────────────────────── */
+.qe-badge {
+  display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-0\.5) var(--space-2);
+  border: 1px solid transparent; border-radius: var(--radius); text-transform: uppercase; white-space: nowrap; vertical-align: middle;
+}
+.qe-badge-soft.qe-badge-neutral { background: var(--surface-hover); border-color: var(--line-strong); color: var(--ink-muted); }
+.qe-badge-soft.qe-badge-accent { background: var(--accent-soft); color: var(--accent); }
+.qe-badge-soft.qe-badge-bull { background: var(--bull-soft); color: var(--bull); }
+.qe-badge-soft.qe-badge-ok { background: var(--ok-soft); color: var(--ok); }
+.qe-badge-soft.qe-badge-bear { background: var(--bear-soft); color: var(--bear); }
+.qe-badge-soft.qe-badge-danger { background: var(--danger-soft); color: var(--danger); }
+.qe-badge-soft.qe-badge-warning { background: var(--warning-soft); color: var(--warning); }
+.qe-badge-outline { background: transparent; border-color: currentColor; }
+.qe-badge-outline.qe-badge-neutral { border-color: var(--line-control); color: var(--ink-muted); }
+.qe-badge-outline.qe-badge-accent { color: var(--accent); }
+.qe-badge-outline.qe-badge-bull { color: var(--bull); }
+.qe-badge-outline.qe-badge-ok { color: var(--ok); }
+.qe-badge-outline.qe-badge-bear { color: var(--bear); }
+.qe-badge-outline.qe-badge-danger { color: var(--danger); }
+.qe-badge-outline.qe-badge-warning { color: var(--warning); }
+.qe-badge-solid.qe-badge-accent { background: var(--accent); color: var(--on-accent); }
+.qe-badge-solid.qe-badge-bull { background: var(--bull); color: var(--on-bull); }
+.qe-badge-solid.qe-badge-ok { background: var(--ok); color: var(--on-ok); }
+.qe-badge-solid.qe-badge-bear { background: var(--bear); color: var(--on-bear); }
+.qe-badge-solid.qe-badge-danger { background: var(--danger); color: var(--on-danger); }
+.qe-badge-solid.qe-badge-warning { background: var(--warning); color: var(--on-warning); }
+
+/* ── Direction (source: TrendingUp/Down + BUY/SELL in qt-buy/qt-sell) ──────────────────── */
+.qe-direction { display: inline-flex; align-items: center; gap: var(--space-1); text-transform: uppercase; white-space: nowrap; }
+.qe-direction.is-bull { color: var(--bull); }
+.qe-direction.is-bear { color: var(--bear); }
+.qe-direction.is-flat { color: var(--ink-muted); }
+
+/* ── FeedStatus (source: 8px dot, bg-qt-buy animate-pulse / bg-qt-sell) ────────────────── */
+.qe-feed { display: inline-flex; align-items: center; gap: var(--space-2); white-space: nowrap; color: var(--ink); }
+.qe-feed-dot { flex: none; width: var(--status-dot); height: var(--status-dot); border-radius: var(--radius-full); }
+.qe-feed-ok .qe-feed-dot { background: var(--ok); }
+.qe-feed-warning .qe-feed-dot { background: var(--warning); }
+.qe-feed-danger .qe-feed-dot { background: var(--danger); }
+.qe-feed-warning .qe-feed-label { color: var(--warning); }
+.qe-feed-danger .qe-feed-label { color: var(--danger); }
+.qe-feed-meta { color: var(--ink-muted); }
+.qe-feed.is-live .qe-feed-dot { animation: qe-pulse 2s cubic-bezier(.4, 0, .6, 1) infinite; }
+@keyframes qe-pulse { 50% { opacity: .5; } }
+
+/* ── PanelState ────────────────────────────────────────────────────────────────────────── */
+.qe-state { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-2) 0; }
+.qe-state-title { display: flex; align-items: center; gap: var(--space-2); color: var(--ink-muted); }
+.qe-state-error .qe-state-title { color: var(--danger); }
+.qe-state-stale .qe-state-title { color: var(--warning); }
+.qe-state-loading .qe-state-title { animation: qe-pulse 2s cubic-bezier(.4, 0, .6, 1) infinite; }
+.qe-state-detail { margin: 0; color: var(--ink-muted); }
+.qe-state-action { margin-top: var(--space-2); }
+
+/* ── Level keys: the chart's line styles, reused as legend marks in cards and tickets ─────── */
+.qe-key-stop { color: var(--level-stop); }
+.qe-key-target { color: var(--level-target); }
+.qe-key-entry { color: var(--ink-muted); }
+.qe-key { display: inline-block; flex: none; width: var(--space-4); height: var(--space-1); margin-right: var(--space-2); overflow: visible; vertical-align: middle; }
+.qe-key .qe-chart-level-line { stroke-width: var(--stroke-level-strong); }
+
+/* ── Score (ranking only) ──────────────────────────────────────────────────────────────── */
+.qe-score { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--ink-muted); text-transform: uppercase; }
+.qe-score-pips { display: inline-flex; gap: var(--space-0\.5); }
+.qe-score-pip { width: var(--space-3); height: var(--space-1); background: var(--line-strong); }
+.qe-score-pip.is-on { background: var(--accent); }
+
+/* ── SignalCard (source: p-2 border accent/30 rounded text-xs hover:bg accent/5) ────────── */
+.qe-signal {
+  box-sizing: border-box; display: flex; flex-direction: column; gap: var(--space-1); width: 100%;
+  padding: var(--space-2); border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: transparent; color: var(--ink); text-align: left; font: inherit;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.qe-signal:hover { background: var(--surface-hover); }
+.qe-signal.is-interactive { cursor: pointer; }
+.qe-signal.is-selected { border-color: var(--accent); background: var(--surface-hover); }
+.qe-signal-top { display: flex; align-items: center; gap: var(--space-2); min-width: 0; }
+.qe-signal-symbol { font-weight: 700; color: var(--ink); }
+.qe-signal-state { margin-left: auto; }
+.qe-signal-context { color: var(--ink-muted); }
+.qe-signal-levels { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); margin: 0; }
+.qe-signal-levels > div { display: flex; gap: var(--space-1); }
+.qe-signal-levels dt { color: var(--ink-muted); }
+.qe-signal-levels dt.qe-key-stop { color: var(--level-stop); }
+.qe-signal-levels dt.qe-key-target { color: var(--level-target); }
+.qe-signal-levels dd { margin: 0; color: var(--ink); }
+.qe-signal-levels dd.qe-signal-missing { color: var(--danger); }
+.qe-signal-r { font-weight: 700; }
+.qe-signal-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
+.qe-signal-blocker { color: var(--danger); text-transform: uppercase; }
+
+/* ── AlertItem (source: CRITICAL border qt-sell bg /5; tag "[TYPE]") ───────────────────── */
+.qe-alert { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-2); border: 1px solid var(--line); border-radius: var(--radius); }
+.qe-alert-top { display: flex; align-items: center; gap: var(--space-2); text-transform: uppercase; }
+.qe-alert-type { color: var(--ink-muted); }
+.qe-alert-time { margin-left: auto; color: var(--ink-muted); }
+.qe-alert-unread { flex: none; width: var(--status-dot); height: var(--status-dot); border-radius: var(--radius-full); background: var(--accent); }
+.qe-alert-message { margin: 0; color: var(--ink); }
+.qe-alert-critical { border-color: var(--danger); background: var(--danger-soft); }
+.qe-alert-critical .qe-alert-icon, .qe-alert-critical .qe-alert-severity { color: var(--danger); }
+.qe-alert-high { border-color: var(--warning); background: var(--warning-soft); }
+.qe-alert-high .qe-alert-icon, .qe-alert-high .qe-alert-severity { color: var(--warning); }
+.qe-alert-medium { border-color: var(--line-strong); }
+.qe-alert-medium .qe-alert-icon, .qe-alert-medium .qe-alert-severity { color: var(--info); }
+.qe-alert-low .qe-alert-icon, .qe-alert-low .qe-alert-severity { color: var(--ink-muted); }
+
+/* ── GateChecklist ─────────────────────────────────────────────────────────────────────── */
+.qe-gates { display: flex; flex-direction: column; gap: var(--space-3); color: var(--ink); }
+.qe-gates-list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.qe-gate {
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) auto; align-items: baseline;
+  column-gap: var(--space-3); row-gap: var(--space-0\.5); padding: var(--space-2) 0; border-bottom: 1px solid var(--line);
+}
+.qe-gate-status { display: inline-flex; align-items: center; gap: var(--space-1); text-transform: uppercase; }
+.qe-gate.is-pass .qe-gate-status { color: var(--ok); }
+.qe-gate.is-fail .qe-gate-status, .qe-gate.is-fail .qe-gate-code { color: var(--danger); }
+.qe-gate.is-unavailable .qe-gate-status, .qe-gate.is-unavailable .qe-gate-code { color: var(--ink-muted); }
+.qe-gate.is-pending .qe-gate-status, .qe-gate.is-pending .qe-gate-code { color: var(--warning); }
+.qe-gate-label { color: var(--ink); }
+.qe-gate-code { text-transform: uppercase; }
+.qe-gate-evidence { grid-column: 2 / -1; margin: 0; color: var(--ink-muted); }
+.qe-gates-summary { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); }
+.qe-gates-blockers { color: var(--danger); }
+.qe-gates-asof { margin-left: auto; color: var(--ink-muted); }
+.qe-gates-contradiction {
+  display: flex; align-items: flex-start; gap: var(--space-2); margin: 0; padding: var(--space-2);
+  border: 1px solid var(--danger); border-radius: var(--radius); background: var(--danger-soft); color: var(--ink);
+}
+.qe-gates-contradiction .qe-icon { color: var(--danger); margin-top: var(--space-0\.5); }
+
+/* ── TradeTicket: risk first, then entry, then targets ─────────────────────────────────── */
+.qe-ticket {
+  box-sizing: border-box; display: flex; flex-direction: column; gap: var(--space-4); min-width: 0;
+  padding: var(--space-4); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink);
+}
+.qe-ticket-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-1) var(--space-3); }
+.qe-ticket-id { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.qe-ticket-symbol { font-weight: 700; }
+.qe-ticket-contract, .qe-ticket-context { color: var(--ink-muted); }
+.qe-ticket-context { grid-column: 1 / -1; }
+.qe-ticket-flag { display: flex; align-items: flex-start; gap: var(--space-2); margin: 0; padding: var(--space-2); border: 1px solid; border-radius: var(--radius); color: var(--ink); }
+.qe-ticket-flag .qe-icon { margin-top: var(--space-0\.5); }
+.qe-ticket-flag.is-danger { border-color: var(--danger); background: var(--danger-soft); }
+.qe-ticket-flag.is-danger .qe-icon { color: var(--danger); }
+.qe-ticket-flag.is-warning { border-color: var(--warning); background: var(--warning-soft); }
+.qe-ticket-flag.is-warning .qe-icon { color: var(--warning); }
+.qe-ticket-section { display: flex; flex-direction: column; gap: var(--space-2); padding-top: var(--space-3); border-top: 1px solid var(--line); }
+.qe-ticket-section-title { margin: 0; color: var(--ink-muted); text-transform: uppercase; }
+.qe-ticket-section > .qe-badge { align-self: flex-start; }
+.qe-ticket-rows, .qe-ticket-notes { display: flex; flex-direction: column; gap: var(--space-2); margin: 0; }
+.qe-ticket-row, .qe-ticket-notes > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.qe-ticket-row dt, .qe-ticket-notes dt { flex: 0 0 11rem; display: flex; align-items: center; color: var(--ink-muted); text-transform: uppercase; }
+.qe-ticket-row dd, .qe-ticket-notes dd { flex: 1 1 12rem; min-width: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.qe-ticket-value { color: var(--ink); }
+.qe-ticket-value.is-muted { color: var(--ink-muted); }
+.qe-ticket-value.is-warning { color: var(--warning); }
+.qe-ticket-sub { color: var(--ink-muted); }
+.qe-ticket-targets { width: 100%; border-collapse: collapse; }
+.qe-ticket-targets th, .qe-ticket-targets td { padding: var(--space-1) 0 var(--space-1) var(--space-3); text-align: right; font-weight: inherit; white-space: nowrap; }
+.qe-ticket-targets th:first-child { padding-left: 0; text-align: left; }
+.qe-ticket-targets thead th { color: var(--ink-muted); text-transform: uppercase; border-bottom: 1px solid var(--line); }
+.qe-ticket-targets tbody th { display: flex; align-items: center; color: var(--ink); }
+.qe-ticket-targets td { color: var(--ink); }
+.qe-ticket-targets td.is-warning { color: var(--warning); }
+.qe-ticket-foot { padding-top: var(--space-3); border-top: 1px solid var(--line); color: var(--ink-muted); }
+
+/* ── RiskMeter: fill carries severity (accent → warning → danger) over its own soft track ─── */
+.qe-risk { display: flex; flex-direction: column; gap: var(--space-2); color: var(--ink); }
+.qe-risk-top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.qe-risk-label { color: var(--ink-muted); text-transform: uppercase; }
+.qe-risk-of { color: var(--ink-muted); }
+.qe-risk-track { position: relative; height: var(--space-2); overflow: hidden; border-radius: var(--radius); background: var(--accent-soft); }
+.qe-risk-fill { display: block; height: 100%; border-radius: var(--radius); background: var(--accent); }
+.qe-risk.is-warning .qe-risk-track { background: var(--warning-soft); }
+.qe-risk.is-warning .qe-risk-fill { background: var(--warning); }
+.qe-risk.is-danger .qe-risk-track { background: var(--danger-soft); }
+.qe-risk.is-danger .qe-risk-fill { background: var(--danger); }
+.qe-risk-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); color: var(--ink-muted); }
+.qe-risk-stops { display: inline-flex; align-items: center; gap: var(--space-2); }
+.qe-risk-pips { display: inline-flex; gap: var(--space-1); }
+.qe-risk-pip { box-sizing: border-box; width: var(--status-dot); height: var(--status-dot); border: 1px solid var(--line-control); border-radius: var(--radius-full); }
+.qe-risk-pip.is-on { background: var(--danger); border-color: var(--danger); }
+.qe-risk-lock { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+
+/* ── ApprovalBar ───────────────────────────────────────────────────────────────────────── */
+.qe-approval { display: flex; flex-direction: column; gap: var(--space-2); }
+.qe-approval-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.qe-approval-expiry { display: inline-flex; align-items: center; gap: var(--space-1); margin-left: auto; color: var(--ink-muted); }
+.qe-approval-reason { display: flex; align-items: flex-start; gap: var(--space-2); margin: 0; color: var(--ink); }
+.qe-approval-reason .qe-icon { color: var(--warning); margin-top: var(--space-0\.5); }
+.qe-approval-note { margin: 0; color: var(--ink-muted); }
+
+/* ── KillSwitch: outlined danger when armed, solid danger when engaged ─────────────────── */
+.qe-kill {
+  box-sizing: border-box; display: flex; align-items: center; gap: var(--space-3); width: 100%;
+  padding: var(--space-3) var(--space-4); border: 1px solid var(--danger); border-radius: var(--radius);
+  background: transparent; color: var(--danger); font: inherit; text-align: left; cursor: pointer;
+  transition: background-color .15s ease;
+}
+.qe-kill:hover { background: var(--danger-soft); }
+.qe-kill-text { display: flex; flex-direction: column; gap: var(--space-0\.5); }
+.qe-kill-title { font-weight: 700; text-transform: uppercase; }
+.qe-kill-detail { color: var(--ink-muted); }
+.qe-kill.is-engaged, .qe-kill.is-engaged:hover { background: var(--danger); color: var(--on-danger); }
+.qe-kill.is-engaged .qe-kill-detail { color: var(--on-danger); }
+
+/* ── PriceChart ────────────────────────────────────────────────────────────────────────── */
+.qe-chart { position: relative; width: 100%; min-width: 0; border-radius: var(--radius); }
+.qe-chart-svg { display: block; overflow: visible; }
+.qe-chart-grid { stroke: var(--chart-grid); stroke-width: 1px; shape-rendering: crispEdges; }
+.qe-chart-axis { stroke: var(--chart-axis); stroke-width: 1px; shape-rendering: crispEdges; }
+.qe-chart-tick { fill: var(--ink-muted); }
+.qe-chart-line { fill: none; stroke: var(--chart-price); stroke-width: var(--stroke-price); stroke-linejoin: round; stroke-linecap: round; }
+.qe-chart-level-line { fill: none; stroke-width: var(--stroke-level); }
+.qe-chart-level.is-entry .qe-chart-level-line { stroke: var(--ink-muted); }
+.qe-chart-level.is-stop .qe-chart-level-line { stroke: var(--level-stop); stroke-dasharray: var(--dash-dashed); }
+.qe-chart-level.is-target .qe-chart-level-line { stroke: var(--level-target); stroke-dasharray: var(--dash-dotted); }
+.qe-chart-level.is-target.is-strong .qe-chart-level-line { stroke-width: var(--stroke-level-strong); stroke-dasharray: var(--dash-dashed); }
+.qe-chart-level.is-fib .qe-chart-level-line { stroke: var(--chart-muted); stroke-dasharray: var(--dash-dotted); }
+.qe-chart-leader { fill: none; stroke: var(--chart-axis); stroke-width: 1px; }
+.qe-chart-level-text { fill: var(--ink); }
+.qe-chart-marker-box { rx: var(--radius); }
+.qe-chart-marker.is-buy .qe-chart-marker-fill { fill: var(--bull); }
+.qe-chart-marker.is-sell .qe-chart-marker-fill { fill: var(--bear); }
+.qe-chart-marker.is-buy .qe-chart-marker-text { fill: var(--on-bull); }
+.qe-chart-marker.is-sell .qe-chart-marker-text { fill: var(--on-bear); }
+.qe-chart-cross { stroke: var(--chart-axis); stroke-width: 1px; }
+.qe-chart-dot { fill: var(--chart-price); stroke: var(--surface-raised); stroke-width: 2px; }
+.qe-chart-hit { fill: transparent; cursor: crosshair; }
+.qe-chart-tip {
+  position: absolute; display: flex; flex-direction: column; gap: var(--space-0\.5); padding: var(--space-1) var(--space-2);
+  background: var(--surface-overlay); border: 1px solid var(--line-control); border-radius: var(--radius); box-shadow: var(--shadow-overlay);
+  color: var(--ink); white-space: nowrap; pointer-events: none;
+}
+.qe-chart-tip.is-flipped { transform: translateX(-100%); }
+.qe-chart-tip-time { color: var(--ink-muted); }
+
+/* ── StatTile: no figure without its basis and sample size ──────────────────────────────── */
+.qe-stat { box-sizing: border-box; display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; padding: var(--space-4); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); }
+.qe-stat-label { color: var(--ink-muted); text-transform: uppercase; }
+.qe-stat-delta { display: inline-flex; align-items: center; gap: var(--space-1); }
+.qe-stat-delta.is-good { color: var(--ok); }
+.qe-stat-delta.is-bad { color: var(--danger); }
+.qe-stat-vs { color: var(--ink-muted); }
+.qe-stat-basis { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-2); color: var(--ink-muted); }
+
+/* ── Motion and forced colors ──────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .qe-feed.is-live .qe-feed-dot, .qe-state-loading .qe-state-title { animation: none; }
+  .qe-button, .qe-icon-button, .qe-toggle, .qe-signal, .qe-kill { transition: none; }
+}
+@media (forced-colors: active) {
+  .qe-toggle.is-selected, .qe-icon-button.is-pressed, .qe-signal.is-selected { outline: 2px solid; outline-offset: -4px; }
+  .qe-feed-dot, .qe-risk-fill, .qe-score-pip.is-on, .qe-risk-pip.is-on { forced-color-adjust: none; }
+}
