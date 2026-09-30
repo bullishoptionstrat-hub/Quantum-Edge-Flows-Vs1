@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 export function useWebSocket() {
   const [isConnected, setIsConnected] = useState(false);
-  const [ws, setWs] = useState<WebSocket | null>(null);
+  // A ref, not state: nothing renders from the socket, and subscribe() reads it when called.
+  const wsRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
     const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:3001/ws';
@@ -25,15 +26,19 @@ export function useWebSocket() {
       setIsConnected(false);
     };
 
-    setWs(websocket);
+    wsRef.current = websocket;
 
     return () => {
       websocket.close();
+      if (wsRef.current === websocket) {
+        wsRef.current = null;
+      }
     };
   }, []);
 
   const subscribe = useCallback(
     (channel: string, options: any) => {
+      const ws = wsRef.current;
       if (ws && ws.readyState === WebSocket.OPEN) {
         ws.send(
           JSON.stringify({
@@ -44,7 +49,7 @@ export function useWebSocket() {
         );
       }
     },
-    [ws]
+    []
   );
 
   return { isConnected, subscribe };
