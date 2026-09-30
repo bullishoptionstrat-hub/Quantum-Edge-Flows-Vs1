@@ -6,7 +6,9 @@ import tokens from './src/design-system/tokens.json';
 // their literal values from tokens.json, so opacity modifiers such as border-qt-accent/20 still work.
 function primitive(name: string): string {
   const token = tokens.color.tokens.find((t) => t.name === name);
-  if (!token || typeof token.value !== 'string') throw new Error(`tokens.json has no constant color "${name}"`);
+  if (!token || typeof token.value !== 'string') {
+    throw new Error(`tokens.json has no constant color "${name}"`);
+  }
   return token.value;
 }
 const themed = (name: string) => `var(--${name})`;

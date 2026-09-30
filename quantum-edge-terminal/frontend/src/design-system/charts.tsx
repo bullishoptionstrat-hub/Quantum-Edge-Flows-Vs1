@@ -69,11 +69,13 @@ export function PriceChart({ data, levels = [], markers = [], label, tickSize = 
 
   useIsoLayoutEffect(() => {
     const el = wrap.current;
-    if (!el) return;
-    const update = () => setWidth(Math.max(320, Math.round(el.clientWidth)));
-    update();
-    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(update) : null;
-    ro?.observe(el);
+    let ro: ResizeObserver | null = null;
+    if (el) {
+      const update = () => setWidth(Math.max(320, Math.round(el.clientWidth)));
+      update();
+      ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(update) : null;
+      ro?.observe(el);
+    }
     return () => ro?.disconnect();
   }, []);
 
@@ -89,7 +91,9 @@ export function PriceChart({ data, levels = [], markers = [], label, tickSize = 
 
   const step = niceStep((hi - lo || 1) / 4);
   const yTicks: number[] = [];
-  for (let v = Math.ceil(d0 / step) * step; v <= d1 + 1e-9; v += step) yTicks.push(v);
+  for (let v = Math.ceil(d0 / step) * step; v <= d1 + 1e-9; v += step) {
+    yTicks.push(v);
+  }
   // At most six x labels, and never closer than one label width: 12px mono runs about 7.8px a character.
   const labelW = Math.max(1, ...data.map((d) => d.t.length)) * 7.8 + 12;
   const pxPerBar = n > 1 ? plotW / (n - 1) : plotW;
@@ -98,10 +102,11 @@ export function PriceChart({ data, levels = [], markers = [], label, tickSize = 
   const path = data.map((d, i) => (i ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(d.close).toFixed(1)).join('');
 
   // Level tags sit in the right gutter; nudge apart so they never overlap (min 18px), then draw leaders.
-  const tags = levels
-    .map((l) => ({ ...l, ly: y(l.price), ty: y(l.price) }))
-    .sort((a, b) => a.ly - b.ly);
-  for (let i = 1; i < tags.length; i++) tags[i].ty = Math.max(tags[i].ty, tags[i - 1].ty + 18);
+  const tags = levels.map((l) => ({ ...l, ly: y(l.price), ty: y(l.price) }));
+  tags.sort((a, b) => a.ly - b.ly);
+  for (let i = 1; i < tags.length; i++) {
+    tags[i].ty = Math.max(tags[i].ty, tags[i - 1].ty + 18);
+  }
   const bottom = M.top + height - 6;
   for (let i = tags.length - 1; i >= 0; i--) {
     const limit = i === tags.length - 1 ? bottom : tags[i + 1].ty - 18;
@@ -114,12 +119,14 @@ export function PriceChart({ data, levels = [], markers = [], label, tickSize = 
     setHover(n <= 1 ? 0 : Math.max(0, Math.min(n - 1, Math.round((px / r.width) * (n - 1)))));
   };
   const onKey = (e: React.KeyboardEvent) => {
-    if (!n) return;
+    if (!n) {
+      return;
+    }
     if (e.key === 'ArrowLeft') { e.preventDefault(); setHover((h) => Math.max(0, (h ?? n - 1) - 1)); }
     else if (e.key === 'ArrowRight') { e.preventDefault(); setHover((h) => Math.min(n - 1, (h ?? n - 1) + 1)); }
     else if (e.key === 'Home') { e.preventDefault(); setHover(0); }
     else if (e.key === 'End') { e.preventDefault(); setHover(n - 1); }
-    else if (e.key === 'Escape') setHover(null);
+    else if (e.key === 'Escape') { setHover(null); }
   };
   const h = hover !== null && data[hover] ? hover : null;
   const tipLeft = h !== null ? (x(h) > M.left + plotW * 0.7 ? x(h) - 12 : x(h) + 12) : 0;

@@ -38,6 +38,12 @@ describe('parseSignals', () => {
     expect(out).toEqual({ signals: [], skipped: 2 });
   });
 
+  it('keeps string and numeric ids and falls back when the id is missing or not a scalar', () => {
+    const row = { signal_type: 'BUY', symbol: 'ES', entry_price: '1' };
+    const ids = parseSignals({ data: [{ ...row, id: 'a1b2' }, { ...row, id: 42 }, { ...row }, { ...row, id: { raw: 1 } }] })?.signals.map((s) => s.id);
+    expect(ids).toEqual(['a1b2', '42', 'ES-2', 'ES-3']);
+  });
+
   it('keeps an unrecognized status code verbatim', () => {
     expect(parseSignals({ data: [{ id: 3, signal_type: 'BUY', symbol: 'GC', entry_price: '2345.1', status: 'archived' }] })?.signals[0].status).toBe('ARCHIVED');
   });

@@ -24,8 +24,12 @@ export const TIMEFRAME_MS: Readonly<Record<string, number>> = {
 
 /** Axis label for a bar: the date for daily bars, date and time for 1h and 4h bars (50 of them span days), the clock time below that. */
 export function formatBarLabel(ms: number, timeframe: string): string {
-  if (timeframe === '1D') return day.format(ms);
-  if (timeframe === '4h' || timeframe === '1h') return `${day.format(ms)} ${clock.format(ms)}`;
+  if (timeframe === '1D') {
+    return day.format(ms);
+  }
+  if (timeframe === '4h' || timeframe === '1h') {
+    return `${day.format(ms)} ${clock.format(ms)}`;
+  }
   return clock.format(ms);
 }
 
@@ -37,10 +41,16 @@ export function isStale(ageMs: number, timeframe: string): boolean {
 /** Compact age: "42s", "18m", "3h", "2d". */
 export function formatAge(ms: number): string {
   const s = Math.max(0, Math.round(ms / 1000));
-  if (s < 60) return `${s}s`;
+  if (s < 60) {
+    return `${s}s`;
+  }
   const m = Math.floor(s / 60);
-  if (m < 60) return `${m}m`;
+  if (m < 60) {
+    return `${m}m`;
+  }
   const h = Math.floor(m / 60);
-  if (h < 48) return `${h}h`;
+  if (h < 48) {
+    return `${h}h`;
+  }
   return `${Math.floor(h / 24)}d`;
 }

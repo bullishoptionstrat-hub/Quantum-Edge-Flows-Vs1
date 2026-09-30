@@ -116,7 +116,12 @@ export function ToggleGroup({ label, options, value, defaultValue, onChange, ton
   const [inner, setInner] = React.useState(defaultValue ?? opts[0]?.value);
   const current = value ?? inner;
   const refs = React.useRef<Array<HTMLButtonElement | null>>([]);
-  const select = (v: string) => { if (value === undefined) setInner(v); onChange?.(v); };
+  const select = (v: string) => {
+    if (value === undefined) {
+      setInner(v);
+    }
+    onChange?.(v);
+  };
   const step = (from: number, dir: number) => {
     for (let k = 1; k <= opts.length; k++) {
       const i = (from + dir * k + opts.length) % opts.length;

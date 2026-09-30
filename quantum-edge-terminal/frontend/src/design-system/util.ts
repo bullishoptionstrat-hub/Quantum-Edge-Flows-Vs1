@@ -74,5 +74,5 @@ const STATE_META: Record<AnyState, StateMeta> = {
 };
 
 export function stateMeta(state: AnyState): StateMeta {
-  return STATE_META[state] ?? { label: String(state), tone: 'neutral' };
+  return STATE_META[state] ?? { label: state, tone: 'neutral' };
 }

@@ -11,7 +11,9 @@ const FONT_URL_PREFIX = '/'; // tokens.json lists fonts as fonts/<file>; Next se
 
 const esc = (name) => {
   let s = name.replace(/\./g, '\\.');
-  if (/^[0-9]/.test(s)) s = '\\3' + s[0] + ' ' + s.slice(1);
+  if (/^[0-9]/.test(s)) {
+    s = '\\3' + s[0] + ' ' + s.slice(1);
+  }
   return s;
 };
 const alias = (v) => (typeof v === 'string' ? /^\{([A-Za-z0-9][A-Za-z0-9_.-]{0,63})\}$/.exec(v)?.[1] : undefined);
@@ -39,22 +41,39 @@ for (const theme of themes.slice(1)) {
     ...colors.filter((c) => theme.id in c.value || alias(c.value[first])).map((c) => colorDecl(c.name, c.value[theme.id] ?? c.value[first])),
     ...shadows.filter((s) => theme.id in s.value).map((s) => `  --${esc(s.name)}: ${s.value[theme.id]};`),
   ];
-  if (block.length) out.push(`[data-theme="${theme.id}"] {`, ...block, '}');
+  if (block.length) {
+    out.push(`[data-theme="${theme.id}"] {`, ...block, '}');
+  }
 }
 
 const root = [];
-for (const family of ['spacing', 'radius']) for (const t of tokens[family]?.tokens ?? []) root.push(`  --${esc(t.name)}: ${t.value};`);
+for (const family of ['spacing', 'radius']) {
+  for (const t of tokens[family]?.tokens ?? []) {
+    root.push(`  --${esc(t.name)}: ${t.value};`);
+  }
+}
 const handled = new Set(['name', 'version', 'meta', 'color', 'type', 'spacing', 'radius', 'shadow']);
 for (const [family, body] of Object.entries(tokens)) {
-  if (handled.has(family) || !body || !Array.isArray(body.tokens)) continue;
-  for (const t of body.tokens) root.push(`  --${esc(t.name)}: ${t.value};`);
+  if (handled.has(family) || !body || !Array.isArray(body.tokens)) {
+    continue;
+  }
+  for (const t of body.tokens) {
+    root.push(`  --${esc(t.name)}: ${t.value};`);
+  }
 }
-for (const [key, stack] of Object.entries(tokens.type.families)) root.push(`  --font-${esc(key)}: ${stack};`);
+for (const [key, stack] of Object.entries(tokens.type.families)) {
+  if (typeof stack !== 'string') {
+    throw new Error(`tokens.json type.families.${key} must be a font stack string`);
+  }
+  root.push(`  --font-${esc(key)}: ${stack};`);
+}
 const colorNames = new Set(colors.map((c) => esc(c.name)));
 for (const group of tokens.type.groups) {
   for (const s of group.styles) {
     const name = 'text-' + esc(s.name);
-    if (colorNames.has(name)) continue;
+    if (colorNames.has(name)) {
+      continue;
+    }
     const family = s.family || group.family || '';
     const style = s.fontStyle ?? 'normal';
     root.push(`  --${name}: ${style === 'normal' ? '' : style + ' '}${s.fontWeight} ${s.fontSize}/${s.lineHeight}${family ? ` var(--font-${esc(family)})` : ' inherit'};`);
