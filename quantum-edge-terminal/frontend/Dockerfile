@@ -1,13 +1,14 @@
-FROM node:20-alpine
+FROM node:22-alpine
 WORKDIR /app
-ENV NODE_ENV=production \
-    NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_TELEMETRY_DISABLED=1
 
-COPY package*.json ./
-RUN npm ci
+COPY package.json package-lock.json ./
+# next build needs the devDependencies (TypeScript, PostCSS, Autoprefixer); they are pruned after the build.
+RUN npm ci --include=dev
 
 COPY . .
-RUN npm run build
+RUN npm run build && npm prune --omit=dev
 
+ENV NODE_ENV=production
 EXPOSE 3000
 CMD ["npm", "start"]

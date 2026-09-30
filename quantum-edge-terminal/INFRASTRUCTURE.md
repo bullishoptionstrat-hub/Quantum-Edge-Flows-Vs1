@@ -52,7 +52,7 @@ POST /analyze/algo
 POST /score/trade
 
 # Tech Stack
-- Frontend: Next.js 14, React 18, TypeScript, Tailwind CSS
+- Frontend: Next.js 16, React 19, TypeScript, Tailwind CSS
 - Backend: Express.js, TypeScript, PostgreSQL, Redis
 - AI: Python 3.11, FastAPI, Pandas, NumPy, scikit-learn
 - Deployment: Docker, Docker Compose
