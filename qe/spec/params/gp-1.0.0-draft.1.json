@@ -1,0 +1,42 @@
+{
+  "spec_version": "gp-1.0.0-draft.1",
+  "status": "PROPOSED: every value awaits operator approval via qe/spec/AMBIGUITY_REGISTER.csv (A2). Not authoritative.",
+  "note": "Ratios are strings of the form 'n/d' and must be parsed as exact Fractions. Tick counts are integers in the traded contract's ticks. P-SMT-MARGIN-TICKS is in the PAIRED instrument's ticks.",
+  "global": {
+    "P-TF-SETUP-S": 300,
+    "P-SESSION-TZ": "America/New_York",
+    "P-SETUP-WINDOW": ["09:35", "15:00"],
+    "P-SWING-K": 3,
+    "P-LIQ-TYPES": ["PRIOR_RTH_HIGH", "PRIOR_RTH_LOW", "OVERNIGHT_HIGH", "OVERNIGHT_LOW", "SWING_K_HIGH", "SWING_K_LOW"],
+    "P-LIQ-TYPE-PRIORITY": ["PRIOR_RTH", "OVERNIGHT", "SWING_K"],
+    "P-ATR-N": 14,
+    "P-SWEEP-MAX-PEN-ATR": "1/1",
+    "P-RECLAIM-MAX-BARS": 3,
+    "P-RECLAIM-MIN-TICKS": 1,
+    "P-ACCEPT-CLOSES": 2,
+    "P-DISP-MAX-BARS": 6,
+    "P-DISP-RANGE-ATR": "3/2",
+    "P-DISP-BODY-RATIO": "3/5",
+    "P-DISP-CLOSE-LOC": "3/4",
+    "P-DISP-STRUCT-LOOKBACK": 6,
+    "P-RETEST-MAX-BARS": 12,
+    "P-CONF-MAX-BARS": 3,
+    "P-TARGET-FRONTRUN-TICKS": 1,
+    "P-MIN-NET-R": "2/1",
+    "P-SMT-REQUIRED": true,
+    "P-SMT-PAIRS": {"ES": "NQ", "NQ": "ES", "MES": "MNQ", "MNQ": "MES"},
+    "P-SMT-MAX-WAIT-S": 30,
+    "P-NEWS-BLACKOUT-MIN": 10,
+    "P-ROLL-BLACKOUT-SESSIONS": 2,
+    "P-AUTHORIZED-INSTRUMENTS": ["ES", "NQ", "MES", "MNQ"],
+    "P-DQ-MAX-STALENESS-S": 600,
+    "P-DQ-RECOVERY-BARS": 3
+  },
+  "per_instrument": {
+    "ES":  {"P-SWEEP-MIN-PEN-TICKS": 2, "P-FVG-MIN-TICKS": 1, "P-ENTRY-LIMIT-OFFSET-TICKS": 1, "P-STOP-BUFFER-TICKS": 2, "P-SMT-MARGIN-TICKS": 1, "P-COST-COMMISSION-RT-MINOR": 500, "P-COST-STOP-SLIP-TICKS": 1},
+    "NQ":  {"P-SWEEP-MIN-PEN-TICKS": 6, "P-FVG-MIN-TICKS": 2, "P-ENTRY-LIMIT-OFFSET-TICKS": 2, "P-STOP-BUFFER-TICKS": 4, "P-SMT-MARGIN-TICKS": 2, "P-COST-COMMISSION-RT-MINOR": 500, "P-COST-STOP-SLIP-TICKS": 2},
+    "MES": {"P-SWEEP-MIN-PEN-TICKS": 2, "P-FVG-MIN-TICKS": 1, "P-ENTRY-LIMIT-OFFSET-TICKS": 1, "P-STOP-BUFFER-TICKS": 2, "P-SMT-MARGIN-TICKS": 1, "P-COST-COMMISSION-RT-MINOR": 150, "P-COST-STOP-SLIP-TICKS": 1},
+    "MNQ": {"P-SWEEP-MIN-PEN-TICKS": 6, "P-FVG-MIN-TICKS": 2, "P-ENTRY-LIMIT-OFFSET-TICKS": 2, "P-STOP-BUFFER-TICKS": 4, "P-SMT-MARGIN-TICKS": 2, "P-COST-COMMISSION-RT-MINOR": 150, "P-COST-STOP-SLIP-TICKS": 2},
+    "GC":  {"P-SWEEP-MIN-PEN-TICKS": 2, "P-FVG-MIN-TICKS": 1, "P-ENTRY-LIMIT-OFFSET-TICKS": 1, "P-STOP-BUFFER-TICKS": 2, "P-SMT-MARGIN-TICKS": 1, "P-COST-COMMISSION-RT-MINOR": 500, "P-COST-STOP-SLIP-TICKS": 1}
+  }
+}

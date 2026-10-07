@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
-CANONICAL_ROOTS = ["qe/core", "qe/execution", "qe/replay", "qe/adapters", "qe/research", "qe/api"]
+CANONICAL_ROOTS = ["qe/core", "qe/gp", "qe/spec", "qe/execution", "qe/replay", "qe/adapters", "qe/research", "qe/api"]
 
 # Top-level module names that exist only in the legacy subtrees (qe/audit/python_imports.json).
 LEGACY_MODULES = {
@@ -73,9 +73,12 @@ IMPURE = re.compile(
 )
 
 
+PURE_ROOTS = ["qe/core", "qe/gp"]  # the strategy reducer must be as pure as the core
+
+
 def test_core_is_pure():
     bad = []
-    for f in sorted((REPO / "qe/core").rglob("*.py")):
+    for f in sorted(p for root in PURE_ROOTS for p in (REPO / root).rglob("*.py")):
         for i, line in enumerate(f.read_text().splitlines(), 1):
             if IMPURE.search(line):
                 bad.append(f"{f.relative_to(REPO)}:{i}: {line.strip()}")
