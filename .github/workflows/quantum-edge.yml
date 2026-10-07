@@ -35,9 +35,17 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: "1"
     steps:
-      - uses: actions/checkout@v6
-        with:
-          persist-credentials: false
+      # Not actions/checkout: the repository carries gitlinks (`lean`, ...) with no
+      # .gitmodules entry, so its `git submodule foreach` step exits 128 ("No url
+      # found for submodule path"). A plain fetch of the exact commit never touches
+      # submodules and stores no credentials. The repository is public.
+      - name: Check out the commit under test
+        run: |
+          git init -q .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch -q --depth=1 --no-tags --no-recurse-submodules origin "${GITHUB_SHA}"
+          git checkout -q --detach FETCH_HEAD
+          git log -1 --format='checked out %H'
 
       - uses: actions/setup-python@v5
         with:
