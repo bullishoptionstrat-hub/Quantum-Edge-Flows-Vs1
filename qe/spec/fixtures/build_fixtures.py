@@ -379,7 +379,7 @@ def main() -> None:
         for r in f["covers"]:
             cover.setdefault(r, []).append(f["fixture_id"])
     with open(SPEC / "GP_REQUIREMENTS_TRACE.csv", "w", newline="") as fh:
-        w = csv.writer(fh)
+        w = csv.writer(fh, lineterminator="\n")
         w.writerow(["req_id", "summary", "golden_fixtures", "implementation", "status"])
         for rid, summary in reqs:
             fxs = " ".join(cover.get(rid, []))
