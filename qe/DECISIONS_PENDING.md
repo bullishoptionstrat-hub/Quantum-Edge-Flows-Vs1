@@ -1,39 +1,24 @@
-# Decisions Pending (A2: human approval required)
+# Decisions Pending (human approval or action required)
 
-Phase 1 can't finish, and Phase 2 can't start, until A2-00 and A2-01 are decided. Everything else in Phase 0 is done.
+A2-00 through A2-03 were decided on 2026-10-07 (ADR-0006 to ADR-0009). This list is what still needs a human.
 
-## A2-00: Where does the God's Plan specification come from? (blocking)
+## H-01: Commit the God's Plan source document (blocks the spec freeze)
 
-**Finding:** "God's Plan" appears nowhere in this repository (D-037). No code implements the sweep → reclaim → displacement → retest → confirmation → SMT sequence. The GP rules exist only in material outside the repo: the uploaded markdown document the two earlier master prompts were written from.
+ADR-0006 chose to formalize the original God's Plan document, but that document is not in the repository. Add it unchanged to `qe/spec/source/` and record its sha256 in `qe/DECISIONS.md`. Each `AMB-*` entry is then re-checked against it.
 
-The closest prior art in the repo is `QuantumEdge/research/fib2`–`fib9`: daily and 1-hour ETF "manipulation leg" detectors with sweep confirmation, displacement metrics, Fibonacci retracement zones, and OOS splits. They run on equity ETFs, not futures, and the data they read is not in the repo (D-035).
+## H-02: Approve or amend each ambiguity entry (A2; blocks Phase 3)
 
-**Options:**
-1. Commit the GP source document to `qe/spec/source/` as-is. Phase 2 formalizes it into `gp-1.0.0` and records each ambiguity. *(Recommended.)*
-2. Dictate or approve the GP rules section by section during Phase 2.
-3. Treat the fib-family research as the starting definition and extend it toward GP.
+`qe/spec/AMBIGUITY_REGISTER.csv` has 37 PROPOSED choices. Each has candidates, consequences, a recommendation, and the fixtures that distinguish the options. Freezing `gp-1.0.0` needs a status of APPROVED or REJECTED (with the chosen alternative) on every row. A changed parameter regenerates the affected fixtures through `qe/spec/fixtures/build_fixtures.py`, with a manifest update.
 
-## A2-01: Repository layout (directive A4.3)
+## H-03: Rotate the committed Postgres password (A3, human action)
 
-**Finding:** Quantum Edge is 538 files inside a roughly 15,000-file openclaw monorepo. The root agent instructions, CI, and tooling all target openclaw. Every CI job on PR #36 was skipped as not applicable.
+ADR-0009: rotate the password on any host that uses the value in `quantum-edge-terminal/docker-compose.yml`. The agent cannot do this.
 
-**Options:**
-1. Extract `QuantumEdge/`, `quantum-edge-terminal/`, `qe/`, and `quantum-edge-governance/` into a dedicated repository with its own CI. *(Recommended: clean agent instructions and CI that actually tests Quantum Edge.)*
-2. Keep it in this repo, add `qe/AGENTS.md` and a Quantum Edge-only CI workflow, and fence openclaw off.
+## H-04: Verify the instrument registry against CME (A2)
 
-## A2-02: Scope of the existing LEAN sector-rotation / IBS strategy
+Every row in `qe/config/instruments.json` is `verified: false` (directive D9). The proposed commission values (`P-COST-COMMISSION-RT-MINOR`) are placeholders until a broker is chosen.
 
-**Finding:** `QuantumEdge/main.py` and `strategy/*` implement an ETF sector-momentum, IBS mean-reversion, and Greenblatt allocation strategy. It is unrelated to God's Plan.
+## Needed before Phase 5 (not blocking now)
 
-**Options:** (1) keep it as legacy research, read-only (*recommended*); (2) run it as a separate governed track; (3) archive it.
-
-## A2-03: Committed Postgres password
-
-**Finding:** `quantum-edge-terminal/docker-compose.yml:9` commits a literal Postgres password (D-034). The value is not reproduced in the audit.
-
-**Action needed:** confirm whether that value is used on any reachable host. If it is, rotate it. Either way, the canonical stack reads secrets from the environment.
-
-## Also needed before Phase 5 (not blocking now)
-
-- **Market data for ES/NQ/GC:** no futures data exists in the repo. Choose a vendor and license, point-in-time contracts, and intraday resolution.
-- **Broker for paper trading:** re-verify futures support against current vendor docs (D9) before choosing.
+- **Market data for ES/NQ (and any other instrument that gets authorized):** choose the vendor and license, point-in-time contracts, and intraday resolution, plus the news calendar and roll-date sources that the spec requires (GP-REQ-013, GP-REQ-014).
+- **Broker for paper trading:** re-verify futures support against current vendor documentation (D9) before choosing.

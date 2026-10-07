@@ -1,0 +1,61 @@
+# Quantum Edge CI (decision A2-01, ADR-0007): Quantum Edge is fenced inside this
+# monorepo, so it gets its own workflow. It runs only when Quantum Edge paths change
+# and uses GitHub-hosted runners, not the openclaw Blacksmith pool.
+# Governance: qe/AGENTS.md and quantum-edge-governance/QEGP_MASTER_PROMPT_v4.md.
+name: Quantum Edge
+
+on:
+  push:
+    paths:
+      - "QuantumEdge/**"
+      - "quantum-edge-terminal/**"
+      - "qe/**"
+      - "quantum-edge-governance/**"
+      - ".github/workflows/quantum-edge.yml"
+  pull_request:
+    paths:
+      - "QuantumEdge/**"
+      - "quantum-edge-terminal/**"
+      - "qe/**"
+      - "quantum-edge-governance/**"
+      - ".github/workflows/quantum-edge.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quantum-edge-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qe-tests:
+    name: qe tests (pinned audit env)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install the pinned audit environment
+        run: |
+          python -m venv qe/.venv
+          qe/.venv/bin/pip install -q -r qe/requirements-audit.lock
+
+      - name: Run the Quantum Edge suite
+        # Legacy defect reproductions and golden fixtures are strict xfails; an
+        # unexpected pass fails the run (qe/pytest.ini sets xfail_strict).
+        run: qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=. -q
+
+      - name: Spec artifacts are reproducible
+        # The fixture generator must reproduce the committed fixtures, manifest
+        # and requirement trace byte for byte.
+        run: |
+          qe/.venv/bin/python qe/spec/fixtures/build_fixtures.py
+          git diff --exit-code -- qe/spec
