@@ -1,0 +1,187 @@
+path,module,result,error_type,error
+QuantumEdge/algorithm/__init__.py,algorithm,OK,,
+QuantumEdge/algorithm/config.py,algorithm.config,OK,,
+QuantumEdge/backtest_standalone.py,backtest_standalone,SKIPPED_UNGUARDED_SCRIPT,,
+QuantumEdge/data/__init__.py,data,OK,,
+QuantumEdge/data/universe.py,data.universe,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/data/validator.py,data.validator,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/generate_lean_data.py,generate_lean_data,SKIPPED_UNGUARDED_SCRIPT,,
+QuantumEdge/main.py,main,SKIPPED_UNGUARDED_SCRIPT,,
+QuantumEdge/research/__init__.py,research,OK,,
+QuantumEdge/research/analytics.py,research.analytics,OK,,
+QuantumEdge/research/experiments.py,research.experiments,OK,,
+QuantumEdge/research/fib/__init__.py,research.fib,OK,,
+QuantumEdge/research/fib/backtester.py,research.fib.backtester,OK,,
+QuantumEdge/research/fib/data.py,research.fib.data,OK,,
+QuantumEdge/research/fib/detector.py,research.fib.detector,OK,,
+QuantumEdge/research/fib/experiments.py,research.fib.experiments,OK,,
+QuantumEdge/research/fib/model.py,research.fib.model,OK,,
+QuantumEdge/research/fib/run.py,research.fib.run,OK,,
+QuantumEdge/research/fib2/__init__.py,research.fib2,OK,,
+QuantumEdge/research/fib2/backtester.py,research.fib2.backtester,OK,,
+QuantumEdge/research/fib2/data.py,research.fib2.data,OK,,
+QuantumEdge/research/fib2/detector.py,research.fib2.detector,OK,,
+QuantumEdge/research/fib2/experiments.py,research.fib2.experiments,OK,,
+QuantumEdge/research/fib2/filters.py,research.fib2.filters,OK,,
+QuantumEdge/research/fib2/model.py,research.fib2.model,OK,,
+QuantumEdge/research/fib2/run.py,research.fib2.run,OK,,
+QuantumEdge/research/fib3/__init__.py,research.fib3,OK,,
+QuantumEdge/research/fib3/analysis.py,research.fib3.analysis,OK,,
+QuantumEdge/research/fib3/backtester.py,research.fib3.backtester,OK,,
+QuantumEdge/research/fib3/detector.py,research.fib3.detector,OK,,
+QuantumEdge/research/fib3/experiments.py,research.fib3.experiments,OK,,
+QuantumEdge/research/fib3/fib_respect.py,research.fib3.fib_respect,OK,,
+QuantumEdge/research/fib3/model.py,research.fib3.model,OK,,
+QuantumEdge/research/fib3/quality_scorer.py,research.fib3.quality_scorer,OK,,
+QuantumEdge/research/fib3/run.py,research.fib3.run,OK,,
+QuantumEdge/research/fib4/__init__.py,research.fib4,OK,,
+QuantumEdge/research/fib4/analysis.py,research.fib4.analysis,OK,,
+QuantumEdge/research/fib4/backtester.py,research.fib4.backtester,OK,,
+QuantumEdge/research/fib4/execution.py,research.fib4.execution,OK,,
+QuantumEdge/research/fib4/experiments.py,research.fib4.experiments,OK,,
+QuantumEdge/research/fib4/model.py,research.fib4.model,OK,,
+QuantumEdge/research/fib4/run.py,research.fib4.run,OK,,
+QuantumEdge/research/fib5/__init__.py,research.fib5,OK,,
+QuantumEdge/research/fib5/analysis.py,research.fib5.analysis,OK,,
+QuantumEdge/research/fib5/backtester.py,research.fib5.backtester,OK,,
+QuantumEdge/research/fib5/experiments.py,research.fib5.experiments,OK,,
+QuantumEdge/research/fib5/model.py,research.fib5.model,OK,,
+QuantumEdge/research/fib5/regime.py,research.fib5.regime,OK,,
+QuantumEdge/research/fib5/robustness.py,research.fib5.robustness,OK,,
+QuantumEdge/research/fib5/run.py,research.fib5.run,OK,,
+QuantumEdge/research/fib5/walkforward.py,research.fib5.walkforward,OK,,
+QuantumEdge/research/fib6/__init__.py,research.fib6,OK,,
+QuantumEdge/research/fib6/analysis.py,research.fib6.analysis,OK,,
+QuantumEdge/research/fib6/backtester.py,research.fib6.backtester,OK,,
+QuantumEdge/research/fib6/execution.py,research.fib6.execution,OK,,
+QuantumEdge/research/fib6/experiments.py,research.fib6.experiments,OK,,
+QuantumEdge/research/fib6/model.py,research.fib6.model,OK,,
+QuantumEdge/research/fib6/portfolio.py,research.fib6.portfolio,OK,,
+QuantumEdge/research/fib6/regime.py,research.fib6.regime,OK,,
+QuantumEdge/research/fib6/robustness.py,research.fib6.robustness,OK,,
+QuantumEdge/research/fib6/run.py,research.fib6.run,OK,,
+QuantumEdge/research/fib7/__init__.py,research.fib7,OK,,
+QuantumEdge/research/fib7/analysis.py,research.fib7.analysis,OK,,
+QuantumEdge/research/fib7/backtester.py,research.fib7.backtester,OK,,
+QuantumEdge/research/fib7/experiments.py,research.fib7.experiments,OK,,
+QuantumEdge/research/fib7/live_spec.py,research.fib7.live_spec,OK,,
+QuantumEdge/research/fib7/model.py,research.fib7.model,OK,,
+QuantumEdge/research/fib7/regime.py,research.fib7.regime,OK,,
+QuantumEdge/research/fib7/robustness.py,research.fib7.robustness,OK,,
+QuantumEdge/research/fib7/rotation.py,research.fib7.rotation,OK,,
+QuantumEdge/research/fib7/run.py,research.fib7.run,OK,,
+QuantumEdge/research/fib8/__init__.py,research.fib8,OK,,
+QuantumEdge/research/fib8/analysis.py,research.fib8.analysis,OK,,
+QuantumEdge/research/fib8/experiments.py,research.fib8.experiments,OK,,
+QuantumEdge/research/fib8/forward_monitor.py,research.fib8.forward_monitor,OK,,
+QuantumEdge/research/fib8/model.py,research.fib8.model,OK,,
+QuantumEdge/research/fib8/promotion.py,research.fib8.promotion,OK,,
+QuantumEdge/research/fib8/rotation.py,research.fib8.rotation,OK,,
+QuantumEdge/research/fib8/run.py,research.fib8.run,OK,,
+QuantumEdge/research/fib8/signal_cards.py,research.fib8.signal_cards,OK,,
+QuantumEdge/research/fib9/__init__.py,research.fib9,OK,,
+QuantumEdge/research/fib9/canonical.py,research.fib9.canonical,OK,,
+QuantumEdge/research/fib9/experiments.py,research.fib9.experiments,OK,,
+QuantumEdge/research/fib9/model.py,research.fib9.model,OK,,
+QuantumEdge/research/manifest.py,research.manifest,OK,,
+QuantumEdge/research/results.py,research.results,OK,,
+QuantumEdge/research/runner.py,research.runner,OK,,
+QuantumEdge/research/validity.py,research.validity,OK,,
+QuantumEdge/strategy/__init__.py,strategy,OK,,
+QuantumEdge/strategy/allocator.py,strategy.allocator,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/strategy/regime.py,strategy.regime,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/strategy/signals.py,strategy.signals,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/strategy/sleeve_a.py,strategy.sleeve_a,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/strategy/sleeve_b.py,strategy.sleeve_b,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/strategy/sleeve_c.py,strategy.sleeve_c,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'AlgorithmImports'
+QuantumEdge/tests/__init__.py,tests,OK,,
+QuantumEdge/tests/test_data_presence.py,tests.test_data_presence,OK,,
+quantum-edge-terminal/FINAL_COMPLETION_SUMMARY.py,FINAL_COMPLETION_SUMMARY,OK,,
+quantum-edge-terminal/PHASE_8_5_DEPLOYMENT_GUIDE.py,PHASE_8_5_DEPLOYMENT_GUIDE,OK,,
+quantum-edge-terminal/PHASE_8_5_INSTRUMENTATION_COMPLETE.py,PHASE_8_5_INSTRUMENTATION_COMPLETE,OK,,
+quantum-edge-terminal/PHASE_8_5_TEST_SUITE_AUDIT.py,PHASE_8_5_TEST_SUITE_AUDIT,OK,,
+quantum-edge-terminal/ai-engine/main.py,main,IMPORT_ERROR,Error,pip install python-multipart
+quantum-edge-terminal/ai-engine/src/__init__.py,src,OK,,
+quantum-edge-terminal/ai-engine/src/modules/__init__.py,src.modules,OK,,
+quantum-edge-terminal/ai-engine/src/modules/algo_detection.py,src.modules.algo_detection,OK,,
+quantum-edge-terminal/ai-engine/src/modules/enhanced_fib_validator.py,src.modules.enhanced_fib_validator,OK,,
+quantum-edge-terminal/ai-engine/src/modules/fib_manipulation_validator.py,src.modules.fib_manipulation_validator,OK,,
+quantum-edge-terminal/ai-engine/src/modules/fractal_validator.py,src.modules.fractal_validator,OK,,
+quantum-edge-terminal/ai-engine/src/modules/institutional_smart_blend_plus.py,src.modules.institutional_smart_blend_plus,OK,,
+quantum-edge-terminal/ai-engine/src/modules/market_structure_analyzer.py,src.modules.market_structure_analyzer,OK,,
+quantum-edge-terminal/ai-engine/src/modules/market_structure_detector.py,src.modules.market_structure_detector,OK,,
+quantum-edge-terminal/ai-engine/src/modules/master_multi_signal.py,src.modules.master_multi_signal,OK,,
+quantum-edge-terminal/ai-engine/src/utils.py,src.utils,OK,,
+quantum-edge-terminal/backtest_baseline_validated.py,backtest_baseline_validated,OK,,
+quantum-edge-terminal/backtest_enhanced_fib.py,backtest_enhanced_fib,OK,,
+quantum-edge-terminal/backtest_fast_enhanced_fib.py,backtest_fast_enhanced_fib,OK,,
+quantum-edge-terminal/backtest_fib_manipulation.py,backtest_fib_manipulation,OK,,
+quantum-edge-terminal/backtest_fib_optimization.py,backtest_fib_optimization,OK,,
+quantum-edge-terminal/backtest_fix_validation.py,backtest_fix_validation,OK,,
+quantum-edge-terminal/backtest_historical_rr.py,backtest_historical_rr,OK,,
+quantum-edge-terminal/backtest_historical_rr_synthetic.py,backtest_historical_rr_synthetic,OK,,
+quantum-edge-terminal/backtest_hybrid_strategy.py,backtest_hybrid_strategy,OK,,
+quantum-edge-terminal/backtest_integrated_system.py,backtest_integrated_system,OK,,
+quantum-edge-terminal/backtest_max_profit_final.py,backtest_max_profit_final,OK,,
+quantum-edge-terminal/backtest_optimized_profitability.py,backtest_optimized_profitability,OK,,
+quantum-edge-terminal/backtest_phase2_institutional.py,backtest_phase2_institutional,OK,,
+quantum-edge-terminal/backtest_phase2_optimized.py,backtest_phase2_optimized,OK,,
+quantum-edge-terminal/backtest_post_fix_validation.py,backtest_post_fix_validation,OK,,
+quantum-edge-terminal/backtest_practical_profits.py,backtest_practical_profits,OK,,
+quantum-edge-terminal/backtest_smart_profitability.py,backtest_smart_profitability,OK,,
+quantum-edge-terminal/backtest_timeframe_analysis.py,backtest_timeframe_analysis,SKIPPED_UNGUARDED_SCRIPT,,
+quantum-edge-terminal/comprehensive_verification.py,comprehensive_verification,SKIPPED_UNGUARDED_SCRIPT,,
+quantum-edge-terminal/execution/__init__.py,execution,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/broker_engine/__init__.py,execution.broker_engine,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/broker_engine/broker_connection.py,execution.broker_engine.broker_connection,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/execution_audit_log.py,execution.execution_audit_log,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/execution_engine/__init__.py,execution.execution_engine,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/execution_engine/execution_engine.py,execution.execution_engine.execution_engine,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/execution_engine/websocket_stream.py,execution.execution_engine.websocket_stream,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/execution_kill_switch.py,execution.execution_kill_switch,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/order_manager/__init__.py,execution.order_manager,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/order_manager/order_manager.py,execution.order_manager.order_manager,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/risk_engine/__init__.py,execution.risk_engine,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/risk_engine/risk_engine.py,execution.risk_engine.risk_engine,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/shadow_execution_comparator.py,execution.shadow_execution_comparator,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/execution/staged_capital_deployment.py,execution.staged_capital_deployment,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/interface/__init__.py,interface,IMPORT_ERROR,SyntaxError,SyntaxError: f-string: single '}' is not allowed
+quantum-edge-terminal/interface/alert_engine/__init__.py,interface.alert_engine,IMPORT_ERROR,SyntaxError,SyntaxError: f-string: single '}' is not allowed
+quantum-edge-terminal/interface/alert_engine/alert_engine.py,interface.alert_engine.alert_engine,SYNTAX_ERROR,SyntaxError,ast.parse failed
+quantum-edge-terminal/learning/__init__.py,learning,OK,,
+quantum-edge-terminal/monitoring/__init__.py,monitoring,OK,,
+quantum-edge-terminal/monitoring/execution_audit_report.py,monitoring.execution_audit_report,OK,,
+quantum-edge-terminal/observability/__init__.py,observability,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'opentelemetry.exporter.jaeger'
+quantum-edge-terminal/observability/execution_instrumenter.py,observability.execution_instrumenter,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'opentelemetry.exporter.jaeger'
+quantum-edge-terminal/observability/runtime_api.py,observability.runtime_api,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'opentelemetry.exporter.jaeger'
+quantum-edge-terminal/observability/telemetry_config.py,observability.telemetry_config,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'opentelemetry.exporter.jaeger'
+quantum-edge-terminal/production/PHASE8_PRODUCTION_EXAMPLE.py,production.PHASE8_PRODUCTION_EXAMPLE,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/production/__init__.py,production,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/production/deployment_gate_controller.py,production.deployment_gate_controller,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/production/live_broker_connector.py,production.live_broker_connector,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/production/market_data_streamer.py,production.market_data_streamer,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/production/performance_monitor.py,production.performance_monitor,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/production/production_runner.py,production.production_runner,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/services/PHASE4_DEMO.py,services.PHASE4_DEMO,OK,,
+quantum-edge-terminal/services/ai_engine/modules/options_flow.py,services.ai_engine.modules.options_flow,OK,,
+quantum-edge-terminal/services/order_manager/order_manager.py,services.order_manager.order_manager,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'broker_connection'
+quantum-edge-terminal/storage/__init__.py,storage,OK,,
+quantum-edge-terminal/storage/trade_journal/__init__.py,storage.trade_journal,OK,,
+quantum-edge-terminal/storage/trade_journal/trade_journal.py,storage.trade_journal.trade_journal,OK,,
+quantum-edge-terminal/tests/test_execution_instrumentation.py,tests.test_execution_instrumentation,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'opentelemetry.exporter.jaeger'
+quantum-edge-terminal/tests/test_execution_instrumentation_perfect.py,tests.test_execution_instrumentation_perfect,IMPORT_ERROR,ModuleNotFoundError,ModuleNotFoundError: No module named 'opentelemetry.exporter.jaeger'
+quantum-edge-terminal/tests/test_phase_8_5_integration.py,tests.test_phase_8_5_integration,IMPORT_ERROR,TypeError,TypeError: non-default argument 'position_size' follows default argument
+quantum-edge-terminal/tradingview_bridge_adapter.py,tradingview_bridge_adapter,OK,,
+quantum-edge-terminal/validation/PHASE7_INTEGRATION_EXAMPLE.py,validation.PHASE7_INTEGRATION_EXAMPLE,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/VALIDATION_EXAMPLE.py,validation.VALIDATION_EXAMPLE,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/__init__.py,validation,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/forward_test_engine/__init__.py,validation.forward_test_engine,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/forward_test_engine/forward_test_engine.py,validation.forward_test_engine.forward_test_engine,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/integration_bridge.py,validation.integration_bridge,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/live_validation_runner.py,validation.live_validation_runner,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/safety_controls/__init__.py,validation.safety_controls,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/safety_controls/safety_controls.py,validation.safety_controls.safety_controls,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/scoring_engine/__init__.py,validation.scoring_engine,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/scoring_engine/institutional_scorecard.py,validation.scoring_engine.institutional_scorecard,IMPORT_ERROR,SyntaxError,SyntaxError: invalid syntax
+quantum-edge-terminal/validation/validation_orchestrator.py,validation.validation_orchestrator,SYNTAX_ERROR,SyntaxError,ast.parse failed
+quantum-edge-terminal/verify_instrumentation.py,verify_instrumentation,SKIPPED_UNGUARDED_SCRIPT,,

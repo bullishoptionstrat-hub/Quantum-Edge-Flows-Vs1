@@ -1,0 +1,67 @@
+req_id,summary,golden_fixtures,implementation,status
+GP-REQ-001,Prices are integer ticks of the traded contract (qe/core/ticks.py). Floats are rejected.,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-002,"The strategy evaluates only BarClosed events of the setup timeframe P-TF-SETUP-S, plus ClockTick events for staleness. Nothing is decided in",GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-003,A fact derived from bar b may influence a decision only at a time ≥ b.available_at_ns. A liquidity object is eligible only for bars with bar,GF-001 GF-002 GF-036,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-004,All ratios are exact rationals (fractions.Fraction). No threshold comparison may be decided by floating-point rounding.,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-005,"Bearish rules are the exact mirror of bullish rules. The mirror transform maps a price p to M − p for a constant M, and a bar (o, h, l, c) t",GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-006,"Per-bar evaluation order for an active lineage: (1) data-quality and contract checks, (2) session-end and news-blackout checks, (3) invalida",GF-001 GF-002 GF-013,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-007,Control flow never branches on free text. Every terminal or blocking outcome carries exactly one reason code from REASON_CODES.yaml.,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-010,"Context is valid at bar b only if all the following hold. When a sweep (section 7) happens while context is invalid, no lineage opens. A rej",GF-021 GF-024 GF-025 GF-026 GF-028 GF-031,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-011,A liquidity object penetrated while context is invalid is consumed. It can never seed a lineage later in the session.,GF-024,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-012,Setup window P-SETUP-WINDOW and timezone P-SESSION-TZ come from the parameters. Session dates are evaluated in P-SESSION-TZ.,GF-024,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-013,"Roll blackout: blocked if session_date ≥ roll_date, or if roll_date falls within the next P-ROLL-BLACKOUT-SESSIONS weekday sessions after se",GF-027,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-014,"A missing news calendar blocks every setup. ""No events today"" must be expressed as an empty calendar, never as a missing one.",GF-026,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-015,An active lineage is BLOCKED with GP_BLOCK_NEWS_BLACKOUT at the first bar that intersects a blackout interval.,GF-038,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-016,An active lineage that has not reached STRATEGY_AUTHORIZED is EXPIRED with GP_EXPIRED_SESSION_END at the first bar whose bar_start is at or ,GF-035,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-020,"TR(x) = max(high − low, |high − prev_close|, |low − prev_close|), where prev_close is the close of the bar immediately before x in the same ",GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-021,ATR(b) = (1/N) · Σ TR(x) over the N = P-ATR-N closed bars immediately preceding b in the same contract (bar b itself is excluded). It is an ,GF-001 GF-002 GF-005 GF-031,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-030,"Bar i is a swing high with strength k = P-SWING-K iff high[i] > high[j] for every j in [i−k, i−1] and high[i] ≥ high[j] for every j in [i+1,",GF-L01 GF-L02,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-031,"A swing's formed_at is event_time(i). Its available_at is available_at(i+k), the close of the k-th confirming bar.",GF-L01,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-032,"No swing is formed if any bar in [i−k, i+k] is missing, or if the feed was not HEALTHY for any of them.",,NOT IMPLEMENTED (Phase 3),NO_FIXTURE_YET
+GP-REQ-040,"A liquidity object is a stateful record: liquidity_id, instrument_root, contract_id, type, side (BUY_SIDE | SELL_SIDE), level (ticks), sessi",,NOT IMPLEMENTED (Phase 3),NO_FIXTURE_YET
+GP-REQ-041,Eligible types in this draft (P-LIQ-TYPES):,GF-L01,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-042,A liquidity object stays ACTIVE until it is consumed (section 7) or the setup window of its session ends (EXPIRED).,,NOT IMPLEMENTED (Phase 3),NO_FIXTURE_YET
+GP-REQ-043,"Equal highs/lows, internal versus external liquidity, and ""engineered"" liquidity are not separate types in this draft (AMB-008).",,NOT IMPLEMENTED (Phase 3),NO_FIXTURE_YET
+GP-REQ-050,"pen(b) = L.level − low(b). If pen ≤ 0, nothing happens. A touch (pen = 0) is not a sweep.",GF-001 GF-002 GF-003,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-051,"If 0 < pen < P-SWEEP-MIN-PEN-TICKS, nothing happens and L stays ACTIVE (insufficient penetration).",GF-004,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-052,"If pen ≥ P-SWEEP-MIN-PEN-TICKS, L becomes CONSUMED whatever happens next. Then:",GF-001 GF-002 GF-005,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-053,"If one bar sweeps several sell-side objects, one lineage opens, keyed to the object with the highest type priority PRIOR_RTH > OVERNIGHT > S",GF-039,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-060,"sweep_extreme ← min(sweep_extreme, low(j)). If L.level − sweep_extreme > P-SWEEP-MAX-PEN-ATR · ATR_sweep, the lineage becomes INVALIDATED wi",GF-001 GF-002 GF-007,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-061,"If close(j) ≥ L.level + P-RECLAIM-MIN-TICKS, the lineage becomes RECLAIMED (classification CONFIRMED) at j. The sweep bar itself may reclaim",GF-001 GF-002 GF-008,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-062,"Otherwise, if close(j) < L.level, increment below_count; else reset it to 0. When below_count ≥ P-ACCEPT-CLOSES, the lineage becomes INVALID",GF-001 GF-002 GF-006 GF-007,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-063,"If j − s = P-RECLAIM-MAX-BARS − 1 and none of the above fired, the lineage becomes EXPIRED with GP_EXPIRED_RECLAIM_WINDOW (classification FA",GF-006,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-064,A failed or invalidated bullish reclaim never creates a bearish lineage. A bearish lineage can only come from its own buy-side sweep.,GF-006,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-065,"When the lineage reaches RECLAIMED, sweep_extreme is frozen.",GF-001 GF-002 GF-014,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-070,"range = high − low, body = close − open, ATR_d = ATR(d).",GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-071,d qualifies iff all four gates pass:,GF-001 GF-002 GF-010,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-072,The first qualifying bar makes the lineage DISPLACED at d. The reclaim bar may itself be the displacement bar.,GF-001 GF-002 GF-009,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-073,"If no bar qualifies by d = r + P-DISP-MAX-BARS, the lineage becomes EXPIRED with GP_EXPIRED_DISPLACEMENT_WINDOW. Each rejected candidate's f",GF-009 GF-010,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-080,"The only zone family in this draft is the fair-value gap created by the displacement bar (AMB-018). On bar d+1, a bullish FVG exists iff low",GF-001 GF-002 GF-011,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-081,"If there is no FVG on bar d+1, the lineage becomes EXPIRED with GP_EXPIRED_NO_ZONE at d+1. No later bar can create the zone.",GF-011,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-090,The retest happens strictly after the zone exists. Eligible bars are t with d+2 ≤ t ≤ d+1+P-RETEST-MAX-BARS. Bar t is a retest iff low(t) ≤ ,GF-001 GF-002 GF-012,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-091,"If no retest happens by t = d+1+P-RETEST-MAX-BARS, the lineage becomes EXPIRED with GP_EXPIRED_RETEST_WINDOW.",GF-012,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-100,Eligible bars are c with t ≤ c ≤ t + P-CONF-MAX-BARS − 1. Bar c confirms iff close(c) > zone.top and close(c) > open(c). The retest bar may ,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-101,"If nothing confirms by c = t + P-CONF-MAX-BARS − 1, the lineage becomes EXPIRED with GP_EXPIRED_CONFIRMATION_WINDOW.",GF-015,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-102,"Words such as ""strong"", ""clean"", or ""obvious"" have no meaning here. Confirmation is exactly GP-REQ-100.",GF-015,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-110,"If the primary bar's contract_id differs from the lineage's, the lineage becomes INVALIDATED with GP_INVALID_CONTRACT_CHANGED. This takes pr",GF-030,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-111,"If the primary feed health is not HEALTHY (gap, staleness at a ClockTick, or a conflicting duplicate), the lineage becomes BLOCKED with DQ_B",GF-029 GF-032 GF-033,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-112,"After RECLAIMED, any bar with low < sweep_extreme makes the lineage INVALIDATED with GP_INVALID_SWEEP_EXTREME_BREACHED.",GF-014,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-113,"From bar d+2 onward, any bar with close < zone.bottom makes the lineage INVALIDATED with GP_INVALID_ZONE_MITIGATED. This is checked before r",GF-013,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-120,"SMT is mandatory when P-SMT-REQUIRED is true. Pairs come from P-SMT-PAIRS (ES↔NQ, MES↔MNQ). The outcome is an enum. It is never a score.",GF-001 GF-002 GF-021,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-121,"SMT is evaluated on the confirmation bar c, with decision time τ = available_at(c) + P-SMT-MAX-WAIT-S. The SMT window is the primary bars fr",GF-001 GF-002 GF-019,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-122,"The paired reference is the pair instrument's liquidity object with the same type and session_date as L (for swing types, see AMB-024).",GF-001 GF-002 GF-020,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-123,The outcome is the first matching state in this order:,GF-001 GF-002 GF-016 GF-017 GF-018 GF-019 GF-020,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-124,CONFIRMED makes the lineage SMT_CONFIRMED. Any other outcome makes it BLOCKED with SMT_BLOCK_<state>.,GF-001 GF-002 GF-016 GF-017 GF-018 GF-019 GF-020,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-125,The traded instrument is the one that swept (the primary). Trading the instrument that held is out of scope for this draft (AMB-025).,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-140,entry_limit = close(c) + P-ENTRY-LIMIT-OFFSET-TICKS. The entry order is a limit order valid for the next bar only; that order lifecycle belo,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-141,stop = sweep_extreme − P-STOP-BUFFER-TICKS.,GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-142,"Target: among ACTIVE buy-side liquidity objects with available_at ≤ available_at(c) and level > entry_limit + P-TARGET-FRONTRUN-TICKS, take ",GF-001 GF-002 GF-022 GF-023,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-143,"net_R = qe.core.instruments.net_r(spec, LONG, entry_limit, stop, target, CostModel(P-COST-COMMISSION-RT-MINOR, entry_slippage_ticks=0, stop_",GF-001 GF-002 GF-022,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-144,"If net_R < P-MIN-NET-R, the lineage becomes BLOCKED with GP_BLOCK_R_BELOW_MIN. The ≥2R rule is evaluated after costs (AMB-028).",GF-022,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-145,"If every check passes, the lineage becomes STRATEGY_AUTHORIZED with reason GP_AUTHORIZED. It emits a decision record (directive D6) carrying",GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-130,"lineage_id = sha256_hex(canonical(...)) (qe/core/serialization.py) of {spec_version, instrument_root, contract_id, direction, setup_family: ",GF-001 GF-002 GF-034,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-131,"If the lineage store holds this lineage_id with attempt_count ≥ 1, the lineage becomes BLOCKED with GP_BLOCK_ONE_ATTEMPT_USED. Reaching STRA",GF-001 GF-002 GF-034,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-132,"If the lineage store is unavailable (missing, unreadable), authorization is BLOCKED with GP_BLOCK_LINEAGE_STORE_UNAVAILABLE.",GF-037,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-133,"A consumed liquidity object can never seed another lineage, so each liquidity object yields at most one attempt.",GF-006,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-150,"Every transition record contains the fields required by directive D4, including a transition hash chained to the previous record (qe/core/se",GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
+GP-REQ-151,"No state may be skipped. A score, confidence value, AI output, or alert cannot move a lineage.",GF-001 GF-002,NOT IMPLEMENTED (Phase 3),FIXTURE_WRITTEN
