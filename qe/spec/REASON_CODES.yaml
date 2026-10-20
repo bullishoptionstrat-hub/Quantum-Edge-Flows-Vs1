@@ -1,0 +1,45 @@
+# Closed reason-code enumeration for the God's Plan reducer (directive D5).
+# spec_version: gp-1.0.0-draft.1 (PROPOSED). Control flow branches on these codes, never on text.
+# Every code here must be produced by at least one golden fixture in qe/spec/fixtures/
+# (enforced by qe/tests/spec/test_gp_spec_artifacts.py).
+# RISK_BLOCK_*, EXEC_*, RECON_* and HALT_* belong to the risk and order authorities (Phases 7+)
+# and are added when those authorities are specified.
+spec_version: gp-1.0.0-draft.1
+codes:
+  GP_AUTHORIZED: {outcome: STRATEGY_AUTHORIZED, spec: GP-REQ-145}
+
+  GP_WAIT_OUTSIDE_SETUP_WINDOW: {outcome: REJECTED, spec: GP-REQ-010}
+  GP_WAIT_INSUFFICIENT_HISTORY: {outcome: REJECTED, spec: GP-REQ-010}
+
+  GP_BLOCK_INSTRUMENT_NOT_AUTHORIZED: {outcome: REJECTED, spec: GP-REQ-010}
+  GP_BLOCK_ROLL_METADATA_MISSING: {outcome: REJECTED, spec: GP-REQ-010}
+  GP_BLOCK_ROLL_WINDOW: {outcome: REJECTED, spec: GP-REQ-013}
+  GP_BLOCK_NEWS_CALENDAR_MISSING: {outcome: REJECTED, spec: GP-REQ-014}
+  GP_BLOCK_NEWS_BLACKOUT: {outcome: REJECTED_OR_BLOCKED, spec: GP-REQ-010 GP-REQ-015}
+  GP_BLOCK_NO_TARGET: {outcome: BLOCKED, spec: GP-REQ-142}
+  GP_BLOCK_R_BELOW_MIN: {outcome: BLOCKED, spec: GP-REQ-144}
+  GP_BLOCK_ONE_ATTEMPT_USED: {outcome: BLOCKED, spec: GP-REQ-131}
+  GP_BLOCK_LINEAGE_STORE_UNAVAILABLE: {outcome: BLOCKED, spec: GP-REQ-132}
+
+  GP_INVALID_SWEEP_TOO_DEEP: {outcome: REJECTED_OR_INVALIDATED, spec: GP-REQ-052 GP-REQ-060}
+  GP_INVALID_ACCEPTED_BEYOND: {outcome: INVALIDATED, spec: GP-REQ-062}
+  GP_INVALID_SWEEP_EXTREME_BREACHED: {outcome: INVALIDATED, spec: GP-REQ-112}
+  GP_INVALID_ZONE_MITIGATED: {outcome: INVALIDATED, spec: GP-REQ-113}
+  GP_INVALID_CONTRACT_CHANGED: {outcome: INVALIDATED, spec: GP-REQ-110}
+
+  GP_EXPIRED_RECLAIM_WINDOW: {outcome: EXPIRED, spec: GP-REQ-063}
+  GP_EXPIRED_DISPLACEMENT_WINDOW: {outcome: EXPIRED, spec: GP-REQ-073}
+  GP_EXPIRED_NO_ZONE: {outcome: EXPIRED, spec: GP-REQ-081}
+  GP_EXPIRED_RETEST_WINDOW: {outcome: EXPIRED, spec: GP-REQ-091}
+  GP_EXPIRED_CONFIRMATION_WINDOW: {outcome: EXPIRED, spec: GP-REQ-101}
+  GP_EXPIRED_SESSION_END: {outcome: EXPIRED, spec: GP-REQ-016}
+
+  SMT_BLOCK_UNAVAILABLE: {outcome: BLOCKED, spec: GP-REQ-123}
+  SMT_BLOCK_MISALIGNED: {outcome: BLOCKED, spec: GP-REQ-123}
+  SMT_BLOCK_STALE: {outcome: BLOCKED, spec: GP-REQ-123}
+  SMT_BLOCK_DENIED: {outcome: BLOCKED, spec: GP-REQ-123}
+  SMT_BLOCK_UNCLEAR: {outcome: BLOCKED, spec: GP-REQ-123}
+
+  DQ_BLOCK_PRIMARY_GAPPED: {outcome: REJECTED_OR_BLOCKED, spec: GP-REQ-010 GP-REQ-111}
+  DQ_BLOCK_PRIMARY_STALE: {outcome: REJECTED_OR_BLOCKED, spec: GP-REQ-010 GP-REQ-111}
+  DQ_BLOCK_PRIMARY_UNKNOWN: {outcome: REJECTED_OR_BLOCKED, spec: GP-REQ-010 GP-REQ-111}

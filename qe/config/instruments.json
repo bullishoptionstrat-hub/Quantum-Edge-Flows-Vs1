@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "note": "Values are the commonly published CME contract specs, entered from memory during Phase 1. verified=false until each row is checked against the current CME contract specification page and the check is recorded in qe/DECISIONS.md (directive D9). Unverified specs must not drive real risk.",
+  "instruments": [
+    {"root": "ES",  "exchange": "CME",   "currency": "USD", "tick_size": "0.25", "tick_value_minor": 1250, "exchange_timezone": "America/Chicago", "verified": false, "source": "unverified: CME E-mini S&P 500, $50/point"},
+    {"root": "MES", "exchange": "CME",   "currency": "USD", "tick_size": "0.25", "tick_value_minor": 125,  "exchange_timezone": "America/Chicago", "verified": false, "source": "unverified: CME Micro E-mini S&P 500, $5/point"},
+    {"root": "NQ",  "exchange": "CME",   "currency": "USD", "tick_size": "0.25", "tick_value_minor": 500,  "exchange_timezone": "America/Chicago", "verified": false, "source": "unverified: CME E-mini Nasdaq-100, $20/point"},
+    {"root": "MNQ", "exchange": "CME",   "currency": "USD", "tick_size": "0.25", "tick_value_minor": 50,   "exchange_timezone": "America/Chicago", "verified": false, "source": "unverified: CME Micro E-mini Nasdaq-100, $2/point"},
+    {"root": "GC",  "exchange": "COMEX", "currency": "USD", "tick_size": "0.10", "tick_value_minor": 1000, "exchange_timezone": "America/Chicago", "verified": false, "source": "unverified: COMEX Gold, $100/troy-ounce point"}
+  ]
+}

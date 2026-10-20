@@ -1,0 +1,3501 @@
+{
+ "internal_edges": {
+  "QuantumEdge/algorithm/__init__.py": [],
+  "QuantumEdge/algorithm/config.py": [],
+  "QuantumEdge/backtest_standalone.py": [],
+  "QuantumEdge/data/__init__.py": [],
+  "QuantumEdge/data/universe.py": [
+   "algorithm.config"
+  ],
+  "QuantumEdge/data/validator.py": [
+   "algorithm.config"
+  ],
+  "QuantumEdge/generate_lean_data.py": [],
+  "QuantumEdge/main.py": [
+   "algorithm.config",
+   "data.universe",
+   "data.validator",
+   "strategy.allocator",
+   "strategy.regime",
+   "strategy.sleeve_a",
+   "strategy.sleeve_b",
+   "strategy.sleeve_c"
+  ],
+  "QuantumEdge/research/__init__.py": [],
+  "QuantumEdge/research/analytics.py": [
+   "research.results",
+   "research.validity"
+  ],
+  "QuantumEdge/research/experiments.py": [],
+  "QuantumEdge/research/fib/__init__.py": [],
+  "QuantumEdge/research/fib/backtester.py": [
+   "research.fib.model"
+  ],
+  "QuantumEdge/research/fib/data.py": [],
+  "QuantumEdge/research/fib/detector.py": [
+   "research.fib.data",
+   "research.fib.model"
+  ],
+  "QuantumEdge/research/fib/experiments.py": [
+   "research.fib.model"
+  ],
+  "QuantumEdge/research/fib/model.py": [],
+  "QuantumEdge/research/fib/run.py": [
+   "research.fib.backtester",
+   "research.fib.data",
+   "research.fib.detector",
+   "research.fib.experiments",
+   "research.fib.model"
+  ],
+  "QuantumEdge/research/fib2/__init__.py": [],
+  "QuantumEdge/research/fib2/backtester.py": [
+   "research.fib2",
+   "research.fib2.data",
+   "research.fib2.model"
+  ],
+  "QuantumEdge/research/fib2/data.py": [],
+  "QuantumEdge/research/fib2/detector.py": [
+   "research.fib2.data",
+   "research.fib2.model"
+  ],
+  "QuantumEdge/research/fib2/experiments.py": [
+   "research.fib2.model"
+  ],
+  "QuantumEdge/research/fib2/filters.py": [],
+  "QuantumEdge/research/fib2/model.py": [],
+  "QuantumEdge/research/fib2/run.py": [
+   "research.fib2.backtester",
+   "research.fib2.data",
+   "research.fib2.detector",
+   "research.fib2.experiments",
+   "research.fib2.model"
+  ],
+  "QuantumEdge/research/fib3/__init__.py": [],
+  "QuantumEdge/research/fib3/analysis.py": [
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib3/backtester.py": [
+   "research.fib2.backtester",
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib3/detector.py": [
+   "research.fib2.data",
+   "research.fib2.detector",
+   "research.fib3",
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib3/experiments.py": [
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib3/fib_respect.py": [
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib3/model.py": [
+   "research.fib2.model"
+  ],
+  "QuantumEdge/research/fib3/quality_scorer.py": [
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib3/run.py": [
+   "research.fib2.data",
+   "research.fib3.analysis",
+   "research.fib3.backtester",
+   "research.fib3.detector",
+   "research.fib3.experiments",
+   "research.fib3.fib_respect",
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib4/__init__.py": [],
+  "QuantumEdge/research/fib4/analysis.py": [],
+  "QuantumEdge/research/fib4/backtester.py": [
+   "research.fib2",
+   "research.fib2.data",
+   "research.fib4.execution",
+   "research.fib4.model"
+  ],
+  "QuantumEdge/research/fib4/execution.py": [
+   "research.fib4.model"
+  ],
+  "QuantumEdge/research/fib4/experiments.py": [
+   "research.fib4.model"
+  ],
+  "QuantumEdge/research/fib4/model.py": [
+   "research.fib3.model"
+  ],
+  "QuantumEdge/research/fib4/run.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib4.analysis",
+   "research.fib4.backtester",
+   "research.fib4.experiments"
+  ],
+  "QuantumEdge/research/fib5/__init__.py": [],
+  "QuantumEdge/research/fib5/analysis.py": [],
+  "QuantumEdge/research/fib5/backtester.py": [
+   "research.fib4",
+   "research.fib5.model"
+  ],
+  "QuantumEdge/research/fib5/experiments.py": [
+   "research.fib5.model"
+  ],
+  "QuantumEdge/research/fib5/model.py": [
+   "research.fib4.model"
+  ],
+  "QuantumEdge/research/fib5/regime.py": [],
+  "QuantumEdge/research/fib5/robustness.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib5.backtester",
+   "research.fib5.model"
+  ],
+  "QuantumEdge/research/fib5/run.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib5.analysis",
+   "research.fib5.backtester",
+   "research.fib5.experiments",
+   "research.fib5.regime",
+   "research.fib5.robustness",
+   "research.fib5.walkforward"
+  ],
+  "QuantumEdge/research/fib5/walkforward.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib5.analysis",
+   "research.fib5.backtester"
+  ],
+  "QuantumEdge/research/fib6/__init__.py": [],
+  "QuantumEdge/research/fib6/analysis.py": [],
+  "QuantumEdge/research/fib6/backtester.py": [
+   "research.fib2",
+   "research.fib2.data",
+   "research.fib6.execution",
+   "research.fib6.model",
+   "research.fib6.regime"
+  ],
+  "QuantumEdge/research/fib6/execution.py": [
+   "research.fib4",
+   "research.fib4.model"
+  ],
+  "QuantumEdge/research/fib6/experiments.py": [
+   "research.fib6.model"
+  ],
+  "QuantumEdge/research/fib6/model.py": [
+   "research.fib5.model"
+  ],
+  "QuantumEdge/research/fib6/portfolio.py": [],
+  "QuantumEdge/research/fib6/regime.py": [],
+  "QuantumEdge/research/fib6/robustness.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib6.analysis",
+   "research.fib6.backtester",
+   "research.fib6.experiments",
+   "research.fib6.model"
+  ],
+  "QuantumEdge/research/fib6/run.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib6.analysis",
+   "research.fib6.backtester",
+   "research.fib6.experiments",
+   "research.fib6.portfolio",
+   "research.fib6.robustness"
+  ],
+  "QuantumEdge/research/fib7/__init__.py": [],
+  "QuantumEdge/research/fib7/analysis.py": [],
+  "QuantumEdge/research/fib7/backtester.py": [
+   "research.fib2",
+   "research.fib2.data",
+   "research.fib6.execution",
+   "research.fib7.regime"
+  ],
+  "QuantumEdge/research/fib7/experiments.py": [
+   "research.fib7.model"
+  ],
+  "QuantumEdge/research/fib7/live_spec.py": [],
+  "QuantumEdge/research/fib7/model.py": [
+   "research.fib6.model"
+  ],
+  "QuantumEdge/research/fib7/regime.py": [
+   "research.fib6.regime"
+  ],
+  "QuantumEdge/research/fib7/robustness.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib7.analysis",
+   "research.fib7.backtester",
+   "research.fib7.model"
+  ],
+  "QuantumEdge/research/fib7/rotation.py": [],
+  "QuantumEdge/research/fib7/run.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib7.analysis",
+   "research.fib7.backtester",
+   "research.fib7.experiments",
+   "research.fib7.live_spec",
+   "research.fib7.robustness",
+   "research.fib7.rotation"
+  ],
+  "QuantumEdge/research/fib8/__init__.py": [],
+  "QuantumEdge/research/fib8/analysis.py": [
+   "research.fib8.model"
+  ],
+  "QuantumEdge/research/fib8/experiments.py": [
+   "research.fib7.experiments",
+   "research.fib7.model"
+  ],
+  "QuantumEdge/research/fib8/forward_monitor.py": [
+   "research.fib6.backtester",
+   "research.fib7.backtester",
+   "research.fib7.regime"
+  ],
+  "QuantumEdge/research/fib8/model.py": [
+   "research.fib7.model"
+  ],
+  "QuantumEdge/research/fib8/promotion.py": [
+   "research.fib8.model"
+  ],
+  "QuantumEdge/research/fib8/rotation.py": [
+   "research.fib7.rotation"
+  ],
+  "QuantumEdge/research/fib8/run.py": [
+   "research.fib2.data",
+   "research.fib3.detector",
+   "research.fib7.analysis",
+   "research.fib7.backtester",
+   "research.fib8.analysis",
+   "research.fib8.experiments",
+   "research.fib8.forward_monitor",
+   "research.fib8.model",
+   "research.fib8.promotion",
+   "research.fib8.rotation",
+   "research.fib8.signal_cards"
+  ],
+  "QuantumEdge/research/fib8/signal_cards.py": [
+   "research.fib8.model"
+  ],
+  "QuantumEdge/research/fib9/__init__.py": [],
+  "QuantumEdge/research/fib9/canonical.py": [
+   "research.fib7.analysis",
+   "research.fib7.robustness",
+   "research.fib9.experiments",
+   "research.fib9.model"
+  ],
+  "QuantumEdge/research/fib9/experiments.py": [
+   "research.fib7.experiments",
+   "research.fib7.model"
+  ],
+  "QuantumEdge/research/fib9/model.py": [
+   "research.fib7.model",
+   "research.fib9"
+  ],
+  "QuantumEdge/research/manifest.py": [],
+  "QuantumEdge/research/results.py": [],
+  "QuantumEdge/research/runner.py": [
+   "research.experiments",
+   "research.manifest",
+   "research.results",
+   "research.validity"
+  ],
+  "QuantumEdge/research/validity.py": [
+   "research.results"
+  ],
+  "QuantumEdge/strategy/__init__.py": [],
+  "QuantumEdge/strategy/allocator.py": [
+   "algorithm.config"
+  ],
+  "QuantumEdge/strategy/regime.py": [
+   "algorithm.config"
+  ],
+  "QuantumEdge/strategy/signals.py": [],
+  "QuantumEdge/strategy/sleeve_a.py": [
+   "algorithm.config",
+   "strategy.signals"
+  ],
+  "QuantumEdge/strategy/sleeve_b.py": [
+   "algorithm.config",
+   "strategy.signals"
+  ],
+  "QuantumEdge/strategy/sleeve_c.py": [
+   "algorithm.config",
+   "strategy.signals"
+  ],
+  "QuantumEdge/tests/__init__.py": [],
+  "QuantumEdge/tests/test_data_presence.py": [
+   "algorithm.config",
+   "strategy.allocator"
+  ],
+  "quantum-edge-terminal/FINAL_COMPLETION_SUMMARY.py": [],
+  "quantum-edge-terminal/PHASE_8_5_DEPLOYMENT_GUIDE.py": [],
+  "quantum-edge-terminal/PHASE_8_5_INSTRUMENTATION_COMPLETE.py": [],
+  "quantum-edge-terminal/PHASE_8_5_TEST_SUITE_AUDIT.py": [],
+  "quantum-edge-terminal/ai-engine/main.py": [
+   "src.modules.algo_detection",
+   "src.modules.fractal_validator",
+   "src.modules.market_structure_detector"
+  ],
+  "quantum-edge-terminal/ai-engine/src/__init__.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/__init__.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/algo_detection.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/enhanced_fib_validator.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/fib_manipulation_validator.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/fractal_validator.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/institutional_smart_blend_plus.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/market_structure_analyzer.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/market_structure_detector.py": [],
+  "quantum-edge-terminal/ai-engine/src/modules/master_multi_signal.py": [],
+  "quantum-edge-terminal/ai-engine/src/utils.py": [],
+  "quantum-edge-terminal/backtest_baseline_validated.py": [],
+  "quantum-edge-terminal/backtest_enhanced_fib.py": [],
+  "quantum-edge-terminal/backtest_fast_enhanced_fib.py": [],
+  "quantum-edge-terminal/backtest_fib_manipulation.py": [],
+  "quantum-edge-terminal/backtest_fib_optimization.py": [],
+  "quantum-edge-terminal/backtest_fix_validation.py": [],
+  "quantum-edge-terminal/backtest_historical_rr.py": [],
+  "quantum-edge-terminal/backtest_historical_rr_synthetic.py": [],
+  "quantum-edge-terminal/backtest_hybrid_strategy.py": [],
+  "quantum-edge-terminal/backtest_integrated_system.py": [],
+  "quantum-edge-terminal/backtest_max_profit_final.py": [],
+  "quantum-edge-terminal/backtest_optimized_profitability.py": [],
+  "quantum-edge-terminal/backtest_phase2_institutional.py": [],
+  "quantum-edge-terminal/backtest_phase2_optimized.py": [],
+  "quantum-edge-terminal/backtest_post_fix_validation.py": [],
+  "quantum-edge-terminal/backtest_practical_profits.py": [],
+  "quantum-edge-terminal/backtest_smart_profitability.py": [],
+  "quantum-edge-terminal/backtest_timeframe_analysis.py": [],
+  "quantum-edge-terminal/comprehensive_verification.py": [
+   "execution",
+   "observability",
+   "validation.integration_bridge",
+   "validation.validation_orchestrator"
+  ],
+  "quantum-edge-terminal/execution/__init__.py": [
+   "execution.broker_engine",
+   "execution.execution_audit_log",
+   "execution.execution_engine",
+   "execution.execution_kill_switch",
+   "execution.order_manager",
+   "execution.risk_engine",
+   "execution.shadow_execution_comparator",
+   "execution.staged_capital_deployment"
+  ],
+  "quantum-edge-terminal/execution/broker_engine/__init__.py": [
+   "execution.broker_engine.broker_connection"
+  ],
+  "quantum-edge-terminal/execution/broker_engine/broker_connection.py": [],
+  "quantum-edge-terminal/execution/execution_audit_log.py": [],
+  "quantum-edge-terminal/execution/execution_engine/__init__.py": [
+   "execution.execution_engine.execution_engine"
+  ],
+  "quantum-edge-terminal/execution/execution_engine/execution_engine.py": [],
+  "quantum-edge-terminal/execution/execution_engine/websocket_stream.py": [],
+  "quantum-edge-terminal/execution/execution_kill_switch.py": [],
+  "quantum-edge-terminal/execution/order_manager/__init__.py": [
+   "execution.order_manager.order_manager"
+  ],
+  "quantum-edge-terminal/execution/order_manager/order_manager.py": [
+   "execution.broker_engine.broker_connection"
+  ],
+  "quantum-edge-terminal/execution/risk_engine/__init__.py": [
+   "execution.risk_engine.risk_engine"
+  ],
+  "quantum-edge-terminal/execution/risk_engine/risk_engine.py": [],
+  "quantum-edge-terminal/execution/shadow_execution_comparator.py": [],
+  "quantum-edge-terminal/execution/staged_capital_deployment.py": [],
+  "quantum-edge-terminal/interface/__init__.py": [
+   "interface.alert_engine"
+  ],
+  "quantum-edge-terminal/interface/alert_engine/__init__.py": [
+   "interface.alert_engine.alert_engine"
+  ],
+  "quantum-edge-terminal/interface/alert_engine/alert_engine.py": [],
+  "quantum-edge-terminal/learning/__init__.py": [],
+  "quantum-edge-terminal/monitoring/__init__.py": [
+   "monitoring.execution_audit_report"
+  ],
+  "quantum-edge-terminal/monitoring/execution_audit_report.py": [],
+  "quantum-edge-terminal/observability/__init__.py": [
+   "observability.execution_instrumenter",
+   "observability.telemetry_config"
+  ],
+  "quantum-edge-terminal/observability/execution_instrumenter.py": [],
+  "quantum-edge-terminal/observability/runtime_api.py": [
+   "observability.execution_instrumenter",
+   "observability.telemetry_config"
+  ],
+  "quantum-edge-terminal/observability/telemetry_config.py": [],
+  "quantum-edge-terminal/production/PHASE8_PRODUCTION_EXAMPLE.py": [
+   "production"
+  ],
+  "quantum-edge-terminal/production/__init__.py": [
+   "production.deployment_gate_controller",
+   "production.live_broker_connector",
+   "production.market_data_streamer",
+   "production.performance_monitor",
+   "production.production_runner"
+  ],
+  "quantum-edge-terminal/production/deployment_gate_controller.py": [],
+  "quantum-edge-terminal/production/live_broker_connector.py": [],
+  "quantum-edge-terminal/production/market_data_streamer.py": [],
+  "quantum-edge-terminal/production/performance_monitor.py": [],
+  "quantum-edge-terminal/production/production_runner.py": [
+   "execution"
+  ],
+  "quantum-edge-terminal/services/PHASE4_DEMO.py": [],
+  "quantum-edge-terminal/services/ai_engine/modules/options_flow.py": [],
+  "quantum-edge-terminal/services/order_manager/order_manager.py": [
+   "execution.execution_audit_log",
+   "observability"
+  ],
+  "quantum-edge-terminal/storage/__init__.py": [
+   "storage.trade_journal"
+  ],
+  "quantum-edge-terminal/storage/trade_journal/__init__.py": [
+   "storage.trade_journal.trade_journal"
+  ],
+  "quantum-edge-terminal/storage/trade_journal/trade_journal.py": [],
+  "quantum-edge-terminal/tests/test_execution_instrumentation.py": [
+   "execution",
+   "observability",
+   "validation.integration_bridge",
+   "validation.validation_orchestrator"
+  ],
+  "quantum-edge-terminal/tests/test_execution_instrumentation_perfect.py": [
+   "execution",
+   "observability",
+   "validation.integration_bridge",
+   "validation.validation_orchestrator"
+  ],
+  "quantum-edge-terminal/tests/test_phase_8_5_integration.py": [
+   "execution",
+   "monitoring"
+  ],
+  "quantum-edge-terminal/tradingview_bridge_adapter.py": [],
+  "quantum-edge-terminal/validation/PHASE7_INTEGRATION_EXAMPLE.py": [
+   "validation"
+  ],
+  "quantum-edge-terminal/validation/VALIDATION_EXAMPLE.py": [
+   "validation.forward_test_engine",
+   "validation.safety_controls",
+   "validation.scoring_engine"
+  ],
+  "quantum-edge-terminal/validation/__init__.py": [
+   "validation.forward_test_engine",
+   "validation.integration_bridge",
+   "validation.live_validation_runner",
+   "validation.safety_controls",
+   "validation.scoring_engine",
+   "validation.validation_orchestrator"
+  ],
+  "quantum-edge-terminal/validation/forward_test_engine/__init__.py": [
+   "validation.forward_test_engine.forward_test_engine"
+  ],
+  "quantum-edge-terminal/validation/forward_test_engine/forward_test_engine.py": [],
+  "quantum-edge-terminal/validation/integration_bridge.py": [
+   "execution",
+   "observability"
+  ],
+  "quantum-edge-terminal/validation/live_validation_runner.py": [],
+  "quantum-edge-terminal/validation/safety_controls/__init__.py": [
+   "validation.safety_controls.safety_controls"
+  ],
+  "quantum-edge-terminal/validation/safety_controls/safety_controls.py": [],
+  "quantum-edge-terminal/validation/scoring_engine/__init__.py": [
+   "validation.scoring_engine.institutional_scorecard"
+  ],
+  "quantum-edge-terminal/validation/scoring_engine/institutional_scorecard.py": [],
+  "quantum-edge-terminal/validation/validation_orchestrator.py": [],
+  "quantum-edge-terminal/verify_instrumentation.py": [
+   "observability",
+   "validation.integration_bridge",
+   "validation.validation_orchestrator"
+  ]
+ },
+ "modules": {
+  "QuantumEdge/algorithm/__init__.py": {
+   "imports": [],
+   "module": "algorithm",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/algorithm/config.py": {
+   "imports": [
+    "json",
+    "os"
+   ],
+   "module": "algorithm.config",
+   "parse_ok": true,
+   "symbols": [
+    "_load_overrides",
+    "apply_overrides"
+   ]
+  },
+  "QuantumEdge/backtest_standalone.py": {
+   "imports": [
+    "matplotlib",
+    "matplotlib.pyplot",
+    "numpy",
+    "os",
+    "pandas",
+    "warnings",
+    "yfinance"
+   ],
+   "module": "backtest_standalone",
+   "parse_ok": true,
+   "symbols": [
+    "value_tilt",
+    "stats"
+   ]
+  },
+  "QuantumEdge/data/__init__.py": {
+   "imports": [],
+   "module": "data",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/data/universe.py": {
+   "imports": [
+    "AlgorithmImports",
+    "Selection.FundamentalUniverseSelectionModel",
+    "__future__",
+    "algorithm.config",
+    "itertools",
+    "math"
+   ],
+   "module": "data.universe",
+   "parse_ok": true,
+   "symbols": [
+    "GreenblattUniverseModel"
+   ]
+  },
+  "QuantumEdge/data/validator.py": {
+   "imports": [
+    "AlgorithmImports",
+    "__future__",
+    "algorithm.config",
+    "dataclasses",
+    "os",
+    "zipfile"
+   ],
+   "module": "data.validator",
+   "parse_ok": true,
+   "symbols": [
+    "SymbolStatus",
+    "ValidationReport",
+    "DataValidator"
+   ]
+  },
+  "QuantumEdge/generate_lean_data.py": {
+   "imports": [
+    "io",
+    "os",
+    "pandas",
+    "warnings",
+    "yfinance",
+    "zipfile"
+   ],
+   "module": "generate_lean_data",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/main.py": {
+   "imports": [
+    "AlgorithmImports",
+    "algorithm.config",
+    "data.universe",
+    "data.validator",
+    "os",
+    "strategy.allocator",
+    "strategy.regime",
+    "strategy.sleeve_a",
+    "strategy.sleeve_b",
+    "strategy.sleeve_c",
+    "sys"
+   ],
+   "module": "main",
+   "parse_ok": true,
+   "symbols": [
+    "QuantumEdge"
+   ]
+  },
+  "QuantumEdge/research/__init__.py": {
+   "imports": [],
+   "module": "research",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/analytics.py": {
+   "imports": [
+    "__future__",
+    "fnmatch",
+    "json",
+    "os",
+    "research.results",
+    "research.validity",
+    "sys",
+    "typing"
+   ],
+   "module": "research.analytics",
+   "parse_ok": true,
+   "symbols": [
+    "load_from_runs_tree",
+    "deduplicate_latest",
+    "_fmt",
+    "compare",
+    "_print_regime_summary",
+    "_print_sleeve_summary"
+   ]
+  },
+  "QuantumEdge/research/experiments.py": {
+   "imports": [
+    "__future__"
+   ],
+   "module": "research.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "list_experiments",
+    "get_experiment"
+   ]
+  },
+  "QuantumEdge/research/fib/__init__.py": {
+   "imports": [],
+   "module": "research.fib",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib/backtester.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "numpy",
+    "research.fib.model",
+    "typing"
+   ],
+   "module": "research.fib.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate"
+   ]
+  },
+  "QuantumEdge/research/fib/data.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "os",
+    "typing",
+    "zipfile"
+   ],
+   "module": "research.fib.data",
+   "parse_ok": true,
+   "symbols": [
+    "_lean_data_dir",
+    "load_ticker",
+    "compute_atr",
+    "available_tickers"
+   ]
+  },
+  "QuantumEdge/research/fib/detector.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib.data",
+    "research.fib.model",
+    "typing"
+   ],
+   "module": "research.fib.detector",
+   "parse_ok": true,
+   "symbols": [
+    "find_pivots",
+    "_fib_levels_bullish",
+    "_fib_levels_bearish",
+    "find_manipulation_setups",
+    "_find_bullish",
+    "_find_bearish"
+   ]
+  },
+  "QuantumEdge/research/fib/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib.model"
+   ],
+   "module": "research.fib.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "get_fib_config",
+    "list_fib_experiments"
+   ]
+  },
+  "QuantumEdge/research/fib/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+   ],
+   "module": "research.fib.model",
+   "parse_ok": true,
+   "symbols": [
+    "FibModelConfig",
+    "ManipulationSetup",
+    "TradeResult"
+   ]
+  },
+  "QuantumEdge/research/fib/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "datetime",
+    "json",
+    "math",
+    "os",
+    "research.fib.backtester",
+    "research.fib.data",
+    "research.fib.detector",
+    "research.fib.experiments",
+    "research.fib.model",
+    "sys",
+    "traceback"
+   ],
+   "module": "research.fib.run",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "_std",
+    "_equity_stats",
+    "print_report",
+    "print_comparison_table",
+    "save_results",
+    "run_one",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib2/__init__.py": {
+   "imports": [],
+   "module": "research.fib2",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib2/backtester.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib2",
+    "research.fib2.data",
+    "research.fib2.model",
+    "typing"
+   ],
+   "module": "research.fib2.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate",
+    "_simulate_leg_daily",
+    "_check_entry_daily",
+    "_simulate_leg_hourly",
+    "_find_date_for_hbar",
+    "_run_trade",
+    "_rolling_vol_avg"
+   ]
+  },
+  "QuantumEdge/research/fib2/data.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "os",
+    "typing",
+    "zipfile"
+   ],
+   "module": "research.fib2.data",
+   "parse_ok": true,
+   "symbols": [
+    "_data_dir",
+    "_load_zip",
+    "load_daily",
+    "load_hourly",
+    "build_date_to_1h_range",
+    "compute_atr",
+    "compute_sma",
+    "available_tickers"
+   ]
+  },
+  "QuantumEdge/research/fib2/detector.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib2.data",
+    "research.fib2.model"
+   ],
+   "module": "research.fib2.detector",
+   "parse_ok": true,
+   "symbols": [
+    "find_pivots",
+    "_fib_levels_bullish",
+    "_fib_levels_bearish",
+    "_sweep_confirmed_bullish",
+    "_sweep_confirmed_bearish",
+    "find_strict_legs",
+    "_find_bullish_legs",
+    "_find_bearish_legs"
+   ]
+  },
+  "QuantumEdge/research/fib2/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib2.model"
+   ],
+   "module": "research.fib2.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "get_config",
+    "list_experiments"
+   ]
+  },
+  "QuantumEdge/research/fib2/filters.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "typing"
+   ],
+   "module": "research.fib2.filters",
+   "parse_ok": true,
+   "symbols": [
+    "spy_bull_regime",
+    "is_trending",
+    "volume_expansion_on_leg",
+    "in_discount",
+    "not_compressed",
+    "_rolling_mean"
+   ]
+  },
+  "QuantumEdge/research/fib2/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses"
+   ],
+   "module": "research.fib2.model",
+   "parse_ok": true,
+   "symbols": [
+    "StrictFibConfig",
+    "ManipulationLeg",
+    "StrictTradeResult"
+   ]
+  },
+  "QuantumEdge/research/fib2/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "datetime",
+    "json",
+    "math",
+    "os",
+    "research.fib2.backtester",
+    "research.fib2.data",
+    "research.fib2.detector",
+    "research.fib2.experiments",
+    "research.fib2.model",
+    "sys",
+    "traceback"
+   ],
+   "module": "research.fib2.run",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "_std",
+    "_equity_stats",
+    "print_report",
+    "print_comparison_table",
+    "run_one",
+    "save_results",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib3/__init__.py": {
+   "imports": [],
+   "module": "research.fib3",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib3/analysis.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "research.fib3.model"
+   ],
+   "module": "research.fib3.analysis",
+   "parse_ok": true,
+   "symbols": [
+    "pearson",
+    "attribution_table",
+    "print_respect_table",
+    "print_attribution",
+    "print_tier_comparison"
+   ]
+  },
+  "QuantumEdge/research/fib3/backtester.py": {
+   "imports": [
+    "__future__",
+    "research.fib2.backtester",
+    "research.fib3.model",
+    "typing"
+   ],
+   "module": "research.fib3.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate"
+   ]
+  },
+  "QuantumEdge/research/fib3/detector.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib2.data",
+    "research.fib2.detector",
+    "research.fib3",
+    "research.fib3.model",
+    "typing"
+   ],
+   "module": "research.fib3.detector",
+   "parse_ok": true,
+   "symbols": [
+    "_fib_levels_bullish",
+    "_fib_levels_bearish",
+    "_spy_bull_at_date",
+    "find_qualified_legs",
+    "_find_bullish",
+    "_find_bearish",
+    "_make_score"
+   ]
+  },
+  "QuantumEdge/research/fib3/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib3.model"
+   ],
+   "module": "research.fib3.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "get_config",
+    "list_experiments"
+   ]
+  },
+  "QuantumEdge/research/fib3/fib_respect.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib3.model"
+   ],
+   "module": "research.fib3.fib_respect",
+   "parse_ok": true,
+   "symbols": [
+    "compute_standard_levels",
+    "measure_leg_respect",
+    "aggregate_by_tier"
+   ]
+  },
+  "QuantumEdge/research/fib3/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib2.model"
+   ],
+   "module": "research.fib3.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib3Config",
+    "LegQualityScore",
+    "QualifiedLeg",
+    "FibLevelProfile",
+    "FibRespectProfile"
+   ]
+  },
+  "QuantumEdge/research/fib3/quality_scorer.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib3.model"
+   ],
+   "module": "research.fib3.quality_scorer",
+   "parse_ok": true,
+   "symbols": [
+    "score_sweep",
+    "score_displacement",
+    "score_choch",
+    "score_context",
+    "score_leg",
+    "assign_tier"
+   ]
+  },
+  "QuantumEdge/research/fib3/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "datetime",
+    "json",
+    "math",
+    "os",
+    "research.fib2.data",
+    "research.fib3.analysis",
+    "research.fib3.backtester",
+    "research.fib3.detector",
+    "research.fib3.experiments",
+    "research.fib3.fib_respect",
+    "research.fib3.model",
+    "sys",
+    "traceback"
+   ],
+   "module": "research.fib3.run",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "_std",
+    "_equity_stats",
+    "print_quality_dist",
+    "print_report",
+    "run_one",
+    "save_results",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib4/__init__.py": {
+   "imports": [],
+   "module": "research.fib4",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib4/analysis.py": {
+   "imports": [
+    "__future__",
+    "math"
+   ],
+   "module": "research.fib4.analysis",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "print_report",
+    "print_comparison_table",
+    "print_verdict",
+    "_std",
+    "_equity_stats"
+   ]
+  },
+  "QuantumEdge/research/fib4/backtester.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib2",
+    "research.fib2.data",
+    "research.fib4.execution",
+    "research.fib4.model",
+    "typing"
+   ],
+   "module": "research.fib4.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate",
+    "_rolling_vol_avg"
+   ]
+  },
+  "QuantumEdge/research/fib4/execution.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "numpy",
+    "research.fib4.model",
+    "typing"
+   ],
+   "module": "research.fib4.execution",
+   "parse_ok": true,
+   "symbols": [
+    "decide_entry",
+    "find_entry_daily",
+    "find_entry_1h",
+    "_effective_zone",
+    "_get_atr",
+    "_date_to_daily_bar"
+   ]
+  },
+  "QuantumEdge/research/fib4/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib4.model"
+   ],
+   "module": "research.fib4.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "get_config",
+    "list_experiments"
+   ]
+  },
+  "QuantumEdge/research/fib4/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib3.model"
+   ],
+   "module": "research.fib4.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib4Config",
+    "EntryDecision"
+   ]
+  },
+  "QuantumEdge/research/fib4/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "datetime",
+    "json",
+    "os",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib4.analysis",
+    "research.fib4.backtester",
+    "research.fib4.experiments",
+    "sys",
+    "traceback"
+   ],
+   "module": "research.fib4.run",
+   "parse_ok": true,
+   "symbols": [
+    "run_one",
+    "save_results",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib5/__init__.py": {
+   "imports": [],
+   "module": "research.fib5",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib5/analysis.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "typing"
+   ],
+   "module": "research.fib5.analysis",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "compute_stats_from_r",
+    "print_replication_table",
+    "print_oos_table",
+    "print_robustness_table",
+    "_print_ascii_hist",
+    "print_friction_table",
+    "print_regime_table",
+    "print_final_verdict",
+    "_std",
+    "_equity_stats"
+   ]
+  },
+  "QuantumEdge/research/fib5/backtester.py": {
+   "imports": [
+    "__future__",
+    "research.fib4",
+    "research.fib5.model",
+    "typing"
+   ],
+   "module": "research.fib5.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate",
+    "friction_adjusted_r"
+   ]
+  },
+  "QuantumEdge/research/fib5/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib5.model"
+   ],
+   "module": "research.fib5.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "make_xlk_style",
+    "make_qqq_style",
+    "make_spy_style",
+    "make_baseline",
+    "get_strategies"
+   ]
+  },
+  "QuantumEdge/research/fib5/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib4.model"
+   ],
+   "module": "research.fib5.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib5Config"
+   ]
+  },
+  "QuantumEdge/research/fib5/regime.py": {
+   "imports": [
+    "__future__"
+   ],
+   "module": "research.fib5.regime",
+   "parse_ok": true,
+   "symbols": [
+    "decompose_results"
+   ]
+  },
+  "QuantumEdge/research/fib5/robustness.py": {
+   "imports": [
+    "__future__",
+    "copy",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib5.backtester",
+    "research.fib5.model",
+    "typing"
+   ],
+   "module": "research.fib5.robustness",
+   "parse_ok": true,
+   "symbols": [
+    "build_xlk_grid",
+    "build_qqq_grid",
+    "run_grid",
+    "summarize_grid"
+   ]
+  },
+  "QuantumEdge/research/fib5/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "os",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib5.analysis",
+    "research.fib5.backtester",
+    "research.fib5.experiments",
+    "research.fib5.regime",
+    "research.fib5.robustness",
+    "research.fib5.walkforward",
+    "sys"
+   ],
+   "module": "research.fib5.run",
+   "parse_ok": true,
+   "symbols": [
+    "track1_replication",
+    "track2_oos",
+    "track3_robustness",
+    "track4_friction",
+    "track5_regime",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib5/walkforward.py": {
+   "imports": [
+    "__future__",
+    "copy",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib5.analysis",
+    "research.fib5.backtester",
+    "typing"
+   ],
+   "module": "research.fib5.walkforward",
+   "parse_ok": true,
+   "symbols": [
+    "run_period",
+    "run_oos_split",
+    "run_oos_batch",
+    "compute_stats_from_r"
+   ]
+  },
+  "QuantumEdge/research/fib6/__init__.py": {
+   "imports": [],
+   "module": "research.fib6",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib6/analysis.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "typing"
+   ],
+   "module": "research.fib6.analysis",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "print_phase1_vol_gate_table",
+    "print_vol_gate_summary",
+    "print_phase2_1h_table",
+    "print_phase3_portfolio_table",
+    "print_phase4_oos_table",
+    "print_phase4_friction_table",
+    "print_robustness_summary",
+    "classify_config",
+    "print_final_classification",
+    "_std",
+    "_equity_stats",
+    "_print_ascii_hist"
+   ]
+  },
+  "QuantumEdge/research/fib6/backtester.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib2",
+    "research.fib2.data",
+    "research.fib6.execution",
+    "research.fib6.model",
+    "research.fib6.regime",
+    "typing"
+   ],
+   "module": "research.fib6.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate",
+    "friction_adjusted_r"
+   ]
+  },
+  "QuantumEdge/research/fib6/execution.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "numpy",
+    "research.fib4",
+    "research.fib4.model",
+    "typing"
+   ],
+   "module": "research.fib6.execution",
+   "parse_ok": true,
+   "symbols": [
+    "decide_entry",
+    "_find_entry_1h_reclaim"
+   ]
+  },
+  "QuantumEdge/research/fib6/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib6.model"
+   ],
+   "module": "research.fib6.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "_base_xlk",
+    "_base_qqq",
+    "_base_spy",
+    "get_phase1_configs",
+    "get_phase2_configs_1h",
+    "get_phase2_configs_daily",
+    "make_portfolio_config",
+    "get_phase4_configs",
+    "_make_xlk_quiet_grid_cfg",
+    "_make_qqq_active_grid_cfg"
+   ]
+  },
+  "QuantumEdge/research/fib6/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib5.model"
+   ],
+   "module": "research.fib6.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib6Config"
+   ]
+  },
+  "QuantumEdge/research/fib6/portfolio.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "typing"
+   ],
+   "module": "research.fib6.portfolio",
+   "parse_ok": true,
+   "symbols": [
+    "compute_equal_weights",
+    "compute_vol_scaled_weights",
+    "compute_capped_weights",
+    "build_portfolio",
+    "find_single_best",
+    "_std"
+   ]
+  },
+  "QuantumEdge/research/fib6/regime.py": {
+   "imports": [
+    "__future__",
+    "numpy"
+   ],
+   "module": "research.fib6.regime",
+   "parse_ok": true,
+   "symbols": [
+    "compute_vol_ratio",
+    "check_vol_gate",
+    "compute_atr_ratio",
+    "label_vol_regime",
+    "classify_results_by_regime"
+   ]
+  },
+  "QuantumEdge/research/fib6/robustness.py": {
+   "imports": [
+    "__future__",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib6.analysis",
+    "research.fib6.backtester",
+    "research.fib6.experiments",
+    "research.fib6.model",
+    "typing"
+   ],
+   "module": "research.fib6.robustness",
+   "parse_ok": true,
+   "symbols": [
+    "run_period",
+    "run_oos_split",
+    "run_oos_batch",
+    "build_xlk_quiet_grid",
+    "build_qqq_active_grid",
+    "run_grid",
+    "summarize_grid"
+   ]
+  },
+  "QuantumEdge/research/fib6/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "os",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib6.analysis",
+    "research.fib6.backtester",
+    "research.fib6.experiments",
+    "research.fib6.portfolio",
+    "research.fib6.robustness",
+    "sys"
+   ],
+   "module": "research.fib6.run",
+   "parse_ok": true,
+   "symbols": [
+    "_run_config",
+    "phase1_vol_gate",
+    "phase2_1h_execution",
+    "phase3_portfolio",
+    "phase4_oos_friction",
+    "run_final_classification",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib7/__init__.py": {
+   "imports": [],
+   "module": "research.fib7",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib7/analysis.py": {
+   "imports": [
+    "__future__",
+    "collections",
+    "math",
+    "typing"
+   ],
+   "module": "research.fib7.analysis",
+   "parse_ok": true,
+   "symbols": [
+    "compute_stats",
+    "print_tracka_hardening_table",
+    "print_trackb_paradox_table",
+    "print_trackb_paradox_summary",
+    "print_trackc_spy_combined_table",
+    "print_trackd_rotation_table",
+    "print_oos_table",
+    "print_friction_table",
+    "print_robustness_summary",
+    "classify_config",
+    "print_final_classification",
+    "_std",
+    "_equity_stats",
+    "_print_ascii_hist"
+   ]
+  },
+  "QuantumEdge/research/fib7/backtester.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib2",
+    "research.fib2.data",
+    "research.fib6.execution",
+    "research.fib7.regime",
+    "typing"
+   ],
+   "module": "research.fib7.backtester",
+   "parse_ok": true,
+   "symbols": [
+    "simulate",
+    "friction_adjusted_r"
+   ]
+  },
+  "QuantumEdge/research/fib7/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib7.model"
+   ],
+   "module": "research.fib7.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "_base_xlk_vq",
+    "_base_qqq",
+    "_base_spy",
+    "get_tracka_configs",
+    "get_trackb_configs",
+    "get_trackc_configs",
+    "get_oos_configs",
+    "build_xlk_tight_grid"
+   ]
+  },
+  "QuantumEdge/research/fib7/live_spec.py": {
+   "imports": [
+    "__future__",
+    "typing"
+   ],
+   "module": "research.fib7.live_spec",
+   "parse_ok": true,
+   "symbols": [
+    "generate_signal_spec",
+    "print_signal_spec_card",
+    "print_all_spec_cards"
+   ]
+  },
+  "QuantumEdge/research/fib7/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib6.model"
+   ],
+   "module": "research.fib7.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib7Config"
+   ]
+  },
+  "QuantumEdge/research/fib7/regime.py": {
+   "imports": [
+    "__future__",
+    "numpy",
+    "research.fib6.regime"
+   ],
+   "module": "research.fib7.regime",
+   "parse_ok": true,
+   "symbols": [
+    "select_regime_bar",
+    "check_vol_gate_multibar",
+    "check_atr_gate",
+    "check_all_gates",
+    "compute_all_vol_ratios"
+   ]
+  },
+  "QuantumEdge/research/fib7/robustness.py": {
+   "imports": [
+    "__future__",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib7.analysis",
+    "research.fib7.backtester",
+    "research.fib7.model",
+    "typing"
+   ],
+   "module": "research.fib7.robustness",
+   "parse_ok": true,
+   "symbols": [
+    "run_period",
+    "run_oos_split",
+    "run_oos_batch",
+    "run_grid",
+    "summarize_grid"
+   ]
+  },
+  "QuantumEdge/research/fib7/rotation.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "typing"
+   ],
+   "module": "research.fib7.rotation",
+   "parse_ok": true,
+   "symbols": [
+    "_trailing_exp_r",
+    "_rolling_std",
+    "_trade_density",
+    "compute_rotation_score",
+    "run_top_n_rotation",
+    "_empty_rotation_stats",
+    "find_single_best",
+    "_std"
+   ]
+  },
+  "QuantumEdge/research/fib7/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "os",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib7.analysis",
+    "research.fib7.backtester",
+    "research.fib7.experiments",
+    "research.fib7.live_spec",
+    "research.fib7.robustness",
+    "research.fib7.rotation",
+    "sys"
+   ],
+   "module": "research.fib7.run",
+   "parse_ok": true,
+   "symbols": [
+    "_run_config",
+    "_compute_friction_row",
+    "track_a_xlk_hardening",
+    "track_b_qqq_paradox",
+    "track_c_spy_combined",
+    "track_d_rotation",
+    "track_e_live_spec",
+    "run_final_classification",
+    "parse_args",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib8/__init__.py": {
+   "imports": [],
+   "module": "research.fib8",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib8/analysis.py": {
+   "imports": [
+    "__future__",
+    "research.fib8.model"
+   ],
+   "module": "research.fib8.analysis",
+   "parse_ok": true,
+   "symbols": [
+    "xlk_canonical_verdict",
+    "qqq_canonical_verdict",
+    "spy_canonical_verdict",
+    "print_canonical_verdicts",
+    "print_promotion_summary"
+   ]
+  },
+  "QuantumEdge/research/fib8/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib7.experiments",
+    "research.fib7.model"
+   ],
+   "module": "research.fib8.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "get_candidate_configs",
+    "get_promotion_evidence"
+   ]
+  },
+  "QuantumEdge/research/fib8/forward_monitor.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "json",
+    "math",
+    "research.fib6.backtester",
+    "research.fib7.backtester",
+    "research.fib7.regime",
+    "typing"
+   ],
+   "module": "research.fib8.forward_monitor",
+   "parse_ok": true,
+   "symbols": [
+    "MonitoredSetup",
+    "ForwardMonitor"
+   ]
+  },
+  "QuantumEdge/research/fib8/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib7.model",
+    "typing"
+   ],
+   "module": "research.fib8.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib8Config",
+    "PromotionScore"
+   ]
+  },
+  "QuantumEdge/research/fib8/promotion.py": {
+   "imports": [
+    "__future__",
+    "research.fib8.model"
+   ],
+   "module": "research.fib8.promotion",
+   "parse_ok": true,
+   "symbols": [
+    "_score_replication",
+    "_score_oos1_quality",
+    "_score_oos2_sufficiency",
+    "_score_robustness_plateau",
+    "_score_friction_survival",
+    "_score_sample_size",
+    "_score_live_feasibility",
+    "_score_no_hindsight",
+    "_score_rule_simplicity",
+    "_score_regime_clarity",
+    "score_config",
+    "promotion_gate",
+    "print_promotion_table",
+    "print_promotion_detail"
+   ]
+  },
+  "QuantumEdge/research/fib8/rotation.py": {
+   "imports": [
+    "__future__",
+    "math",
+    "research.fib7.rotation",
+    "typing"
+   ],
+   "module": "research.fib8.rotation",
+   "parse_ok": true,
+   "symbols": [
+    "apply_eligibility_gate",
+    "run_thresholded_rotation",
+    "run_rotation_comparison",
+    "print_rotation_comparison"
+   ]
+  },
+  "QuantumEdge/research/fib8/run.py": {
+   "imports": [
+    "__future__",
+    "argparse",
+    "os",
+    "research.fib2.data",
+    "research.fib3.detector",
+    "research.fib7.analysis",
+    "research.fib7.backtester",
+    "research.fib8.analysis",
+    "research.fib8.experiments",
+    "research.fib8.forward_monitor",
+    "research.fib8.model",
+    "research.fib8.promotion",
+    "research.fib8.rotation",
+    "research.fib8.signal_cards",
+    "sys"
+   ],
+   "module": "research.fib8.run",
+   "parse_ok": true,
+   "symbols": [
+    "track_a_promotion",
+    "track_b_forward_monitor",
+    "track_cde_canonical",
+    "track_f_rotation",
+    "track_g_signal_cards",
+    "main"
+   ]
+  },
+  "QuantumEdge/research/fib8/signal_cards.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib8.model",
+    "typing"
+   ],
+   "module": "research.fib8.signal_cards",
+   "parse_ok": true,
+   "symbols": [
+    "SignalCard",
+    "generate_card",
+    "print_card",
+    "print_all_cards"
+   ]
+  },
+  "QuantumEdge/research/fib9/__init__.py": {
+   "imports": [],
+   "module": "research.fib9",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/research/fib9/canonical.py": {
+   "imports": [
+    "__future__",
+    "research.fib7.analysis",
+    "research.fib7.robustness",
+    "research.fib9.experiments",
+    "research.fib9.model",
+    "typing"
+   ],
+   "module": "research.fib9.canonical",
+   "parse_ok": true,
+   "symbols": [
+    "_run_candidate_splits",
+    "_extract_period",
+    "_decide_winner",
+    "_build_rationale",
+    "compare_xlk_candidates",
+    "compare_qqq_candidates",
+    "compare_spy_candidates",
+    "print_canonical_table",
+    "print_candidate_details"
+   ]
+  },
+  "QuantumEdge/research/fib9/experiments.py": {
+   "imports": [
+    "__future__",
+    "research.fib7.experiments",
+    "research.fib7.model"
+   ],
+   "module": "research.fib9.experiments",
+   "parse_ok": true,
+   "symbols": [
+    "get_xlk_candidates",
+    "get_qqq_candidates",
+    "get_spy_candidates",
+    "get_all_candidates",
+    "get_canonical_forward_set"
+   ]
+  },
+  "QuantumEdge/research/fib9/model.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.fib7.model",
+    "research.fib9",
+    "typing"
+   ],
+   "module": "research.fib9.model",
+   "parse_ok": true,
+   "symbols": [
+    "Fib9Config",
+    "ForwardSetup",
+    "CanonicalVerdict",
+    "PromotionGateResult"
+   ]
+  },
+  "QuantumEdge/research/manifest.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "json",
+    "os",
+    "subprocess",
+    "typing"
+   ],
+   "module": "research.manifest",
+   "parse_ok": true,
+   "symbols": [
+    "RunManifest",
+    "_git_state",
+    "_effective_allocations",
+    "build_manifest"
+   ]
+  },
+  "QuantumEdge/research/results.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "json",
+    "os",
+    "re",
+    "typing"
+   ],
+   "module": "research.results",
+   "parse_ok": true,
+   "symbols": [
+    "ResultRecord",
+    "ResultParser",
+    "save_result",
+    "load_results"
+   ]
+  },
+  "QuantumEdge/research/runner.py": {
+   "imports": [
+    "__future__",
+    "datetime",
+    "fnmatch",
+    "io",
+    "json",
+    "os",
+    "research.experiments",
+    "research.manifest",
+    "research.results",
+    "research.validity",
+    "shutil",
+    "subprocess",
+    "sys",
+    "time",
+    "traceback"
+   ],
+   "module": "research.runner",
+   "parse_ok": true,
+   "symbols": [
+    "write_experiment_config",
+    "clear_experiment_config",
+    "make_run_dir",
+    "_find_latest_data_monitor",
+    "archive_lean_artifacts",
+    "run_lean",
+    "run_experiment",
+    "run_experiments",
+    "print_comparison_table"
+   ]
+  },
+  "QuantumEdge/research/validity.py": {
+   "imports": [
+    "__future__",
+    "dataclasses",
+    "research.results",
+    "typing"
+   ],
+   "module": "research.validity",
+   "parse_ok": true,
+   "symbols": [
+    "ValidityResult",
+    "classify"
+   ]
+  },
+  "QuantumEdge/strategy/__init__.py": {
+   "imports": [],
+   "module": "strategy",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/strategy/allocator.py": {
+   "imports": [
+    "AlgorithmImports",
+    "__future__",
+    "algorithm.config"
+   ],
+   "module": "strategy.allocator",
+   "parse_ok": true,
+   "symbols": [
+    "Allocator"
+   ]
+  },
+  "QuantumEdge/strategy/regime.py": {
+   "imports": [
+    "AlgorithmImports",
+    "algorithm.config"
+   ],
+   "module": "strategy.regime",
+   "parse_ok": true,
+   "symbols": [
+    "RegimeFilter"
+   ]
+  },
+  "QuantumEdge/strategy/signals.py": {
+   "imports": [
+    "AlgorithmImports",
+    "__future__"
+   ],
+   "module": "strategy.signals",
+   "parse_ok": true,
+   "symbols": [
+    "inv_vol",
+    "risk_parity_weights",
+    "ibs_score",
+    "momentum_score",
+    "value_rank"
+   ]
+  },
+  "QuantumEdge/strategy/sleeve_a.py": {
+   "imports": [
+    "AlgorithmImports",
+    "__future__",
+    "algorithm.config",
+    "strategy.signals"
+   ],
+   "module": "strategy.sleeve_a",
+   "parse_ok": true,
+   "symbols": [
+    "SleeveA"
+   ]
+  },
+  "QuantumEdge/strategy/sleeve_b.py": {
+   "imports": [
+    "AlgorithmImports",
+    "__future__",
+    "algorithm.config",
+    "strategy.signals"
+   ],
+   "module": "strategy.sleeve_b",
+   "parse_ok": true,
+   "symbols": [
+    "SleeveB"
+   ]
+  },
+  "QuantumEdge/strategy/sleeve_c.py": {
+   "imports": [
+    "AlgorithmImports",
+    "__future__",
+    "algorithm.config",
+    "strategy.signals"
+   ],
+   "module": "strategy.sleeve_c",
+   "parse_ok": true,
+   "symbols": [
+    "SleeveC"
+   ]
+  },
+  "QuantumEdge/tests/__init__.py": {
+   "imports": [],
+   "module": "tests",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "QuantumEdge/tests/test_data_presence.py": {
+   "imports": [
+    "algorithm.config",
+    "importlib",
+    "os",
+    "strategy.allocator",
+    "sys",
+    "traceback",
+    "types"
+   ],
+   "module": "tests.test_data_presence",
+   "parse_ok": true,
+   "symbols": [
+    "_zip_exists",
+    "test_required_sectors_present",
+    "test_fallback_and_letf_present",
+    "test_ibs_etfs_present",
+    "test_config_allocations_sum_to_one"
+   ]
+  },
+  "quantum-edge-terminal/FINAL_COMPLETION_SUMMARY.py": {
+   "imports": [],
+   "module": "FINAL_COMPLETION_SUMMARY",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/PHASE_8_5_DEPLOYMENT_GUIDE.py": {
+   "imports": [
+    "datetime",
+    "json",
+    "pathlib"
+   ],
+   "module": "PHASE_8_5_DEPLOYMENT_GUIDE",
+   "parse_ok": true,
+   "symbols": [
+    "print_deployment_checklist"
+   ]
+  },
+  "quantum-edge-terminal/PHASE_8_5_INSTRUMENTATION_COMPLETE.py": {
+   "imports": [],
+   "module": "PHASE_8_5_INSTRUMENTATION_COMPLETE",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/PHASE_8_5_TEST_SUITE_AUDIT.py": {
+   "imports": [
+    "datetime",
+    "json"
+   ],
+   "module": "PHASE_8_5_TEST_SUITE_AUDIT",
+   "parse_ok": true,
+   "symbols": [
+    "print_test_report"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/main.py": {
+   "imports": [
+    "asyncio",
+    "contextlib",
+    "dotenv",
+    "fastapi",
+    "logging",
+    "os",
+    "src.modules.algo_detection",
+    "src.modules.fractal_validator",
+    "src.modules.market_structure_detector",
+    "uvicorn"
+   ],
+   "module": "main",
+   "parse_ok": true,
+   "symbols": [
+    "lifespan",
+    "health",
+    "analyze_structure",
+    "analyze_fractal",
+    "analyze_algo_manipulation",
+    "score_trade"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/__init__.py": {
+   "imports": [],
+   "module": "src",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/__init__.py": {
+   "imports": [],
+   "module": "src.modules",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/algo_detection.py": {
+   "imports": [
+    "logging",
+    "typing"
+   ],
+   "module": "src.modules.algo_detection",
+   "parse_ok": true,
+   "symbols": [
+    "AlgoDetector"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/enhanced_fib_validator.py": {
+   "imports": [
+    "logging",
+    "statistics",
+    "typing"
+   ],
+   "module": "src.modules.enhanced_fib_validator",
+   "parse_ok": true,
+   "symbols": [
+    "InstitutionalOrderFlow",
+    "EnhancedFibManipulationValidator"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/fib_manipulation_validator.py": {
+   "imports": [
+    "logging",
+    "typing"
+   ],
+   "module": "src.modules.fib_manipulation_validator",
+   "parse_ok": true,
+   "symbols": [
+    "FibManipulationValidator",
+    "FibManipulationBacktester"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/fractal_validator.py": {
+   "imports": [
+    "logging",
+    "typing"
+   ],
+   "module": "src.modules.fractal_validator",
+   "parse_ok": true,
+   "symbols": [
+    "FractalValidator"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/institutional_smart_blend_plus.py": {
+   "imports": [
+    "dataclasses",
+    "enum",
+    "logging",
+    "statistics",
+    "typing"
+   ],
+   "module": "src.modules.institutional_smart_blend_plus",
+   "parse_ok": true,
+   "symbols": [
+    "SignalStrength",
+    "ConfluenceScore",
+    "InstitutionalSmartBlendStrategy"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/market_structure_analyzer.py": {
+   "imports": [
+    "dataclasses",
+    "enum",
+    "statistics",
+    "typing"
+   ],
+   "module": "src.modules.market_structure_analyzer",
+   "parse_ok": true,
+   "symbols": [
+    "PriceLevel",
+    "MarketLevel",
+    "MarketStructureAnalyzer",
+    "get_institutional_levels"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/market_structure_detector.py": {
+   "imports": [
+    "logging",
+    "numpy",
+    "pandas",
+    "typing"
+   ],
+   "module": "src.modules.market_structure_detector",
+   "parse_ok": true,
+   "symbols": [
+    "MarketStructureDetector"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/modules/master_multi_signal.py": {
+   "imports": [
+    "logging",
+    "statistics",
+    "typing"
+   ],
+   "module": "src.modules.master_multi_signal",
+   "parse_ok": true,
+   "symbols": [
+    "MasterMultiSignalValidator",
+    "StrategyPerformanceTracker"
+   ]
+  },
+  "quantum-edge-terminal/ai-engine/src/utils.py": {
+   "imports": [
+    "datetime",
+    "json"
+   ],
+   "module": "src.utils",
+   "parse_ok": true,
+   "symbols": [
+    "format_trade_summary",
+    "calculate_risk_metrics"
+   ]
+  },
+  "quantum-edge-terminal/backtest_baseline_validated.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_baseline_validated",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "BaselineBacktester",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_enhanced_fib.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.enhanced_fib_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_enhanced_fib",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "EnhancedFibBacktester",
+    "test_variant",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_fast_enhanced_fib.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_fast_enhanced_fib",
+   "parse_ok": true,
+   "symbols": [
+    "detect_liquidity_grab",
+    "detect_trend",
+    "Trade",
+    "DataGen",
+    "FastFibBacktester",
+    "test_config",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_fib_manipulation.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fib_manipulation_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_fib_manipulation",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "FibManipBacktester",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_fib_optimization.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fib_manipulation_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_fib_optimization",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "FibOptimizedBacktester",
+    "test_target",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_fix_validation.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_fix_validation",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "Backtester",
+    "test_approach",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_historical_rr.py": {
+   "imports": [
+    "argparse",
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "modules.fractal_validator",
+    "pandas",
+    "pathlib",
+    "sys",
+    "typing",
+    "yfinance"
+   ],
+   "module": "backtest_historical_rr",
+   "parse_ok": true,
+   "symbols": [
+    "TradeOutcome",
+    "BacktestTrade",
+    "FractalBacktester",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_historical_rr_synthetic.py": {
+   "imports": [
+    "argparse",
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "math",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_historical_rr_synthetic",
+   "parse_ok": true,
+   "symbols": [
+    "TradeOutcome",
+    "BacktestTrade",
+    "SyntheticMarketGenerator",
+    "FractalBacktester",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_hybrid_strategy.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fib_manipulation_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_hybrid_strategy",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "HybridBacktester",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_integrated_system.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.master_multi_signal",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_integrated_system",
+   "parse_ok": true,
+   "symbols": [
+    "generate_synthetic_signals",
+    "TestTrade",
+    "IntegratedSystemBacktester",
+    "test_all_modes",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_max_profit_final.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_max_profit_final",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "MaxProfitBot",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_optimized_profitability.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_optimized_profitability",
+   "parse_ok": true,
+   "symbols": [
+    "TradeOutcome",
+    "OptimizedTrade",
+    "SyntheticMarketGenerator",
+    "ConfluenceFilter",
+    "OptimizedFractalBacktester",
+    "run_optimization_suite"
+   ]
+  },
+  "quantum-edge-terminal/backtest_phase2_institutional.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "json",
+    "modules.fractal_validator",
+    "modules.institutional_smart_blend_plus",
+    "modules.market_structure_analyzer",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_phase2_institutional",
+   "parse_ok": true,
+   "symbols": [
+    "BacktestTrade",
+    "InstitutionalStrategyBacktester",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_phase2_optimized.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_phase2_optimized",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "OptimizedInstitutionalBacktest",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_post_fix_validation.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_post_fix_validation",
+   "parse_ok": true,
+   "symbols": [
+    "Trade",
+    "DataGen",
+    "PostFixValidator",
+    "main"
+   ]
+  },
+  "quantum-edge-terminal/backtest_practical_profits.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_practical_profits",
+   "parse_ok": true,
+   "symbols": [
+    "PracticalTrade",
+    "SyntheticMarketGenerator",
+    "PracticalOptimizer",
+    "run_suite"
+   ]
+  },
+  "quantum-edge-terminal/backtest_smart_profitability.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "modules.fractal_validator",
+    "pathlib",
+    "random",
+    "statistics",
+    "sys",
+    "typing"
+   ],
+   "module": "backtest_smart_profitability",
+   "parse_ok": true,
+   "symbols": [
+    "ProfitTrade",
+    "SyntheticMarketGenerator",
+    "SmartFractalBacktester",
+    "run_validation_suite"
+   ]
+  },
+  "quantum-edge-terminal/backtest_timeframe_analysis.py": {
+   "imports": [
+    "datetime",
+    "numpy",
+    "pandas"
+   ],
+   "module": "backtest_timeframe_analysis",
+   "parse_ok": true,
+   "symbols": [
+    "generate_market_data",
+    "detect_fractal_bull",
+    "detect_fractal_bear",
+    "find_swing_high",
+    "find_swing_low",
+    "calculate_atr",
+    "backtest_timeframe"
+   ]
+  },
+  "quantum-edge-terminal/comprehensive_verification.py": {
+   "imports": [
+    "datetime",
+    "execution",
+    "observability",
+    "pathlib",
+    "sys",
+    "traceback",
+    "validation.integration_bridge",
+    "validation.validation_orchestrator"
+   ],
+   "module": "comprehensive_verification",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/execution/__init__.py": {
+   "imports": [
+    ".broker_engine",
+    ".execution_audit_log",
+    ".execution_engine",
+    ".execution_kill_switch",
+    ".order_manager",
+    ".risk_engine",
+    ".shadow_execution_comparator",
+    ".staged_capital_deployment"
+   ],
+   "module": "execution",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/execution/broker_engine/__init__.py": {
+   "imports": [
+    ".broker_connection"
+   ],
+   "module": "execution.broker_engine",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/execution/broker_engine/broker_connection.py": {
+   "imports": [
+    "dataclasses",
+    "enum",
+    "logging",
+    "os",
+    "typing"
+   ],
+   "module": "execution.broker_engine.broker_connection",
+   "parse_ok": true,
+   "symbols": [
+    "BrokerMode",
+    "BrokerConfig",
+    "AccountInfo",
+    "Position",
+    "OrderStatus",
+    "BrokerConnection"
+   ]
+  },
+  "quantum-edge-terminal/execution/execution_audit_log.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "typing"
+   ],
+   "module": "execution.execution_audit_log",
+   "parse_ok": true,
+   "symbols": [
+    "ExecutionPhase",
+    "FillQuality",
+    "ExecutionPhaseEvent",
+    "ExecutionPrice",
+    "ExecutionFill",
+    "ExecutionAuditRecord",
+    "ExecutionAuditLog"
+   ]
+  },
+  "quantum-edge-terminal/execution/execution_engine/__init__.py": {
+   "imports": [
+    ".execution_engine"
+   ],
+   "module": "execution.execution_engine",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/execution/execution_engine/execution_engine.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing",
+    "uuid"
+   ],
+   "module": "execution.execution_engine.execution_engine",
+   "parse_ok": true,
+   "symbols": [
+    "ExecutionStatus",
+    "ExecutionPayload",
+    "ExecutionValidationResult",
+    "ExecutionEngine"
+   ]
+  },
+  "quantum-edge-terminal/execution/execution_engine/websocket_stream.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "json",
+    "logging",
+    "typing"
+   ],
+   "module": "execution.execution_engine.websocket_stream",
+   "parse_ok": true,
+   "symbols": [
+    "WebSocketEventType",
+    "WSMessage",
+    "TradeStreamManager",
+    "get_trade_stream_manager"
+   ]
+  },
+  "quantum-edge-terminal/execution/execution_kill_switch.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "execution_audit_log",
+    "logging",
+    "typing"
+   ],
+   "module": "execution.execution_kill_switch",
+   "parse_ok": true,
+   "symbols": [
+    "KillSwitchTrigger",
+    "KillSwitchThresholds",
+    "KillSwitchStatus",
+    "ExecutionKillSwitch"
+   ]
+  },
+  "quantum-edge-terminal/execution/order_manager/__init__.py": {
+   "imports": [
+    ".order_manager"
+   ],
+   "module": "execution.order_manager",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/execution/order_manager/order_manager.py": {
+   "imports": [
+    "..broker_engine.broker_connection",
+    "dataclasses",
+    "decimal",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "execution.order_manager.order_manager",
+   "parse_ok": true,
+   "symbols": [
+    "OrderType",
+    "OrderContext",
+    "BrokerOrder",
+    "OrderManager"
+   ]
+  },
+  "quantum-edge-terminal/execution/risk_engine/__init__.py": {
+   "imports": [
+    ".risk_engine"
+   ],
+   "module": "execution.risk_engine",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/execution/risk_engine/risk_engine.py": {
+   "imports": [
+    "collections",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "execution.risk_engine.risk_engine",
+   "parse_ok": true,
+   "symbols": [
+    "RiskLevel",
+    "RiskCheckResult",
+    "RiskLimits",
+    "RiskEngine"
+   ]
+  },
+  "quantum-edge-terminal/execution/shadow_execution_comparator.py": {
+   "imports": [
+    "collections",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "statistics",
+    "typing"
+   ],
+   "module": "execution.shadow_execution_comparator",
+   "parse_ok": true,
+   "symbols": [
+    "ExecutionMode",
+    "ShadowExecutionPair",
+    "DivergenceAlert",
+    "ShadowExecutionComparator"
+   ]
+  },
+  "quantum-edge-terminal/execution/staged_capital_deployment.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "execution.staged_capital_deployment",
+   "parse_ok": true,
+   "symbols": [
+    "DeploymentStage",
+    "StageGateRequirements",
+    "StageCycleRecord",
+    "DeploymentGateDecision",
+    "StagedCapitalDeployment"
+   ]
+  },
+  "quantum-edge-terminal/interface/__init__.py": {
+   "imports": [
+    ".alert_engine"
+   ],
+   "module": "interface",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/interface/alert_engine/__init__.py": {
+   "imports": [
+    ".alert_engine"
+   ],
+   "module": "interface.alert_engine",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/interface/alert_engine/alert_engine.py": {
+   "imports": [],
+   "module": "interface.alert_engine.alert_engine",
+   "parse_ok": false,
+   "symbols": []
+  },
+  "quantum-edge-terminal/learning/__init__.py": {
+   "imports": [],
+   "module": "learning",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/monitoring/__init__.py": {
+   "imports": [
+    ".execution_audit_report"
+   ],
+   "module": "monitoring",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/monitoring/execution_audit_report.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "statistics",
+    "typing"
+   ],
+   "module": "monitoring.execution_audit_report",
+   "parse_ok": true,
+   "symbols": [
+    "ReportPeriod",
+    "ExecutionMetrics",
+    "ExecutionAlert",
+    "ExecutionAuditReport"
+   ]
+  },
+  "quantum-edge-terminal/observability/__init__.py": {
+   "imports": [
+    ".execution_instrumenter",
+    ".telemetry_config"
+   ],
+   "module": "observability",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/observability/execution_instrumenter.py": {
+   "imports": [
+    "contextlib",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "opentelemetry",
+    "opentelemetry.metrics",
+    "opentelemetry.trace",
+    "typing"
+   ],
+   "module": "observability.execution_instrumenter",
+   "parse_ok": true,
+   "symbols": [
+    "ExecutionEventType",
+    "ExecutionInstrumenter"
+   ]
+  },
+  "quantum-edge-terminal/observability/runtime_api.py": {
+   "imports": [
+    ".execution_instrumenter",
+    ".telemetry_config",
+    "atexit",
+    "logging",
+    "opentelemetry",
+    "opentelemetry.exporter.jaeger.thrift",
+    "opentelemetry.exporter.otlp.proto.grpc.trace_exporter",
+    "opentelemetry.sdk.resources",
+    "opentelemetry.sdk.trace",
+    "opentelemetry.sdk.trace.export",
+    "typing"
+   ],
+   "module": "observability.runtime_api",
+   "parse_ok": true,
+   "symbols": [
+    "initialize_telemetry",
+    "get_tracer",
+    "get_execution_instrumenter",
+    "record_event",
+    "export_telemetry",
+    "get_telemetry_stats",
+    "_shutdown_telemetry",
+    "initialize_defaults",
+    "initialize_production"
+   ]
+  },
+  "quantum-edge-terminal/observability/telemetry_config.py": {
+   "imports": [
+    "dataclasses",
+    "enum",
+    "logging",
+    "opentelemetry",
+    "opentelemetry.exporter.jaeger.thrift",
+    "opentelemetry.exporter.otlp.proto.grpc.metric_exporter",
+    "opentelemetry.exporter.otlp.proto.grpc.trace_exporter",
+    "opentelemetry.instrumentation.logging",
+    "opentelemetry.instrumentation.requests",
+    "opentelemetry.sdk.metrics",
+    "opentelemetry.sdk.metrics.export",
+    "opentelemetry.sdk.resources",
+    "opentelemetry.sdk.trace",
+    "opentelemetry.sdk.trace.export",
+    "opentelemetry.sdk.trace.sampling",
+    "os",
+    "pathlib",
+    "typing"
+   ],
+   "module": "observability.telemetry_config",
+   "parse_ok": true,
+   "symbols": [
+    "ExportProtocol",
+    "SamplingStrategy",
+    "TelemetryConfig",
+    "TelemetrySDK",
+    "initialize_telemetry",
+    "get_telemetry_sdk",
+    "get_global_tracer",
+    "get_global_meter",
+    "shutdown_telemetry",
+    "_load_config_from_env"
+   ]
+  },
+  "quantum-edge-terminal/production/PHASE8_PRODUCTION_EXAMPLE.py": {
+   "imports": [
+    "datetime",
+    "logging",
+    "production"
+   ],
+   "module": "production.PHASE8_PRODUCTION_EXAMPLE",
+   "parse_ok": true,
+   "symbols": [
+    "simulate_validation_period",
+    "show_deployment_checklist"
+   ]
+  },
+  "quantum-edge-terminal/production/__init__.py": {
+   "imports": [
+    ".deployment_gate_controller",
+    ".live_broker_connector",
+    ".market_data_streamer",
+    ".performance_monitor",
+    ".production_runner"
+   ],
+   "module": "production",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/production/deployment_gate_controller.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "production.deployment_gate_controller",
+   "parse_ok": true,
+   "symbols": [
+    "DeploymentState",
+    "DeploymentMetrics",
+    "DeploymentApproval",
+    "DeploymentGateController"
+   ]
+  },
+  "quantum-edge-terminal/production/live_broker_connector.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "production.live_broker_connector",
+   "parse_ok": true,
+   "symbols": [
+    "OrderStatus",
+    "BrokerMode",
+    "LiveOrder",
+    "BrokerConfig",
+    "LiveBrokerConnector"
+   ]
+  },
+  "quantum-edge-terminal/production/market_data_streamer.py": {
+   "imports": [
+    "asyncio",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "production.market_data_streamer",
+   "parse_ok": true,
+   "symbols": [
+    "BarTimeframe",
+    "MarketStatus",
+    "MarketBar",
+    "StreamingConfig",
+    "MarketDataStreamer"
+   ]
+  },
+  "quantum-edge-terminal/production/performance_monitor.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "production.performance_monitor",
+   "parse_ok": true,
+   "symbols": [
+    "AlertLevel",
+    "AlertType",
+    "PerformanceAlert",
+    "PerformanceSnapshot",
+    "PerformanceMonitor"
+   ]
+  },
+  "quantum-edge-terminal/production/production_runner.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "execution",
+    "logging",
+    "typing"
+   ],
+   "module": "production.production_runner",
+   "parse_ok": true,
+   "symbols": [
+    "SystemState",
+    "SystemConfig",
+    "ProductionRunner"
+   ]
+  },
+  "quantum-edge-terminal/services/PHASE4_DEMO.py": {
+   "imports": [
+    "datetime",
+    "json",
+    "typing"
+   ],
+   "module": "services.PHASE4_DEMO",
+   "parse_ok": true,
+   "symbols": [
+    "Phase4Demo"
+   ]
+  },
+  "quantum-edge-terminal/services/ai_engine/modules/options_flow.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "services.ai_engine.modules.options_flow",
+   "parse_ok": true,
+   "symbols": [
+    "OptionsDirection",
+    "OptionsPCR",
+    "IVMetrics",
+    "OptionsFlow",
+    "OptionsAnalysis",
+    "OptionsFlowAnalyzer",
+    "OptionsFlowSynthesizer"
+   ]
+  },
+  "quantum-edge-terminal/services/order_manager/order_manager.py": {
+   "imports": [
+    "broker_connection",
+    "dataclasses",
+    "datetime",
+    "decimal",
+    "enum",
+    "execution.execution_audit_log",
+    "logging",
+    "observability",
+    "typing",
+    "uuid"
+   ],
+   "module": "services.order_manager.order_manager",
+   "parse_ok": true,
+   "symbols": [
+    "OrderType",
+    "OrderContext",
+    "BrokerOrder",
+    "OrderManager"
+   ]
+  },
+  "quantum-edge-terminal/storage/__init__.py": {
+   "imports": [
+    ".trade_journal"
+   ],
+   "module": "storage",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/storage/trade_journal/__init__.py": {
+   "imports": [
+    ".trade_journal"
+   ],
+   "module": "storage.trade_journal",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/storage/trade_journal/trade_journal.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "storage.trade_journal.trade_journal",
+   "parse_ok": true,
+   "symbols": [
+    "TradeOutcome",
+    "JournalEntry",
+    "PerformanceSnapshot",
+    "TradeJournal"
+   ]
+  },
+  "quantum-edge-terminal/tests/test_execution_instrumentation.py": {
+   "imports": [
+    "datetime",
+    "execution",
+    "json",
+    "observability",
+    "pathlib",
+    "pytest",
+    "sys",
+    "time",
+    "unittest.mock",
+    "validation.integration_bridge",
+    "validation.validation_orchestrator"
+   ],
+   "module": "tests.test_execution_instrumentation",
+   "parse_ok": true,
+   "symbols": [
+    "TestExecutionInstrumenter",
+    "TestBridgeSignalInstrumentation",
+    "TestValidationOrchestratorInstrumentation",
+    "TestErrorHandlingRecovery",
+    "TestBridgeCoverageComplete",
+    "TestValidationOrchestratorFullLifecycle",
+    "TestEventOrderingConsistency",
+    "TestPerformanceScalability",
+    "TestEdgeCasesBoundary",
+    "TestExportValidation",
+    "TestInstrumentationIntegration"
+   ]
+  },
+  "quantum-edge-terminal/tests/test_execution_instrumentation_perfect.py": {
+   "imports": [
+    "datetime",
+    "execution",
+    "json",
+    "observability",
+    "pathlib",
+    "pytest",
+    "sys",
+    "threading",
+    "time",
+    "unittest.mock",
+    "validation.integration_bridge",
+    "validation.validation_orchestrator"
+   ],
+   "module": "tests.test_execution_instrumentation_perfect",
+   "parse_ok": true,
+   "symbols": [
+    "TestErrorHandlingAndRecovery",
+    "TestBridgeInstrumentationCompleteness",
+    "TestValidationOrchestratorPhases",
+    "TestEventOrderingAndConsistency",
+    "TestPerformanceAndScalability",
+    "TestEdgeCasesAndBoundaries",
+    "TestExportValidation",
+    "TestConcurrencyAndThreadSafety",
+    "TestIntegrationStress",
+    "TestRealWorldScenarios",
+    "test_perfect_suite_summary"
+   ]
+  },
+  "quantum-edge-terminal/tests/test_phase_8_5_integration.py": {
+   "imports": [
+    "datetime",
+    "execution",
+    "logging",
+    "monitoring",
+    "pytest",
+    "unittest.mock"
+   ],
+   "module": "tests.test_phase_8_5_integration",
+   "parse_ok": true,
+   "symbols": [
+    "TestExecutionAuditLogIntegration",
+    "TestExecutionKillSwitchIntegration",
+    "TestShadowExecutionIntegration",
+    "TestStagedCapitalDeployment",
+    "TestExecutionAuditReport",
+    "TestSystemIntegration"
+   ]
+  },
+  "quantum-edge-terminal/tradingview_bridge_adapter.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "json",
+    "logging",
+    "typing"
+   ],
+   "module": "tradingview_bridge_adapter",
+   "parse_ok": true,
+   "symbols": [
+    "SignalType",
+    "TradingViewSignal",
+    "TradingViewStrategyValidator",
+    "TradingViewWebhookReceiver",
+    "create_pine_script_webhook_handler"
+   ]
+  },
+  "quantum-edge-terminal/validation/PHASE7_INTEGRATION_EXAMPLE.py": {
+   "imports": [
+    "datetime",
+    "logging",
+    "pathlib",
+    "validation"
+   ],
+   "module": "validation.PHASE7_INTEGRATION_EXAMPLE",
+   "parse_ok": true,
+   "symbols": [
+    "generate_mock_market_data",
+    "generate_mock_signal",
+    "run_phase7_integration_demo"
+   ]
+  },
+  "quantum-edge-terminal/validation/VALIDATION_EXAMPLE.py": {
+   "imports": [
+    "datetime",
+    "validation.forward_test_engine",
+    "validation.safety_controls",
+    "validation.scoring_engine"
+   ],
+   "module": "validation.VALIDATION_EXAMPLE",
+   "parse_ok": true,
+   "symbols": [
+    "run_institutional_validation"
+   ]
+  },
+  "quantum-edge-terminal/validation/__init__.py": {
+   "imports": [
+    ".forward_test_engine",
+    ".integration_bridge",
+    ".live_validation_runner",
+    ".safety_controls",
+    ".scoring_engine",
+    ".validation_orchestrator"
+   ],
+   "module": "validation",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/validation/forward_test_engine/__init__.py": {
+   "imports": [
+    ".forward_test_engine"
+   ],
+   "module": "validation.forward_test_engine",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/validation/forward_test_engine/forward_test_engine.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "validation.forward_test_engine.forward_test_engine",
+   "parse_ok": true,
+   "symbols": [
+    "TradeSignal",
+    "MarketCandle",
+    "GeneratedSignal",
+    "PaperTrade",
+    "ForwardTestEngine"
+   ]
+  },
+  "quantum-edge-terminal/validation/integration_bridge.py": {
+   "imports": [
+    "..execution",
+    "..observability",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "validation.integration_bridge",
+   "parse_ok": true,
+   "symbols": [
+    "SignalSource",
+    "BridgeExecutionMode",
+    "BridgeSignal",
+    "BridgeExecutionResult",
+    "IntegrationBridge"
+   ]
+  },
+  "quantum-edge-terminal/validation/live_validation_runner.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "json",
+    "logging",
+    "pathlib",
+    "typing"
+   ],
+   "module": "validation.live_validation_runner",
+   "parse_ok": true,
+   "symbols": [
+    "ValidationRunConfig",
+    "LiveValidationRunner"
+   ]
+  },
+  "quantum-edge-terminal/validation/safety_controls/__init__.py": {
+   "imports": [
+    ".safety_controls"
+   ],
+   "module": "validation.safety_controls",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/validation/safety_controls/safety_controls.py": {
+   "imports": [
+    "dataclasses",
+    "datetime",
+    "enum",
+    "logging",
+    "typing"
+   ],
+   "module": "validation.safety_controls.safety_controls",
+   "parse_ok": true,
+   "symbols": [
+    "SafetyStatus",
+    "SafetyEvent",
+    "SafetyControls"
+   ]
+  },
+  "quantum-edge-terminal/validation/scoring_engine/__init__.py": {
+   "imports": [
+    ".institutional_scorecard"
+   ],
+   "module": "validation.scoring_engine",
+   "parse_ok": true,
+   "symbols": []
+  },
+  "quantum-edge-terminal/validation/scoring_engine/institutional_scorecard.py": {
+   "imports": [
+    "dataclasses",
+    "enum",
+    "typing"
+   ],
+   "module": "validation.scoring_engine.institutional_scorecard",
+   "parse_ok": true,
+   "symbols": [
+    "GateStatus",
+    "MetricResult",
+    "SectionResult",
+    "ValidationResult",
+    "InstitutionalScorecard"
+   ]
+  },
+  "quantum-edge-terminal/validation/validation_orchestrator.py": {
+   "imports": [],
+   "module": "validation.validation_orchestrator",
+   "parse_ok": false,
+   "symbols": []
+  },
+  "quantum-edge-terminal/verify_instrumentation.py": {
+   "imports": [
+    "datetime",
+    "observability",
+    "pathlib",
+    "sys",
+    "traceback",
+    "validation.integration_bridge",
+    "validation.validation_orchestrator"
+   ],
+   "module": "verify_instrumentation",
+   "parse_ok": true,
+   "symbols": []
+  }
+ }
+}

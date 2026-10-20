@@ -1,0 +1,21 @@
+capability,evidence_level,files,tests,notes,last_verified_commit
+Setup state machine (GP sequence),MISSING,-,-,D-037,361e92ac
+SMT engine,MISSING,-,-,D-036,361e92ac
+Liquidity/sweep detection (ai-engine),L1 SOURCE (defective),ai-engine/src/modules/market_structure_detector.py,qe legacy tests D-019..D-022,replace,361e92ac
+Manipulation-leg/Fibonacci research (QuantumEdge fib..fib9),L1 SOURCE (imports OK; data absent),QuantumEdge/research/*,none runnable (no data),closest prior art to GP concepts,361e92ac
+Sector/IBS LEAN algorithm,L1 SOURCE (needs LEAN),"QuantumEdge/main.py, strategy/*",test_data_presence 1/4,out of GP scope,361e92ac
+Execution engine,L1 SOURCE (cannot import),execution/execution_engine,D-001..D-009,,361e92ac
+Risk engine,L1 SOURCE (loads standalone; never wired),execution/risk_engine,"D-002,D-003,D-010,D-011",,361e92ac
+Broker / order submission,L1 SOURCE (mock; crashes),"execution/broker_engine, production/live_broker_connector","D-040, D-029",no real order path exists,361e92ac
+Kill switch / staged capital / shadow comparator,L1 SOURCE (cannot import),execution/*,none (package import fails),,361e92ac
+Validation / scorecard / safety controls,L1 SOURCE (package does not parse),validation/*,"D-017,D-018,D-027",,361e92ac
+Observability,L1 SOURCE (cannot import),observability/*,D-028,,361e92ac
+TradingView bridge,L1 SOURCE (imports; unhosted),tradingview_bridge_adapter.py,"D-012..D-016, D-026",,361e92ac
+Pine scripts,L0/L1 (not executable here),*.pine,none,D-039,361e92ac
+Trade journal,L1 SOURCE (loads; never wired),storage/trade_journal,D-023..D-025,,361e92ac
+Backend API (Express),L1 SOURCE (not run),backend/src,none,D-034,361e92ac
+Frontend (Next.js),L1 SOURCE (not run),frontend/src,none,,361e92ac
+Data quality authority,MISSING,-,-,,361e92ac
+Instrument registry / futures metadata,MISSING,-,-,,361e92ac
+Deterministic replay,MISSING,-,-,,361e92ac
+Research provenance tooling (manifest/validity),"L1 SOURCE (QuantumEdge/research/manifest.py, validity.py)",QuantumEdge/research,none,reusable ideas,361e92ac

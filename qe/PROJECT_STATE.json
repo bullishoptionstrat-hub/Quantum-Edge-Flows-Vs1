@@ -1,0 +1,45 @@
+{
+  "directive": "QEGP-MASTER-4.0 (quantum-edge-governance/QEGP_MASTER_PROMPT_v4.md)",
+  "current_phase": "2",
+  "phase_status": {
+    "0": "EXIT_GATES_MET_PENDING_REVIEW",
+    "1": "DONE: P1-01 matrix, P1-02 decision (ADR-0007: fenced in this repo), P1-03 quarantine",
+    "2": "DRAFT: gp-1.0.0-draft.1 written (qe/spec/GP_SPEC.md, 66 requirements, 37 ambiguities, 41 golden fixtures); freeze blocked on H-01 (source document) and H-02 (operator approval of each ambiguity)",
+    "core_primitives": "DONE (ADR-0004): ticks, instruments/risk/net-R, clock, serialization, events, mode firewall; see qe/spec/INVARIANT_TRACEABILITY.csv",
+    "data_quality_gate": "DONE (ADR-0005): closed-bar feed gate, fail-closed; thresholds are A2 policy"
+  },
+  "audited_commit": "361e92ac",
+  "canonical_strategy_version": null,
+  "canonical_strategy_note": "No God's Plan implementation exists (D-037). qe/gp is a stub; the golden fixtures xfail until Phase 3.",
+  "mode": "AUDIT",
+  "live_capability": "NONE (no code path can reach a broker; see qe/audit/EXECUTION_AUTHORITY_GRAPH.md)",
+  "defects_open": {
+    "CRITICAL": 15,
+    "HIGH": 23,
+    "MEDIUM": 7,
+    "register": "qe/audit/DEFECT_REGISTER.csv"
+  },
+  "legacy_defect_reproductions": {
+    "tests": 32,
+    "status": "32 xfail (reproduced) + 41 golden-fixture xfail (not implemented); 124 passing core, data-quality, boundary and spec tests",
+    "command": "qe/.venv/bin/python -m pytest -c qe/pytest.ini --rootdir=."
+  },
+  "pending_decisions": [
+    "H-01 commit God's Plan source document",
+    "H-02 approve each AMB entry",
+    "H-03 rotate Postgres password (A3)",
+    "H-04 verify instrument registry"
+  ],
+  "research_protocol": null,
+  "holdouts": "none defined; no GP dataset exists",
+  "evidence_levels": "qe/evidence/EVIDENCE_MATURITY_MATRIX.csv",
+  "regenerate": "bash qe/tools/run_phase0.sh",
+  "canonical_strategy_draft": "gp-1.0.0-draft.1 (PROPOSED, not authoritative)",
+  "decided": {
+    "A2-00": "ADR-0006",
+    "A2-01": "ADR-0007 (fence in repo)",
+    "A2-02": "ADR-0008",
+    "A2-03": "ADR-0009"
+  },
+  "ci": ".github/workflows/quantum-edge.yml (Quantum Edge only, GitHub-hosted runners)"
+}

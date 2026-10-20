@@ -1,0 +1,29 @@
+artifact,data_source,cost_model,randomness,dataset_identity,reproducible_from_repo,status_and_variant_count
+quantum-edge-terminal/backtest_baseline_validated.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_enhanced_fib.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_fast_enhanced_fib.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_fib_manipulation.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_fib_optimization.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_fix_validation.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_historical_rr.py,YFINANCE_UNPINNED,none,n/a,none,no,NOT_REPRODUCIBLE
+quantum-edge-terminal/backtest_historical_rr_synthetic.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_hybrid_strategy.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_integrated_system.py,SYNTHETIC_OUTCOMES (wins drawn by random.random),none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_max_profit_final.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_optimized_profitability.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_phase2_institutional.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_phase2_optimized.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_post_fix_validation.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_practical_profits.py,SYNTHETIC_PRICES,partial (1 cost term),seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_smart_profitability.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+quantum-edge-terminal/backtest_timeframe_analysis.py,SYNTHETIC_PRICES,none,seeded,none,no,NOT_EVIDENCE
+QuantumEdge/research/fib,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: 50 result files / 50 configs x instruments
+QuantumEdge/research/fib2,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: 48 / 42
+QuantumEdge/research/fib3,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: 12 / 12
+QuantumEdge/research/fib4,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: 22 / 11
+QuantumEdge/research/fib5,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: no committed outputs
+QuantumEdge/research/fib6,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: no committed outputs
+QuantumEdge/research/fib7,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: no committed outputs
+QuantumEdge/research/fib8,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: no committed outputs
+QuantumEdge/research/fib9,"LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: no committed outputs
+"QuantumEdge LEAN runs (output/runs, output/experiments, output/logs)","LEAN_ZIP (lean/Data, absent from repo)","fib5+: optional slippage/commission, default 0",n/a,"none (manifests: commit 77509024b8 absent, dirty)",no,NOT_REPRODUCIBLE; search-history count: 11 runs + 52 experiment files (28 configs) + 17 logged configs
